@@ -186,7 +186,7 @@ h4 { font-size: 1.02rem; font-weight: 700; }
 /* ---------- Teadaanderiba ja päis ---------- */
 .announce { background: var(--pink); color: #fff; font-size: 0.84rem; font-weight: 600; text-align: center; padding: 9px var(--gutter); }
 .announce a { text-decoration: underline; text-underline-offset: 3px; }
-.site-header { position: sticky; top: 0; z-index: 100; padding: 12px 0; transition: padding 0.3s; }
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 100; padding: 12px 0; transition: padding 0.3s; }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between; gap: 18px; height: 66px;
   padding: 0 10px 0 22px; border-radius: var(--pill);
@@ -727,7 +727,7 @@ body.menu-open { overflow: hidden; }
 /* Kleepuv broneerimisnupp mobiilis */
 .sticky-book { display: none; }
 @media (max-width: 600px) {
-  .sticky-book { display: flex; position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 90; transform: translateY(160%); transition: transform 0.4s var(--ease); }
+  .sticky-book { display: flex; position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 90; transform: translateY(160%); transition: transform 0.4s var(--ease); }
   .sticky-book.show { transform: none; }
 }
 .sticky-col { position: sticky; top: 110px; }
