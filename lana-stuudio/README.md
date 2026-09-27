@@ -70,6 +70,14 @@ Vabad kellaajad broneerimisel on näidis. Päris kasutuseks ühenda vorm vormite
 (nt Formspree või Netlify Forms) või asenda broneerimisvorm broneerimissüsteemi lingiga
 (nt Fresha, Booksy).
 
+## Netlify ja otsingumootorid
+
+`robots.txt` ja `_headers` keelavad Google'il lehte indekseerida, sest tegu on näidisega.
+Kui leht läheb päris kasutusse (päris arvustuste ja andmetega), kustuta need kaks faili.
+
+Netlify Drop: pakkige kausta **sisu** (mitte kausta ennast) zip-faili ja lohistage see aadressile
+https://app.netlify.com/drop. `index.html` peab olema zip-faili juurtasemel.
+
 ## Muutmine
 
 Päis ja jalus korduvad igas HTML-failis. Menüü muutmisel uuenda kõiki 18 faili.
