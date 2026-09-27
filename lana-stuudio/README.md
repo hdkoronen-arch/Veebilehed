@@ -8,13 +8,12 @@ Ava `index.html` brauseris või laadi kogu kaust üles mis tahes staatilisse hos
 | Eesti | Vene | Leht |
 |---|---|---|
 | `index.html` | `ru/index.html` | Avaleht |
-| `teenused.html` | `ru/teenused.html` | Teenused ja hinnad |
+| `teenused.html` | `ru/teenused.html` | Teenused ja hinnad (kategooriamenüüga) |
 | `broneeri.html` | `ru/broneeri.html` | Broneeri aeg (3 sammu + kokkuvõte) |
 | `galerii.html` | `ru/galerii.html` | Galerii (filtriga) |
 | `arvustused.html` | `ru/arvustused.html` | Arvustused |
 | `meist.html` | `ru/meist.html` | Meist |
 | `kkk.html` | `ru/kkk.html` | KKK |
-| `kinkekaardid.html` | `ru/kinkekaardid.html` | Kinkekaardid (kaardi eelvaatega) |
 | `kontakt.html` | `ru/kontakt.html` | Kontakt |
 | `privaatsuspoliitika.html` | `ru/privaatsuspoliitika.html` | Privaatsuspoliitika |
 
@@ -66,11 +65,11 @@ Vene lehtedel on tee `../assets/img/...`. Silt kaob automaatselt, kui kohatäite
 
 ## Vormid
 
-Broneerimise, kinkekaardi ja kontakti vormid näitavad praegu ainult kinnitust (demo).
+Broneerimise ja kontakti vormid näitavad praegu ainult kinnitust (demo).
 Vabad kellaajad broneerimisel on näidis. Päris kasutuseks ühenda vorm vormiteenusega
 (nt Formspree või Netlify Forms) või asenda broneerimisvorm broneerimissüsteemi lingiga
 (nt Fresha, Booksy).
 
 ## Muutmine
 
-Päis ja jalus korduvad igas HTML-failis. Menüü muutmisel uuenda kõiki 20 faili.
+Päis ja jalus korduvad igas HTML-failis. Menüü muutmisel uuenda kõiki 18 faili.

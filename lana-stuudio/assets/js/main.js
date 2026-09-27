@@ -70,7 +70,6 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
       if (form.id === 'book-form') fillBookingOk();
-      if (form.id === 'gift-form') fillGiftOk();
       showOk(form);
     });
   });
@@ -157,40 +156,24 @@
     update();
   }
 
-  /* Kinkekaart */
-  var gift = d.getElementById('gift-form');
-  function giftAmount() {
-    var r = gift.querySelector('input[name="summa"]:checked');
-    if (!r) return '';
-    if (r.value === 'muu') {
-      var n = parseInt(d.getElementById('g-custom').value, 10);
-      return n > 0 ? n + ' €' : '';
-    }
-    return r.value + ' €';
-  }
-  function fillGiftOk() {
-    var el = d.getElementById('ok-gift');
-    if (el) el.textContent = giftAmount();
-  }
-  if (gift) {
-    var custom = d.getElementById('g-custom');
-    var customWrap = d.getElementById('g-custom-wrap');
-    var pvAmount = d.getElementById('pv-amount');
-    var pvName = d.getElementById('pv-name');
-    var pvCode = d.getElementById('pv-code');
-    var nameInput = d.getElementById('g-to');
-    var pvDefault = pvName.textContent;
-    pvCode.textContent = 'LS-' + String(Math.floor(1000 + Math.random() * 9000));
-    function upd() {
-      var r = gift.querySelector('input[name="summa"]:checked');
-      var isCustom = r && r.value === 'muu';
-      customWrap.hidden = !isCustom;
-      custom.required = !!isCustom;
-      pvAmount.textContent = giftAmount() || '... €';
-      pvName.textContent = nameInput.value.trim() || pvDefault;
-    }
-    gift.addEventListener('input', upd);
-    gift.addEventListener('change', upd);
-    upd();
+  /* Teenuste kategooriamenüü: tõstab esile kategooria, mida parajasti vaadatakse */
+  var pnav = d.querySelector('.price-nav');
+  if (pnav && 'IntersectionObserver' in window) {
+    var chips = pnav.querySelectorAll('a[href^="#"]');
+    var setOn = function (id) {
+      chips.forEach(function (c) {
+        var on = c.getAttribute('href') === '#' + id;
+        c.classList.toggle('on', on);
+        if (on) {
+          c.setAttribute('aria-current', 'true');
+          var bar = c.parentNode;
+          bar.scrollTo({ left: c.offsetLeft - 16, behavior: 'smooth' });
+        } else c.removeAttribute('aria-current');
+      });
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setOn(en.target.id); });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    d.querySelectorAll('.pcat[id]').forEach(function (sec) { io.observe(sec); });
   }
 })();
