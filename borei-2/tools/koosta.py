@@ -8,6 +8,10 @@ import collections, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Demo: otsingumootorid ei indekseeri lehte. Päris avaldamisel pane DEMO = False ja käivita uuesti.
+DEMO = True
+ROBOTS = '<meta name="robots" content="noindex, nofollow">\n' if DEMO else ""
+
 PHONE = "+372 5192 0155"
 TEL = "tel:+37251920155"
 EMAIL = "irinabograya@gmail.com"
@@ -544,7 +548,7 @@ def write_pages():
 <title>{p["title"]}</title>
 <meta name="description" content="{p["desc"]}">
 <meta name="theme-color" content="#f7f4ec">
-{ICON}
+{ROBOTS}{ICON}
 {FONTS}
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -633,7 +637,7 @@ def write_single():
 <title>{first["title"]}</title>
 <meta name="description" content="{first["desc"]}">
 <meta name="theme-color" content="#f7f4ec">
-{ICON}
+{ROBOTS}{ICON}
 {FONTS}
 <style>
 {css}

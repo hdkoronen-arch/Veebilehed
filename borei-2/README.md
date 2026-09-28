@@ -16,6 +16,12 @@ python3 borei-2/tools/koosta.py
 
 See kirjutab üle kõik `*.html` failid ja ühe faili versiooni. CSS on `assets/css/style.css`, JS `assets/js/main.js`.
 
+## Netlifysse demoks
+Lohista Netlify Dropi (app.netlify.com/drop) ainult avalikud failid: 8 `*.html` lehte ja kaust `assets/`.
+Ära lae üles `README.md`, `BRIEF.md` ega `tools/`, sest need oleksid kõigile loetavad.
+Demo lehtedel on `noindex`, et Google ei näitaks väljamõeldud hindadega lehte.
+Päris avaldamisel pane `tools/koosta.py` failis `DEMO = False` ja käivita skript uuesti.
+
 ## Pildid
 Kohatäited on kujul `<span class="ph"><i>Silt</i></span>`. Pildi lisamiseks pane `<img>` kohatäite sisse:
 
