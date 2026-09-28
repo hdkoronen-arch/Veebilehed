@@ -506,7 +506,7 @@ h2 .count { font-size: .9rem; }
 .mbar.show { transform: none; }
 .mbar a { min-height: 58px; display: grid; place-items: center; text-decoration: none; font: 600 .78rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
 .mbar a:first-child { background: var(--ink); color: var(--cream); font-size: 1.2rem; }
-.mbar a:last-child { color: #fff; }
+.mbar a:last-child { color: #fff; place-items: center start; padding-left: 16px; letter-spacing: .08em; } /* tekst vasakul, et hostingu silt paremal all seda ei kataks */
 @media (min-width: 1100px) { .mbar { display: none; } }
 @media (max-width: 1099px) { .has-mbar .ftr { padding-bottom: 58px; } }
 .no-mbar .mbar { display: none; }
