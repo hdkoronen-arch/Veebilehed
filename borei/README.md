@@ -5,7 +5,7 @@ Ava `index.html` brauseris või laadi kaust `borei/` üles mis tahes staatilisse
 
 **Üks fail:** `borei-koik-lehed.html` sisaldab kõiki lehti, CSS-i ja JS-i. Lehtede vahel liigutakse
 `#`-linkidega (`#teenused`, `#broneeri?teenus=fade`, `#kkk:lapsed`), töötab ka ilma serverita.
-See on eraldi failidest kokku pandud koopia: muudatused tee eraldi failides ja pane üks fail uuesti kokku.
+See on eraldi failidest kokku pandud koopia: muudatused tee eraldi failides ja pane üks fail uuesti kokku käsuga `python3 borei/tools/koosta-uks-fail.py`.
 
 Täidetud mall, disainiallikad ja andmete päritolu: [`BRIEF.md`](BRIEF.md).
 
