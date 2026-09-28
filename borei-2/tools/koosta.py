@@ -17,7 +17,7 @@ EMBED = "https://www.google.com/maps?q=Keskallee%2020%2C%2030322%20Kohtla-J%C3%A
 CUR = ' aria-current="page"'
 
 NAV = [("index.html", "Avaleht"), ("teenused.html", "Teenused"), ("galerii.html", "Tööd"), ("meist.html", "Meist"),
-       ("kinkekaart.html", "Kinkekaart"), ("kkk.html", "KKK"), ("kontakt.html", "Kontakt")]
+       ("kkk.html", "KKK"), ("kontakt.html", "Kontakt")]
 
 # Hinnad, kestused ja kirjeldused on näidised: asenda salongi päris hinnakirjaga.
 SERVICES = [
@@ -162,8 +162,6 @@ def visit():
 rail_ids = ["loikus", "fade", "kombo", "habe", "raseerimine", "masin", "poisid", "isa-poeg"]
 rail = "\n".join(f'''      <a class="svc" href="broneeri.html?teenus={i}">{ph(svc(i)[2])}<h3>{svc(i)[2]}</h3><p>{svc(i)[5]}</p><span class="pr">{svc(i)[3]} min · {svc(i)[4]} €</span></a>''' for i in rail_ids)
 svc_opts = "\n".join(f'          <option value="{i}">{n}</option>' for g, i, n, d, p, ds in SERVICES)
-words = ["Klassikaline lõikus", "Fade", "Habeme kujundamine", "Kuum rätik", "Poiste lõikus", "Isa + poeg", "Pea raseerimine"]
-marq = "".join(f"<span>{w}</span>" for w in words * 2)
 page("index.html", "Borei · meeste juuksur Kohtla-Järvel",
      "Borei on meeste juuksurisalong Kohtla-Järvel, Keskallee 20. Lõikus, fade, habe ja raseerimine. Broneeri aeg veebis.", f'''<section class="hero">
   <div class="slides" aria-hidden="true">
@@ -192,15 +190,7 @@ page("index.html", "Borei · meeste juuksur Kohtla-Järvel",
     <button class="btn btn--red" type="submit">Leia aeg <span class="ar">→</span></button>
   </form>
 </section>
-<div class="marquee" aria-hidden="true"><div class="track">{marq}</div></div>
 
-<section class="sec">
-  <div class="wrap manifest rise">
-    <div class="mark" aria-hidden="true">B</div>
-    <p>Borei on koht <em>vahetusest tulnud meistrimehele</em> ja gümnasistile enne lõpuaktust. Isale ja pojale. Kõigile, kes tahavad head lõikust ilma pika jututa.</p>
-    <div class="sign">Borei · Keskallee 20 · aastast 2015</div>
-  </div>
-</section>
 
 <section class="sec sec--alt" data-rail>
   <div class="wrap">
@@ -277,7 +267,7 @@ page("teenused.html", "Teenused ja hinnad · Borei", "Borei hinnakiri: meeste ju
   <div class="wrap">
     <div class="head"><div><span class="eyebrow">Hea teada</span><h2 style="margin-top:12px">Enne <em>tulekut</em></h2></div></div>
     <div class="notes">
-      <div class="note-card"><span class="n">1/</span><h3>Tasumine</h3><p>Pangakaart või sularaha salongis pärast teenust. Kinkekaart kehtib kõigile teenustele.</p></div>
+      <div class="note-card"><span class="n">1/</span><h3>Tasumine</h3><p>Pangakaart või sularaha salongis pärast teenust.</p></div>
       <div class="note-card"><span class="n">2/</span><h3>Hilinemine</h3><p>Kui jääd üle 15 minuti hiljaks, helista. Vajadusel lühendame teenust või leiame uue aja.</p></div>
       <div class="note-card"><span class="n">3/</span><h3>Tühistamine</h3><p>Anna teada vähemalt 3 tundi ette, siis saab aja võtta keegi teine.</p></div>
     </div>
@@ -436,73 +426,6 @@ page("broneeri.html", "Broneeri aeg · Borei", "Broneeri aeg Borei meeste juuksu
 <script type="application/json" id="svc-json">{json.dumps(SVC_JSON, ensure_ascii=False)}</script>
 <script type="application/json" id="mst-json">{json.dumps(MASTERS, ensure_ascii=False)}</script>''', body_class="no-mbar")
 
-# ------------------------------------------------------------ KINKEKAART
-gopts = "\n".join(f'            <option value="{i}">{svc(i)[2]} · {svc(i)[4]} €</option>' for i in ["loikus", "fade", "kombo", "raseerimine", "habe", "isa-poeg"])
-page("kinkekaart.html", "Kinkekaart · Borei", "Borei kinkekaart: kingi meeste lõikus või habemehooldus. Vali summa või teenus ja vaata eelvaadet.",
-     phead("Kinkekaart", "Kinke<em>kaart</em>", "Kingi korralik lõikus. Kaart muutub eelvaates kohe, kui midagi valid.") + f'''
-<section class="sec">
-  <div class="wrap gift">
-    <div>
-      <form class="form" id="gift" novalidate>
-        <div class="fld"><span class="lbl">Kaardi tüüp</span>
-          <div class="seg seg--2">
-            <label class="on"><input type="radio" name="gt" value="summa" checked>Summa</label>
-            <label><input type="radio" name="gt" value="teenus">Teenus</label>
-          </div>
-        </div>
-        <div class="fld" id="g-amt"><span class="lbl">Summa</span>
-          <div class="seg" role="group" aria-label="Summa">
-            <button type="button" data-amt="20" aria-pressed="false">20 €</button>
-            <button type="button" data-amt="30" aria-pressed="true">30 €</button>
-            <button type="button" data-amt="50" aria-pressed="false">50 €</button>
-            <button type="button" data-amt="muu" aria-pressed="false">Muu</button>
-          </div>
-          <div class="fld" id="g-own" hidden style="margin-top:12px"><label for="g-own-v">Oma summa (€)</label><input id="g-own-v" type="number" min="10" max="300" step="5" inputmode="numeric" placeholder="40"></div>
-        </div>
-        <div class="fld" id="g-svc-w" hidden><label for="g-svc">Teenus</label><select id="g-svc">
-{gopts}
-          </select></div>
-        <div class="fld"><span class="lbl">Foto värv</span>
-          <div class="swatches" role="group" aria-label="Kaardi värv">
-            <button type="button" data-c="" aria-pressed="true" style="background:#0f0f0f" aria-label="Must"></button>
-            <button type="button" data-c="red" aria-pressed="false" style="background:#cf3b22" aria-label="Punane"></button>
-            <button type="button" data-c="cream" aria-pressed="false" style="background:#efe9dd" aria-label="Kreem"></button>
-          </div>
-        </div>
-        <div class="two">
-          <div class="fld"><label for="g-to">Kellele</label><input id="g-to" type="text" maxlength="28" required><span class="err">Kirjuta saaja nimi.</span></div>
-          <div class="fld"><label for="g-from">Kellelt</label><input id="g-from" type="text" maxlength="28" required><span class="err">Kirjuta oma nimi.</span></div>
-        </div>
-        <div class="fld"><label for="g-msg">Soov <span class="opt">(kuni 120 tähemärki)</span></label><textarea id="g-msg" maxlength="120" placeholder="Palju õnne, isa!"></textarea></div>
-        <div class="two">
-          <div class="fld"><label for="g-phone">Sinu telefon</label><input id="g-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
-          <div class="fld"><label for="g-get">Kättesaamine</label><select id="g-get"><option>Tulen salongi järele</option><option>Saatke e-postiga (PDF)</option></select></div>
-        </div>
-        <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei võtab tellimuse kinnitamiseks minuga ühendust. <a href="privaatsus.html">Privaatsus</a></span></label>
-        <button class="btn btn--red btn--wide" type="submit">Telli kinkekaart <span class="ar">→</span></button>
-        <p class="small muted">Kehtib 12 kuud. Tasumine salongis või arvega.</p>
-      </form>
-      <div class="done" id="g-done" hidden>
-        <span class="eyebrow eyebrow--muted">Tellimus vastu võetud</span>
-        <h2>Aitäh!</h2>
-        <p class="intro">Võtame ühendust ühe tööpäeva jooksul. Kaardi kood: <b id="g-done-code"></b>.</p>
-        <a class="btn btn--line" href="index.html">Avalehele <span class="ar">→</span></a>
-      </div>
-    </div>
-    <div class="gift-prev">
-      <span class="eyebrow eyebrow--muted" style="display:block;margin-bottom:22px">Eelvaade</span>
-      <div class="polaroid" aria-live="polite">
-        <div class="pic">
-          <div class="top"><span>Kinkekaart</span><span>Kohtla-Järve</span></div>
-          <div class="val" id="p-val">30 €</div>
-          <div class="bot"><span>Kood<br><span id="p-code"></span></span><b>Borei</b></div>
-        </div>
-        <div class="under"><p id="p-msg"></p><small><span>Kellele: <span id="p-to">Saaja</span></span><span>Kellelt: <span id="p-from">Sina</span></span></small></div>
-      </div>
-    </div>
-  </div>
-</section>''')
-
 # ------------------------------------------------------------ KKK
 FAQ = [
     ("broneerimine", "Broneerimine", [
@@ -519,8 +442,6 @@ FAQ = [
     ]),
     ("tasumine", "Tasumine", [
         ("Kuidas saab maksta?", "Pangakaardi või sularahaga salongis pärast teenust."),
-        ("Kui kaua kinkekaart kehtib?", "12 kuud alates ostmisest. Kehtivusaeg on kaardil kirjas."),
-        ("Kas kinkekaardi jääki saab hiljem kasutada?", "Jah. Kui teenus on kaardi summast odavam, jääb vahe kaardile järgmiseks korraks."),
     ]),
     ("lapsed", "Lapsed", [
         ("Mis vanusest lõikate lapsi?", "Umbes 3. eluaastast. Poiste lõikuse hind kehtib kuni 12-aastastele."),
@@ -530,7 +451,7 @@ FAQ = [
 ]
 cats = "\n".join(f'        <button type="button" data-cat="{k}" aria-pressed="false">{t}</button>' for k, t, q in FAQ)
 qas = "\n".join(f'''      <details data-cat="{k}"><summary>{q}</summary><div class="a"><span class="cat">{t}</span><p>{a}</p></div></details>''' for k, t, qs in FAQ for q, a in qs)
-page("kkk.html", "KKK · Borei", "Korduma kippuvad küsimused: broneerimine, hilinemine, tasumine, kinkekaardid ja laste lõikused Boreis.",
+page("kkk.html", "KKK · Borei", "Korduma kippuvad küsimused: broneerimine, hilinemine, tasumine ja laste lõikused Boreis.",
      phead("KKK", "Küsimused <em>& vastused</em>", "Otsi märksõnaga või vali teema. Ei leidnud? Helista.") + f'''
 <section class="sec">
   <div class="wrap faq-grid">
@@ -572,7 +493,7 @@ page("kontakt.html", "Kontakt · Borei", "Borei kontakt: Keskallee 20, Kohtla-J�
           <div class="fld"><label for="c-name">Nimi</label><input id="c-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
           <div class="fld"><label for="c-phone">Telefon</label><input id="c-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
         </div>
-        <div class="fld"><label for="c-topic">Teema</label><select id="c-topic"><option>Üldine küsimus</option><option>Broneering</option><option>Kinkekaart</option><option>Grupiaeg (pulm, sünnipäev)</option><option>Tagasiside</option></select></div>
+        <div class="fld"><label for="c-topic">Teema</label><select id="c-topic"><option>Üldine küsimus</option><option>Broneering</option><option>Grupiaeg (pulm, sünnipäev)</option><option>Tagasiside</option></select></div>
         <div class="fld"><label for="c-msg">Sõnum</label><textarea id="c-msg" required></textarea><span class="err">Kirjuta sõnum.</span></div>
         <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei kasutab minu andmeid vastamiseks. <a href="privaatsus.html">Privaatsus</a></span></label>
         <button class="btn btn--red" type="submit">Saada <span class="ar">→</span></button>
@@ -596,12 +517,12 @@ page("privaatsus.html", "Privaatsus · Borei", "Borei OÜ privaatsuspoliitika: m
   <div class="wrap prose">
     <p><b>Vastutav töötleja:</b> Borei OÜ (registrikood 12807446), Keskallee 20, 30322 Kohtla-Järve. Kontakt: {PHONE}, {EMAIL}.</p>
     <h2>Milliseid andmeid kogume</h2>
-    <ul><li>Nimi ja telefon, kui broneerid aja, tellid kinkekaardi või kirjutad meile.</li><li>Broneeringu andmed: teenus, meister, kuupäev ja kellaaeg.</li><li>Lisainfo, mille ise vormi kirjutad.</li></ul>
+    <ul><li>Nimi ja telefon, kui broneerid aja või kirjutad meile.</li><li>Broneeringu andmed: teenus, meister, kuupäev ja kellaaeg.</li><li>Lisainfo, mille ise vormi kirjutad.</li></ul>
     <h2>Milleks neid kasutame</h2>
-    <ul><li>Broneeringu kinnitamiseks ja meeldetuletuseks.</li><li>Kinkekaardi tellimuse täitmiseks.</li><li>Sinu küsimusele vastamiseks.</li></ul>
+    <ul><li>Broneeringu kinnitamiseks ja meeldetuletuseks.</li><li>Sinu küsimusele vastamiseks.</li></ul>
     <p>Me ei müü ega jaga andmeid kolmandatele isikutele turunduseks.</p>
     <h2>Kui kaua hoiame</h2>
-    <p>Broneeringu andmeid kuni 12 kuud, kinkekaardi andmeid kaardi kehtivuse lõpuni ja raamatupidamise dokumente seadusega nõutud aja.</p>
+    <p>Broneeringu andmeid kuni 12 kuud ja raamatupidamise dokumente seadusega nõutud aja.</p>
     <h2>Sinu õigused</h2>
     <p>Võid küsida, milliseid andmeid sinu kohta hoiame, neid parandada või lasta kustutada. Kirjuta {EMAIL}. Kaebuse saad esitada Andmekaitse Inspektsioonile (www.aki.ee).</p>
     <h2>Küpsised ja kaart</h2>
@@ -645,7 +566,7 @@ def slug(fname): return "avaleht" if fname == "index.html" else fname[:-5]
 
 
 def relink(s):
-    s = re.sub(r'(href|action)="(index|teenused|broneeri|galerii|meist|kinkekaart|kkk|kontakt|privaatsus)\.html(\?[^"#]*)?"',
+    s = re.sub(r'(href|action)="(index|teenused|broneeri|galerii|meist|kkk|kontakt|privaatsus)\.html(\?[^"#]*)?"',
                lambda m: f'{m.group(1)}="#{slug(m.group(2) + ".html")}{m.group(3) or ""}"', s)
     return s.replace(CUR, "")
 

@@ -15,7 +15,7 @@
 * **Kirjad:** Instrument Serif (pealkirjad, kursiivsed rõhud), Hanken Grotesk (tekst, väikesed suurtähtsildid)
 * **Mida EI ole:** ümaraid nurki, em dash'e, lillat, gradiente
 * **Erinevus versioonist 1:** v1 oli paberjas beež + tumesinine + kitsas groteskkiri + mono-sildid.
-  v2 on kreem + must + punane, seriifkiri, täislaiuses tume hero, polaroid-kinkekaart ja kalendriga broneerimine.
+  v2 on kreem + must + punane, seriifkiri, täislaiuses tume hero ja kalendriga broneerimine.
 
 ### Inspiratsioon ja kust mis pärit on
 
@@ -26,13 +26,15 @@ andis enamiku eeskujudest. **godly.design** näitab praegu peamiselt tehnoloogia
 | Allikas (refero.design) | Mis võetud |
 |---|---|
 | AVNIER (avnier.com) | mustvalge täislaiuses hero, nummerdatud slaidid 01–03 edenemisjoontega, pealkiri + loendur „(14)” |
-| Volkshotel (volkshotel.nl) | kastis logo „BO\|REI”, kastis „Menüü” nupp, keskel manifestitekst |
+| Volkshotel (volkshotel.nl) | kastis logo „BO\|REI”, kastis „Menüü” nupp, keskel olev lühitekst (Meist-lehel) |
 | Fresha (fresha.com) | suur seriifpealkiri ja otsinguriba tüüpi kiirbroneerimine hero all |
 | Nudea (nudea.com) | seriifkiri kursiivsete rõhuasetustega |
 | Aesop (aesop.com) | kreemjas toon, horisontaalne teenuste rida keskele joondatud pealdiste ja edenemisribaga |
-| Prose (prose.com) | jooksev märksõnariba, sammud „1/ 2/ 3/ 4/” |
-| Polaroid (polaroid.com) | punakasoranž aktsent, kinkekaart polaroidfoto raamis |
+| Prose (prose.com) | sammud „1/ 2/ 3/ 4/” |
+| Polaroid (polaroid.com) | punakasoranž aktsent |
 | godly.design (üldine) | hiiglaslik sõnamärk jaluses |
+
+**Muudatused kliendi tagasiside põhjal:** eemaldatud jooksev märksõnariba, avalehe manifestiplokk ja kinkekaardi leht.
 
 ## Lehed
 
@@ -41,21 +43,20 @@ andis enamiku eeskujudest. **godly.design** näitab praegu peamiselt tehnoloogia
 3. Broneeri aeg (`broneeri.html`)
 4. Tööd (`galerii.html`)
 5. Meist + meeskond (`meist.html`)
-6. Kinkekaart (`kinkekaart.html`)
-7. KKK (`kkk.html`)
-8. Kontakt (`kontakt.html`)
-9. Privaatsus (`privaatsus.html`)
+6. KKK (`kkk.html`)
+7. Kontakt (`kontakt.html`)
+8. Privaatsus (`privaatsus.html`)
 
 ## Funktsioonid
 
 * [x] Broneerimine sammudena: teenus → meister → aeg (kalender + hommik/päev/õhtu) → andmed; allservas püsiv kokkuvõtteriba; lõpus „Lisa kalendrisse” (.ics)
 * [x] Kiirbroneerimine avalehe hero all (teenus + päev → avab broneerimise õigest sammust)
 * [ ] E-pood ostukorviga (pole vajalik)
-* [x] Kinkekaart polaroid-eelvaatega (summa või teenus, 3 värvi, soov, kood)
+* [ ] Kinkekaardid (eemaldatud kliendi soovil)
 * [x] Kontaktivorm
 * [x] KKK avanevate vastustega + otsing + teemafilter
 * [x] Galerii filtritega (loenduritega) + täisekraani vaade
-* [x] Muu: hero slaidid, jooksev riba, „praegu avatud” olek, tänase päeva esiletõst, mobiilis „☎ / Broneeri” riba
+* [x] Muu: hero slaidid, „praegu avatud” olek, tänase päeva esiletõst, mobiilis „☎ / Broneeri” riba
 
 ## Sisu
 

@@ -21,8 +21,8 @@
    - Fresha: suur seriifpealkiri + otsinguriba tüüpi kiirbroneerimine
    - Nudea: seriifkiri kursiivsete rõhuasetustega
    - Aesop: kreemjas taust, horisontaalne teenuste rida edenemisribaga
-   - Prose: jooksev märksõnariba, sammud "1/ 2/ 3/"
-   - Polaroid: punakasoranž aktsent, polaroidraamiga kinkekaart
+   - Prose: sammud "1/ 2/ 3/"
+   - Polaroid: punakasoranž aktsent
    Reeglid: teravad nurgad, ei gradiente, ei lillat.
    ========================================================= */
 
@@ -196,13 +196,6 @@ h2 .count { font-size: .9rem; }
 .ph--dark > i { color: #6f6a62; }
 .ph--fill { position: absolute; inset: 0; aspect-ratio: auto; }
 .hero .ph > i { top: 58px; left: auto; right: var(--gut); transform: none; width: auto; text-align: right; font-size: .95rem; }
-
-/* ---------- Jooksev riba (Prose) ---------- */
-.marquee { background: var(--red); color: #fff; overflow: hidden; border-block: 1px solid var(--ink); }
-.marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
-.marquee span { font: italic 400 clamp(1.5rem, 3vw, 2.2rem)/1 var(--serif); padding: 16px 0; white-space: nowrap; }
-.marquee span::after { content: "/"; font-style: normal; margin: 0 26px; opacity: .55; }
-@keyframes slide { to { transform: translateX(-50%); } }
 
 /* ---------- Sektsioonid ---------- */
 .sec { padding: 72px 0; }
@@ -445,33 +438,6 @@ h2 .count { font-size: .9rem; }
 .bk-bar #bk-back { padding: 0 14px; }
 @media (max-width: 480px) { .bk-bar #bk-back span.t { display: none; } }
 
-/* ---------- Kinkekaart (Polaroid) ---------- */
-.gift { display: grid; gap: 48px; align-items: start; }
-@media (min-width: 960px) { .gift { grid-template-columns: 1fr 1fr; gap: 80px; } .gift-prev { position: sticky; top: calc(var(--hdr) + 28px); } }
-.polaroid { background: #fff; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--line), 0 18px 40px rgba(15, 15, 15, .12); max-width: 440px; margin: 0 auto; transform: rotate(-1.5deg); }
-.polaroid .pic { aspect-ratio: 1 / 1; background: var(--ink); color: var(--cream); display: grid; grid-template-rows: auto 1fr auto; padding: 20px; transition: background .2s, color .2s; }
-.polaroid.red .pic { background: var(--red); color: #fff; }
-.polaroid.cream .pic { background: var(--cream-2); color: var(--ink); }
-.polaroid .pic .top { display: flex; justify-content: space-between; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .16em; }
-.polaroid .pic .val { align-self: center; text-align: center; font: 400 clamp(3.4rem, 12vw, 5.6rem)/.9 var(--serif); word-break: break-word; }
-.polaroid .pic .val.long { font-size: clamp(2rem, 6.5vw, 2.8rem); font-style: italic; }
-.polaroid .pic .bot { display: flex; justify-content: space-between; align-items: flex-end; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
-.polaroid .pic .bot b { font: 400 1.4rem/1 var(--serif); text-transform: none; letter-spacing: 0; }
-.polaroid .under { padding: 16px 6px 22px; min-height: 120px; }
-.polaroid .under p { font: italic 400 1.5rem/1.2 var(--serif); margin: 0 0 10px; overflow-wrap: anywhere; min-height: 1.2em; }
-.polaroid .under p:empty::before { content: "Siia tuleb sinu soov."; color: #b9b2a5; }
-.polaroid .under small { display: flex; justify-content: space-between; gap: 10px; font: 600 .62rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
-.seg { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); }
-.seg--2 { grid-template-columns: 1fr 1fr; }
-.seg button, .seg label { min-height: 50px; display: grid; place-items: center; border: 0; border-right: 1px solid var(--ink); background: transparent; cursor: pointer; font: 400 1.25rem/1 var(--serif); position: relative; }
-.seg > :last-child { border-right: 0; }
-.seg input { position: absolute; opacity: 0; pointer-events: none; }
-.seg [aria-pressed="true"], .seg label.on { background: var(--ink); color: var(--cream); }
-.seg label:has(input:focus-visible) { outline: 2px solid var(--red); outline-offset: -4px; }
-.swatches { display: flex; gap: 10px; }
-.swatches button { width: 44px; height: 44px; border: 1px solid var(--ink); cursor: pointer; }
-.swatches button[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 3px; }
-
 /* ---------- KKK ---------- */
 .faq-grid { display: grid; gap: 36px; }
 @media (min-width: 960px) { .faq-grid { grid-template-columns: 4fr 8fr; gap: 72px; } .faq-side { position: sticky; top: calc(var(--hdr) + 28px); align-self: start; } }
@@ -558,8 +524,6 @@ h2 .count { font-size: .9rem; }
 @media (max-width: 1099px) { .has-mbar .ftr { padding-bottom: 58px; } }
 .no-mbar .mbar { display: none; }
 
-.toast { position: fixed; left: 50%; bottom: 80px; z-index: 150; transform: translate(-50%, 16px); background: var(--ink); color: var(--cream); padding: 12px 18px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; max-width: calc(100% - 32px); }
-.toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 .js .rise { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .js .rise.in { opacity: 1; transform: none; }
@@ -581,7 +545,6 @@ h2 .count { font-size: .9rem; }
       <li><a href="#teenused">Teenused</a></li>
       <li><a href="#galerii">Tööd</a></li>
       <li><a href="#meist">Meist</a></li>
-      <li><a href="#kinkekaart">Kinkekaart</a></li>
       <li><a href="#kkk">KKK</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul></nav>
@@ -596,7 +559,6 @@ h2 .count { font-size: .9rem; }
     <li><a href="#teenused">Teenused</a></li>
     <li><a href="#galerii">Tööd</a></li>
     <li><a href="#meist">Meist</a></li>
-    <li><a href="#kinkekaart">Kinkekaart</a></li>
     <li><a href="#kkk">KKK</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
     <li><a href="#broneeri">Broneeri aeg</a></li>
@@ -645,15 +607,7 @@ h2 .count { font-size: .9rem; }
     <button class="btn btn--red" type="submit">Leia aeg <span class="ar">→</span></button>
   </form>
 </section>
-<div class="marquee" aria-hidden="true"><div class="track"><span>Klassikaline lõikus</span><span>Fade</span><span>Habeme kujundamine</span><span>Kuum rätik</span><span>Poiste lõikus</span><span>Isa + poeg</span><span>Pea raseerimine</span><span>Klassikaline lõikus</span><span>Fade</span><span>Habeme kujundamine</span><span>Kuum rätik</span><span>Poiste lõikus</span><span>Isa + poeg</span><span>Pea raseerimine</span></div></div>
 
-<section class="sec">
-  <div class="wrap manifest rise">
-    <div class="mark" aria-hidden="true">B</div>
-    <p>Borei on koht <em>vahetusest tulnud meistrimehele</em> ja gümnasistile enne lõpuaktust. Isale ja pojale. Kõigile, kes tahavad head lõikust ilma pika jututa.</p>
-    <div class="sign">Borei · Keskallee 20 · aastast 2015</div>
-  </div>
-</section>
 
 <section class="sec sec--alt" data-rail>
   <div class="wrap">
@@ -779,7 +733,7 @@ h2 .count { font-size: .9rem; }
   <div class="wrap">
     <div class="head"><div><span class="eyebrow">Hea teada</span><h2 style="margin-top:12px">Enne <em>tulekut</em></h2></div></div>
     <div class="notes">
-      <div class="note-card"><span class="n">1/</span><h3>Tasumine</h3><p>Pangakaart või sularaha salongis pärast teenust. Kinkekaart kehtib kõigile teenustele.</p></div>
+      <div class="note-card"><span class="n">1/</span><h3>Tasumine</h3><p>Pangakaart või sularaha salongis pärast teenust.</p></div>
       <div class="note-card"><span class="n">2/</span><h3>Hilinemine</h3><p>Kui jääd üle 15 minuti hiljaks, helista. Vajadusel lühendame teenust või leiame uue aja.</p></div>
       <div class="note-card"><span class="n">3/</span><h3>Tühistamine</h3><p>Anna teada vähemalt 3 tundi ette, siis saab aja võtta keegi teine.</p></div>
     </div>
@@ -976,82 +930,6 @@ h2 .count { font-size: .9rem; }
 <script type="application/json" id="svc-json">[{"group": "Juukselõikus", "id": "loikus", "name": "Meeste juukselõikus", "dur": 45, "price": 15, "desc": "Käärid ja masin, pesu, viimistlus ja soeng."}, {"group": "Juukselõikus", "id": "fade", "name": "Fade", "dur": 45, "price": 18, "desc": "Sujuv üleminek nullist, skin fade või taper. Pealt kääridega."}, {"group": "Juukselõikus", "id": "masin", "name": "Masinlõikus", "dur": 20, "price": 10, "desc": "Üks või kaks otsikut, kontuur ja kael puhtaks."}, {"group": "Juukselõikus", "id": "pikk", "name": "Pikkade juuste lõikus", "dur": 60, "price": 20, "desc": "Õlgadeni või pikemad juuksed, kihid ja kuju."}, {"group": "Habe ja raseerimine", "id": "kombo", "name": "Lõikus + habe", "dur": 75, "price": 25, "desc": "Juukselõikus ja habeme kujundamine ühe korraga."}, {"group": "Habe ja raseerimine", "id": "habe", "name": "Habeme kujundamine", "dur": 30, "price": 12, "desc": "Pikkus, kuju ja kontuur, lõpus õli või palsam."}, {"group": "Habe ja raseerimine", "id": "raseerimine", "name": "Kuuma rätikuga raseerimine", "dur": 30, "price": 15, "desc": "Klassikaline raseerimine habemenoaga."}, {"group": "Habe ja raseerimine", "id": "pea", "name": "Pea raseerimine", "dur": 30, "price": 14, "desc": "Pea siledaks habemenoaga, jahutav palsam."}, {"group": "Lapsed", "id": "poisid", "name": "Poiste lõikus", "dur": 30, "price": 12, "desc": "Kuni 12-aastastele. Rahulik tempo, lühike ooteaeg."}, {"group": "Lapsed", "id": "isa-poeg", "name": "Isa + poeg", "dur": 75, "price": 25, "desc": "Kaks lõikust järjest, istute kõrvuti."}, {"group": "Lisateenused", "id": "kontuur", "name": "Kontuuri värskendus", "dur": 15, "price": 7, "desc": "Kõrvade ja kaela piirid korda lõikuste vahel."}, {"group": "Lisateenused", "id": "kulmud", "name": "Kulmude korrigeerimine", "dur": 10, "price": 5, "desc": "Kulmud korda kääride ja masinaga."}, {"group": "Lisateenused", "id": "toon", "name": "Halli toonimine", "dur": 30, "price": 15, "desc": "Loomulik toon, mis katab halli osaliselt."}, {"group": "Lisateenused", "id": "pesu", "name": "Pesu ja soeng", "dur": 15, "price": 6, "desc": "Pesu, peamassaaž ja stiilimine tootega."}]</script>
 <script type="application/json" id="mst-json">[{"id": "any", "name": "Esimene vaba", "role": "Kiireim aeg"}, {"id": "irina", "name": "Irina", "role": "Omanik · meister"}, {"id": "andrei", "name": "Andrei", "role": "Meister"}, {"id": "olga", "name": "Olga", "role": "Meister"}]</script>
 </div>
-<div class="page" data-page="kinkekaart" hidden>
-<section class="phead">
-  <div class="wrap">
-    <div class="crumb"><a href="#avaleht">Avaleht</a> / Kinkekaart</div>
-    <h1>Kinke<em>kaart</em></h1>
-    <p class="intro">Kingi korralik lõikus. Kaart muutub eelvaates kohe, kui midagi valid.</p>
-  </div>
-</section>
-<section class="sec">
-  <div class="wrap gift">
-    <div>
-      <form class="form" id="gift" novalidate>
-        <div class="fld"><span class="lbl">Kaardi tüüp</span>
-          <div class="seg seg--2">
-            <label class="on"><input type="radio" name="gt" value="summa" checked>Summa</label>
-            <label><input type="radio" name="gt" value="teenus">Teenus</label>
-          </div>
-        </div>
-        <div class="fld" id="g-amt"><span class="lbl">Summa</span>
-          <div class="seg" role="group" aria-label="Summa">
-            <button type="button" data-amt="20" aria-pressed="false">20 €</button>
-            <button type="button" data-amt="30" aria-pressed="true">30 €</button>
-            <button type="button" data-amt="50" aria-pressed="false">50 €</button>
-            <button type="button" data-amt="muu" aria-pressed="false">Muu</button>
-          </div>
-          <div class="fld" id="g-own" hidden style="margin-top:12px"><label for="g-own-v">Oma summa (€)</label><input id="g-own-v" type="number" min="10" max="300" step="5" inputmode="numeric" placeholder="40"></div>
-        </div>
-        <div class="fld" id="g-svc-w" hidden><label for="g-svc">Teenus</label><select id="g-svc">
-            <option value="loikus">Meeste juukselõikus · 15 €</option>
-            <option value="fade">Fade · 18 €</option>
-            <option value="kombo">Lõikus + habe · 25 €</option>
-            <option value="raseerimine">Kuuma rätikuga raseerimine · 15 €</option>
-            <option value="habe">Habeme kujundamine · 12 €</option>
-            <option value="isa-poeg">Isa + poeg · 25 €</option>
-          </select></div>
-        <div class="fld"><span class="lbl">Foto värv</span>
-          <div class="swatches" role="group" aria-label="Kaardi värv">
-            <button type="button" data-c="" aria-pressed="true" style="background:#0f0f0f" aria-label="Must"></button>
-            <button type="button" data-c="red" aria-pressed="false" style="background:#cf3b22" aria-label="Punane"></button>
-            <button type="button" data-c="cream" aria-pressed="false" style="background:#efe9dd" aria-label="Kreem"></button>
-          </div>
-        </div>
-        <div class="two">
-          <div class="fld"><label for="g-to">Kellele</label><input id="g-to" type="text" maxlength="28" required><span class="err">Kirjuta saaja nimi.</span></div>
-          <div class="fld"><label for="g-from">Kellelt</label><input id="g-from" type="text" maxlength="28" required><span class="err">Kirjuta oma nimi.</span></div>
-        </div>
-        <div class="fld"><label for="g-msg">Soov <span class="opt">(kuni 120 tähemärki)</span></label><textarea id="g-msg" maxlength="120" placeholder="Palju õnne, isa!"></textarea></div>
-        <div class="two">
-          <div class="fld"><label for="g-phone">Sinu telefon</label><input id="g-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
-          <div class="fld"><label for="g-get">Kättesaamine</label><select id="g-get"><option>Tulen salongi järele</option><option>Saatke e-postiga (PDF)</option></select></div>
-        </div>
-        <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei võtab tellimuse kinnitamiseks minuga ühendust. <a href="#privaatsus">Privaatsus</a></span></label>
-        <button class="btn btn--red btn--wide" type="submit">Telli kinkekaart <span class="ar">→</span></button>
-        <p class="small muted">Kehtib 12 kuud. Tasumine salongis või arvega.</p>
-      </form>
-      <div class="done" id="g-done" hidden>
-        <span class="eyebrow eyebrow--muted">Tellimus vastu võetud</span>
-        <h2>Aitäh!</h2>
-        <p class="intro">Võtame ühendust ühe tööpäeva jooksul. Kaardi kood: <b id="g-done-code"></b>.</p>
-        <a class="btn btn--line" href="#avaleht">Avalehele <span class="ar">→</span></a>
-      </div>
-    </div>
-    <div class="gift-prev">
-      <span class="eyebrow eyebrow--muted" style="display:block;margin-bottom:22px">Eelvaade</span>
-      <div class="polaroid" aria-live="polite">
-        <div class="pic">
-          <div class="top"><span>Kinkekaart</span><span>Kohtla-Järve</span></div>
-          <div class="val" id="p-val">30 €</div>
-          <div class="bot"><span>Kood<br><span id="p-code"></span></span><b>Borei</b></div>
-        </div>
-        <div class="under"><p id="p-msg"></p><small><span>Kellele: <span id="p-to">Saaja</span></span><span>Kellelt: <span id="p-from">Sina</span></span></small></div>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
 <div class="page" data-page="kkk" hidden>
 <section class="phead">
   <div class="wrap">
@@ -1084,8 +962,6 @@ h2 .count { font-size: .9rem; }
       <details data-cat="teenused"><summary>Kas lõikate ka naisi?</summary><div class="a"><span class="cat">Teenused</span><p>Oleme meeste salong, aga lühikesed masinlõikused teeme kõigile. Küsi telefoni teel.</p></div></details>
       <details data-cat="teenused"><summary>Kas pean enne juuksed pesema?</summary><div class="a"><span class="cat">Teenused</span><p>Ei pea. Vajadusel peseme juuksed enne lõikust ja see sisaldub hinnas.</p></div></details>
       <details data-cat="tasumine"><summary>Kuidas saab maksta?</summary><div class="a"><span class="cat">Tasumine</span><p>Pangakaardi või sularahaga salongis pärast teenust.</p></div></details>
-      <details data-cat="tasumine"><summary>Kui kaua kinkekaart kehtib?</summary><div class="a"><span class="cat">Tasumine</span><p>12 kuud alates ostmisest. Kehtivusaeg on kaardil kirjas.</p></div></details>
-      <details data-cat="tasumine"><summary>Kas kinkekaardi jääki saab hiljem kasutada?</summary><div class="a"><span class="cat">Tasumine</span><p>Jah. Kui teenus on kaardi summast odavam, jääb vahe kaardile järgmiseks korraks.</p></div></details>
       <details data-cat="lapsed"><summary>Mis vanusest lõikate lapsi?</summary><div class="a"><span class="cat">Lapsed</span><p>Umbes 3. eluaastast. Poiste lõikuse hind kehtib kuni 12-aastastele.</p></div></details>
       <details data-cat="lapsed"><summary>Kas lapsevanem võib juures olla?</summary><div class="a"><span class="cat">Lapsed</span><p>Muidugi. Väiksemad lapsed võivad istuda ka vanema süles.</p></div></details>
       <details data-cat="lapsed"><summary>Mis on Isa + poeg?</summary><div class="a"><span class="cat">Lapsed</span><p>Kaks lõikust järjest. Broneeri üks aeg ja kirjuta lisainfosse lapse vanus.</p></div></details>
@@ -1116,7 +992,7 @@ h2 .count { font-size: .9rem; }
           <div class="fld"><label for="c-name">Nimi</label><input id="c-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
           <div class="fld"><label for="c-phone">Telefon</label><input id="c-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
         </div>
-        <div class="fld"><label for="c-topic">Teema</label><select id="c-topic"><option>Üldine küsimus</option><option>Broneering</option><option>Kinkekaart</option><option>Grupiaeg (pulm, sünnipäev)</option><option>Tagasiside</option></select></div>
+        <div class="fld"><label for="c-topic">Teema</label><select id="c-topic"><option>Üldine küsimus</option><option>Broneering</option><option>Grupiaeg (pulm, sünnipäev)</option><option>Tagasiside</option></select></div>
         <div class="fld"><label for="c-msg">Sõnum</label><textarea id="c-msg" required></textarea><span class="err">Kirjuta sõnum.</span></div>
         <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei kasutab minu andmeid vastamiseks. <a href="#privaatsus">Privaatsus</a></span></label>
         <button class="btn btn--red" type="submit">Saada <span class="ar">→</span></button>
@@ -1164,12 +1040,12 @@ h2 .count { font-size: .9rem; }
   <div class="wrap prose">
     <p><b>Vastutav töötleja:</b> Borei OÜ (registrikood 12807446), Keskallee 20, 30322 Kohtla-Järve. Kontakt: +372 5192 0155, irinabograya@gmail.com.</p>
     <h2>Milliseid andmeid kogume</h2>
-    <ul><li>Nimi ja telefon, kui broneerid aja, tellid kinkekaardi või kirjutad meile.</li><li>Broneeringu andmed: teenus, meister, kuupäev ja kellaaeg.</li><li>Lisainfo, mille ise vormi kirjutad.</li></ul>
+    <ul><li>Nimi ja telefon, kui broneerid aja või kirjutad meile.</li><li>Broneeringu andmed: teenus, meister, kuupäev ja kellaaeg.</li><li>Lisainfo, mille ise vormi kirjutad.</li></ul>
     <h2>Milleks neid kasutame</h2>
-    <ul><li>Broneeringu kinnitamiseks ja meeldetuletuseks.</li><li>Kinkekaardi tellimuse täitmiseks.</li><li>Sinu küsimusele vastamiseks.</li></ul>
+    <ul><li>Broneeringu kinnitamiseks ja meeldetuletuseks.</li><li>Sinu küsimusele vastamiseks.</li></ul>
     <p>Me ei müü ega jaga andmeid kolmandatele isikutele turunduseks.</p>
     <h2>Kui kaua hoiame</h2>
-    <p>Broneeringu andmeid kuni 12 kuud, kinkekaardi andmeid kaardi kehtivuse lõpuni ja raamatupidamise dokumente seadusega nõutud aja.</p>
+    <p>Broneeringu andmeid kuni 12 kuud ja raamatupidamise dokumente seadusega nõutud aja.</p>
     <h2>Sinu õigused</h2>
     <p>Võid küsida, milliseid andmeid sinu kohta hoiame, neid parandada või lasta kustutada. Kirjuta irinabograya@gmail.com. Kaebuse saad esitada Andmekaitse Inspektsioonile (www.aki.ee).</p>
     <h2>Küpsised ja kaart</h2>
@@ -1198,7 +1074,6 @@ h2 .count { font-size: .9rem; }
           <li><a href="#teenused">Teenused</a></li>
           <li><a href="#galerii">Tööd</a></li>
           <li><a href="#meist">Meist</a></li>
-          <li><a href="#kinkekaart">Kinkekaart</a></li>
           <li><a href="#kkk">KKK</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
       </ul></div>
@@ -1228,12 +1103,6 @@ h2 .count { font-size: .9rem; }
   function parseIso(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function fmt(d) { return DOW_LONG[d.getDay()] + ", " + d.getDate() + ". " + MON[d.getMonth()]; }
 
-  function toast(msg) {
-    var t = $(".toast");
-    if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
-    t.textContent = msg; t.classList.add("show");
-    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2800);
-  }
   /* Vormi saatmine. Kuulame ka nupu klikki, sest liivakastis (sandbox ilma allow-forms) submit-sündmust ei tule. */
   function onSubmit(form, fn) {
     form.addEventListener("submit", function (e) { e.preventDefault(); fn(); });
@@ -1578,54 +1447,13 @@ h2 .count { font-size: .9rem; }
     if (!window.boreiGo) window.boreiBooking(new URLSearchParams(location.search));
   }
 
-  /* ---------- Kinkekaart ---------- */
-  var gf = $("#gift");
-  if (gf) {
-    var pol = $(".polaroid"), amount = "30 €";
-    var code = "BOREI-"; for (var c = 0; c < 5; c++) code += "ACDEFGHJKLMNPRSTUVXYZ2345679".charAt(Math.floor(Math.random() * 28));
-    $("#p-code").textContent = code;
-    function draw() {
-      var type = $('input[name="gt"]:checked', gf).value;
-      $$(".seg label", gf).forEach(function (l) { l.classList.toggle("on", $("input", l).checked); });
-      $("#g-amt").hidden = type !== "summa"; $("#g-svc-w").hidden = type === "summa";
-      var val = $("#p-val");
-      if (type === "summa") { val.textContent = amount; val.classList.remove("long"); }
-      else { var o = $("#g-svc").selectedOptions[0]; val.textContent = o.text.split(" · ")[0]; val.classList.add("long"); }
-      $("#p-to").textContent = $("#g-to").value.trim() || "Saaja";
-      $("#p-from").textContent = $("#g-from").value.trim() || "Sina";
-      $("#p-msg").textContent = $("#g-msg").value.trim();
-    }
-    $$("[data-amt]", gf).forEach(function (b) {
-      b.addEventListener("click", function () {
-        $$("[data-amt]", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        var v = b.dataset.amt; $("#g-own").hidden = v !== "muu";
-        if (v === "muu") { $("#g-own-v").focus(); amount = ($("#g-own-v").value || "0") + " €"; } else amount = v + " €";
-        draw();
-      });
-    });
-    $("#g-own-v").addEventListener("input", function () { amount = (this.value || "0") + " €"; draw(); });
-    $$(".swatches button", gf).forEach(function (b) {
-      b.addEventListener("click", function () {
-        $$(".swatches button", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        pol.className = "polaroid " + b.dataset.c;
-      });
-    });
-    gf.addEventListener("input", draw); gf.addEventListener("change", draw);
-    onSubmit(gf, function () {
-      if ($('input[name="gt"]:checked', gf).value === "summa" && parseInt(amount, 10) < 10) { toast("Väikseim summa on 10 €."); return; }
-      if (!validate(gf)) return;
-      gf.hidden = true; $("#g-done-code").textContent = code;
-      var d = $("#g-done"); d.hidden = false; d.setAttribute("tabindex", "-1"); d.focus();
-    });
-    draw();
-  }
 })();
 
 
 /* Ühe faili ruuter: #leht ja #leht?param=vaartus */
 (function () {
   "use strict";
-  var META = {"avaleht": ["Borei · meeste juuksur Kohtla-Järvel", "Borei on meeste juuksurisalong Kohtla-Järvel, Keskallee 20. Lõikus, fade, habe ja raseerimine. Broneeri aeg veebis."], "teenused": ["Teenused ja hinnad · Borei", "Borei hinnakiri: meeste juukselõikus, fade, masinlõikus, habe, raseerimine ja poiste lõikus Kohtla-Järvel."], "galerii": ["Tööd · Borei", "Borei tööd: fade, klassikalised lõikused, habemed ja poiste lõikused. Filtreeri stiili järgi."], "meist": ["Meist · Borei", "Borei lugu: meeste juuksurisalong Kohtla-Järvel aastast 2015. Omanik Irina Oja ja meistrid."], "broneeri": ["Broneeri aeg · Borei", "Broneeri aeg Borei meeste juuksurisalongi Kohtla-Järvel: teenus, meister, aeg ja kinnitus."], "kinkekaart": ["Kinkekaart · Borei", "Borei kinkekaart: kingi meeste lõikus või habemehooldus. Vali summa või teenus ja vaata eelvaadet."], "kkk": ["KKK · Borei", "Korduma kippuvad küsimused: broneerimine, hilinemine, tasumine, kinkekaardid ja laste lõikused Boreis."], "kontakt": ["Kontakt · Borei", "Borei kontakt: Keskallee 20, Kohtla-Järve. Telefon +372 5192 0155. Lahti iga päev."], "privaatsus": ["Privaatsus · Borei", "Borei OÜ privaatsuspoliitika: millised andmed kogume broneerimisel ja kuidas neid kasutame."]};
+  var META = {"avaleht": ["Borei · meeste juuksur Kohtla-Järvel", "Borei on meeste juuksurisalong Kohtla-Järvel, Keskallee 20. Lõikus, fade, habe ja raseerimine. Broneeri aeg veebis."], "teenused": ["Teenused ja hinnad · Borei", "Borei hinnakiri: meeste juukselõikus, fade, masinlõikus, habe, raseerimine ja poiste lõikus Kohtla-Järvel."], "galerii": ["Tööd · Borei", "Borei tööd: fade, klassikalised lõikused, habemed ja poiste lõikused. Filtreeri stiili järgi."], "meist": ["Meist · Borei", "Borei lugu: meeste juuksurisalong Kohtla-Järvel aastast 2015. Omanik Irina Oja ja meistrid."], "broneeri": ["Broneeri aeg · Borei", "Broneeri aeg Borei meeste juuksurisalongi Kohtla-Järvel: teenus, meister, aeg ja kinnitus."], "kkk": ["KKK · Borei", "Korduma kippuvad küsimused: broneerimine, hilinemine, tasumine ja laste lõikused Boreis."], "kontakt": ["Kontakt · Borei", "Borei kontakt: Keskallee 20, Kohtla-Järve. Telefon +372 5192 0155. Lahti iga päev."], "privaatsus": ["Privaatsus · Borei", "Borei OÜ privaatsuspoliitika: millised andmed kogume broneerimisel ja kuidas neid kasutame."]};
   var pages = [].slice.call(document.querySelectorAll(".page[data-page]")), current = null;
   function route(hash) {
     var h = decodeURIComponent(String(hash == null ? location.hash : hash).replace(/^#/, ""));

@@ -17,12 +17,6 @@
   function parseIso(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function fmt(d) { return DOW_LONG[d.getDay()] + ", " + d.getDate() + ". " + MON[d.getMonth()]; }
 
-  function toast(msg) {
-    var t = $(".toast");
-    if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
-    t.textContent = msg; t.classList.add("show");
-    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2800);
-  }
   /* Vormi saatmine. Kuulame ka nupu klikki, sest liivakastis (sandbox ilma allow-forms) submit-sündmust ei tule. */
   function onSubmit(form, fn) {
     form.addEventListener("submit", function (e) { e.preventDefault(); fn(); });
@@ -367,45 +361,4 @@
     if (!window.boreiGo) window.boreiBooking(new URLSearchParams(location.search));
   }
 
-  /* ---------- Kinkekaart ---------- */
-  var gf = $("#gift");
-  if (gf) {
-    var pol = $(".polaroid"), amount = "30 €";
-    var code = "BOREI-"; for (var c = 0; c < 5; c++) code += "ACDEFGHJKLMNPRSTUVXYZ2345679".charAt(Math.floor(Math.random() * 28));
-    $("#p-code").textContent = code;
-    function draw() {
-      var type = $('input[name="gt"]:checked', gf).value;
-      $$(".seg label", gf).forEach(function (l) { l.classList.toggle("on", $("input", l).checked); });
-      $("#g-amt").hidden = type !== "summa"; $("#g-svc-w").hidden = type === "summa";
-      var val = $("#p-val");
-      if (type === "summa") { val.textContent = amount; val.classList.remove("long"); }
-      else { var o = $("#g-svc").selectedOptions[0]; val.textContent = o.text.split(" · ")[0]; val.classList.add("long"); }
-      $("#p-to").textContent = $("#g-to").value.trim() || "Saaja";
-      $("#p-from").textContent = $("#g-from").value.trim() || "Sina";
-      $("#p-msg").textContent = $("#g-msg").value.trim();
-    }
-    $$("[data-amt]", gf).forEach(function (b) {
-      b.addEventListener("click", function () {
-        $$("[data-amt]", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        var v = b.dataset.amt; $("#g-own").hidden = v !== "muu";
-        if (v === "muu") { $("#g-own-v").focus(); amount = ($("#g-own-v").value || "0") + " €"; } else amount = v + " €";
-        draw();
-      });
-    });
-    $("#g-own-v").addEventListener("input", function () { amount = (this.value || "0") + " €"; draw(); });
-    $$(".swatches button", gf).forEach(function (b) {
-      b.addEventListener("click", function () {
-        $$(".swatches button", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
-        pol.className = "polaroid " + b.dataset.c;
-      });
-    });
-    gf.addEventListener("input", draw); gf.addEventListener("change", draw);
-    onSubmit(gf, function () {
-      if ($('input[name="gt"]:checked', gf).value === "summa" && parseInt(amount, 10) < 10) { toast("Väikseim summa on 10 €."); return; }
-      if (!validate(gf)) return;
-      gf.hidden = true; $("#g-done-code").textContent = code;
-      var d = $("#g-done"); d.hidden = false; d.setAttribute("tabindex", "-1"); d.focus();
-    });
-    draw();
-  }
 })();

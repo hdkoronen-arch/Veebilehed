@@ -8,8 +8,8 @@
    - Fresha: suur seriifpealkiri + otsinguriba tüüpi kiirbroneerimine
    - Nudea: seriifkiri kursiivsete rõhuasetustega
    - Aesop: kreemjas taust, horisontaalne teenuste rida edenemisribaga
-   - Prose: jooksev märksõnariba, sammud "1/ 2/ 3/"
-   - Polaroid: punakasoranž aktsent, polaroidraamiga kinkekaart
+   - Prose: sammud "1/ 2/ 3/"
+   - Polaroid: punakasoranž aktsent
    Reeglid: teravad nurgad, ei gradiente, ei lillat.
    ========================================================= */
 
@@ -183,13 +183,6 @@ h2 .count { font-size: .9rem; }
 .ph--dark > i { color: #6f6a62; }
 .ph--fill { position: absolute; inset: 0; aspect-ratio: auto; }
 .hero .ph > i { top: 58px; left: auto; right: var(--gut); transform: none; width: auto; text-align: right; font-size: .95rem; }
-
-/* ---------- Jooksev riba (Prose) ---------- */
-.marquee { background: var(--red); color: #fff; overflow: hidden; border-block: 1px solid var(--ink); }
-.marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
-.marquee span { font: italic 400 clamp(1.5rem, 3vw, 2.2rem)/1 var(--serif); padding: 16px 0; white-space: nowrap; }
-.marquee span::after { content: "/"; font-style: normal; margin: 0 26px; opacity: .55; }
-@keyframes slide { to { transform: translateX(-50%); } }
 
 /* ---------- Sektsioonid ---------- */
 .sec { padding: 72px 0; }
@@ -432,33 +425,6 @@ h2 .count { font-size: .9rem; }
 .bk-bar #bk-back { padding: 0 14px; }
 @media (max-width: 480px) { .bk-bar #bk-back span.t { display: none; } }
 
-/* ---------- Kinkekaart (Polaroid) ---------- */
-.gift { display: grid; gap: 48px; align-items: start; }
-@media (min-width: 960px) { .gift { grid-template-columns: 1fr 1fr; gap: 80px; } .gift-prev { position: sticky; top: calc(var(--hdr) + 28px); } }
-.polaroid { background: #fff; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--line), 0 18px 40px rgba(15, 15, 15, .12); max-width: 440px; margin: 0 auto; transform: rotate(-1.5deg); }
-.polaroid .pic { aspect-ratio: 1 / 1; background: var(--ink); color: var(--cream); display: grid; grid-template-rows: auto 1fr auto; padding: 20px; transition: background .2s, color .2s; }
-.polaroid.red .pic { background: var(--red); color: #fff; }
-.polaroid.cream .pic { background: var(--cream-2); color: var(--ink); }
-.polaroid .pic .top { display: flex; justify-content: space-between; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .16em; }
-.polaroid .pic .val { align-self: center; text-align: center; font: 400 clamp(3.4rem, 12vw, 5.6rem)/.9 var(--serif); word-break: break-word; }
-.polaroid .pic .val.long { font-size: clamp(2rem, 6.5vw, 2.8rem); font-style: italic; }
-.polaroid .pic .bot { display: flex; justify-content: space-between; align-items: flex-end; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
-.polaroid .pic .bot b { font: 400 1.4rem/1 var(--serif); text-transform: none; letter-spacing: 0; }
-.polaroid .under { padding: 16px 6px 22px; min-height: 120px; }
-.polaroid .under p { font: italic 400 1.5rem/1.2 var(--serif); margin: 0 0 10px; overflow-wrap: anywhere; min-height: 1.2em; }
-.polaroid .under p:empty::before { content: "Siia tuleb sinu soov."; color: #b9b2a5; }
-.polaroid .under small { display: flex; justify-content: space-between; gap: 10px; font: 600 .62rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
-.seg { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); }
-.seg--2 { grid-template-columns: 1fr 1fr; }
-.seg button, .seg label { min-height: 50px; display: grid; place-items: center; border: 0; border-right: 1px solid var(--ink); background: transparent; cursor: pointer; font: 400 1.25rem/1 var(--serif); position: relative; }
-.seg > :last-child { border-right: 0; }
-.seg input { position: absolute; opacity: 0; pointer-events: none; }
-.seg [aria-pressed="true"], .seg label.on { background: var(--ink); color: var(--cream); }
-.seg label:has(input:focus-visible) { outline: 2px solid var(--red); outline-offset: -4px; }
-.swatches { display: flex; gap: 10px; }
-.swatches button { width: 44px; height: 44px; border: 1px solid var(--ink); cursor: pointer; }
-.swatches button[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 3px; }
-
 /* ---------- KKK ---------- */
 .faq-grid { display: grid; gap: 36px; }
 @media (min-width: 960px) { .faq-grid { grid-template-columns: 4fr 8fr; gap: 72px; } .faq-side { position: sticky; top: calc(var(--hdr) + 28px); align-self: start; } }
@@ -545,8 +511,6 @@ h2 .count { font-size: .9rem; }
 @media (max-width: 1099px) { .has-mbar .ftr { padding-bottom: 58px; } }
 .no-mbar .mbar { display: none; }
 
-.toast { position: fixed; left: 50%; bottom: 80px; z-index: 150; transform: translate(-50%, 16px); background: var(--ink); color: var(--cream); padding: 12px 18px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; max-width: calc(100% - 32px); }
-.toast.show { opacity: 1; transform: translate(-50%, 0); }
 
 .js .rise { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
 .js .rise.in { opacity: 1; transform: none; }
