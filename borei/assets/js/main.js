@@ -123,6 +123,12 @@
     });
   }
 
+  /* Vormi saatmine. Kuulame ka nupu klikki, sest liivakastis (sandbox ilma allow-forms) submit-sündmust ei tule. */
+  function onSubmit(form, fn) {
+    form.addEventListener("submit", function (e) { e.preventDefault(); fn(); });
+    $$('button[type="submit"]', form).forEach(function (b) { b.addEventListener("click", function (e) { e.preventDefault(); fn(); }); });
+  }
+
   /* ---------- Vormide valideerimine ---------- */
   function validate(form) {
     var ok = true, first = null;
@@ -138,8 +144,7 @@
     return ok;
   }
   $$("form[data-simple]").forEach(function (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+    onSubmit(form, function () {
       if (!validate(form)) return;
       var done = document.getElementById(form.getAttribute("data-simple"));
       form.hidden = true;
@@ -341,8 +346,7 @@
     });
     gc.addEventListener("input", render);
     gc.addEventListener("change", render);
-    gc.addEventListener("submit", function (e) {
-      e.preventDefault();
+    onSubmit(gc, function () {
       if ($('input[name="gc-type"]:checked', gc).value === "summa" && parseInt(amount, 10) < 10) { toast("Kinkekaardi väikseim summa on 10 €."); return; }
       if (!validate(gc)) return;
       gc.hidden = true;

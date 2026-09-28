@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Broneeri aeg · Borei</title>
+<meta name="description" content="Broneeri aeg Borei meeste juuksurisalongi Kohtla-Järvel: teenus, meister, aeg ja kinnitus.">
+<meta name="theme-color" content="#f7f4ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f0f0f'/%3E%3Ctext x='16' y='24' font-family='Georgia' font-style='italic' font-size='22' fill='%23f7f4ec' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="no-mbar">
+<a class="skip" href="#sisu">Liigu sisu juurde</a>
+<header class="hdr">
+  <div class="wrap bar">
+    <a class="logo" href="index.html" aria-label="Borei avaleht"><b><span>BO</span><span>REI</span></b><small>Meeste juuksur<br>Kohtla-Järve</small></a>
+    <nav class="nav" aria-label="Peamenüü"><ul>
+      <li><a href="index.html">Avaleht</a></li>
+      <li><a href="teenused.html">Teenused</a></li>
+      <li><a href="galerii.html">Tööd</a></li>
+      <li><a href="meist.html">Meist</a></li>
+      <li><a href="kinkekaart.html">Kinkekaart</a></li>
+      <li><a href="kkk.html">KKK</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul></nav>
+    <a class="btn btn--red hdr-book" href="broneeri.html">Broneeri <span class="ar">→</span></a>
+    <button class="menu-btn" type="button" data-open-menu aria-expanded="false" aria-controls="menu"><i></i>Menüü</button>
+  </div>
+</header>
+<div class="overlay" id="menu" aria-hidden="true">
+  <div class="top"><span class="logo"><b><span>BO</span><span>REI</span></b></span><button class="close" type="button" data-close-menu>Sulge ×</button></div>
+  <nav aria-label="Mobiilimenüü"><ol>
+    <li><a href="index.html">Avaleht</a></li>
+    <li><a href="teenused.html">Teenused</a></li>
+    <li><a href="galerii.html">Tööd</a></li>
+    <li><a href="meist.html">Meist</a></li>
+    <li><a href="kinkekaart.html">Kinkekaart</a></li>
+    <li><a href="kkk.html">KKK</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="broneeri.html">Broneeri aeg</a></li>
+  </ol></nav>
+  <div class="foot"><a href="tel:+37251920155">+372 5192 0155</a><span>Keskallee 20, Kohtla-Järve · E–R 10–19 · L–P 10–16</span></div>
+</div>
+<main id="sisu">
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Avaleht</a> / Broneeri aeg</div>
+    <h1>Broneeri <em>aeg</em></h1>
+    <p class="intro">Neli sammu. Tasumine salongis, kinnitus SMS-iga.</p>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap" id="bk">
+    <div id="bk-flow">
+      <ol class="bk-progress">
+        <li class="cur"><b>1/</b><span>Teenus</span></li>
+        <li><b>2/</b><span>Meister</span></li>
+        <li><b>3/</b><span>Aeg</span></li>
+        <li><b>4/</b><span>Kinnitus</span></li>
+      </ol>
+      <div class="bk-step" data-step="1">
+        <h2>Mida <em>teeme?</em></h2>
+        <p>Vali üks teenus. Kombinatsioonid on eraldi välja toodud.</p>
+        <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Teenus</legend><div class="cards" id="bk-svcs"></div></fieldset>
+      </div>
+      <div class="bk-step" data-step="2" hidden>
+        <h2>Kes <em>lõikab?</em></h2>
+        <p>„Esimene vaba” annab kõige rohkem aegu.</p>
+        <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Meister</legend><div class="people" id="bk-people"></div></fieldset>
+      </div>
+      <div class="bk-step" data-step="3" hidden>
+        <h2>Millal <em>sobib?</em></h2>
+        <p>Kaks nädalat ette. Läbikriipsutatud ajad on võetud.</p>
+        <div class="cal" id="bk-cal" role="group" aria-label="Päev"></div>
+        <div class="slots-wrap" id="bk-slots" aria-live="polite"></div>
+      </div>
+      <div class="bk-step" data-step="4" hidden>
+        <h2>Peaaegu <em>valmis</em></h2>
+        <p>Kontrolli üle ja lisa oma andmed.</p>
+        <dl class="recap">
+          <div><dt>Teenus</dt><dd id="r-svc"></dd></div>
+          <div><dt>Meister</dt><dd id="r-mst"></dd></div>
+          <div><dt>Päev</dt><dd id="r-day"></dd></div>
+          <div><dt>Kell</dt><dd id="r-time"></dd></div>
+          <div><dt>Kokku</dt><dd id="r-sum"></dd></div>
+        </dl>
+        <form class="form" id="bk-form" novalidate>
+          <div class="two">
+            <div class="fld"><label for="b-name">Nimi</label><input id="b-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
+            <div class="fld"><label for="b-phone">Telefon</label><input id="b-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+372" required><span class="err">Kontrolli numbrit.</span></div>
+          </div>
+          <div class="fld"><label for="b-note">Lisainfo <span class="opt">(soovi korral)</span></label><textarea id="b-note" placeholder="Nt sama lõikus nagu eelmine kord"></textarea></div>
+          <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei kasutab minu andmeid broneeringu haldamiseks. <a href="privaatsus.html">Privaatsus</a></span></label>
+        </form>
+      </div>
+      <div class="bk-bar">
+        <div class="sum"><b id="bar-t">Vali teenus</b><small id="bar-s">Samm 1 / 4</small></div>
+        <button class="btn btn--line" type="button" id="bk-back"><span class="ar">←</span><span class="t">Tagasi</span></button>
+        <button class="btn btn--red" type="button" id="bk-next" disabled>Edasi <span class="ar">→</span></button>
+      </div>
+    </div>
+    <div class="done" id="bk-done" hidden>
+      <span class="eyebrow eyebrow--muted">Broneering vastu võetud</span>
+      <h2>Aitäh, <em id="done-name"></em>.</h2>
+      <p class="intro" id="done-txt"></p>
+      <p class="muted">Kinnitus tuleb SMS-iga. Kui aeg ei sobi enam, helista <a href="tel:+37251920155">+372 5192 0155</a>.</p>
+      <div class="btns" style="margin-top:26px"><a class="btn btn--red" id="done-ics" download="borei-broneering.ics" href="#">Lisa kalendrisse <span class="ar">↓</span></a><a class="btn btn--line" href="index.html">Avalehele <span class="ar">→</span></a></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="svc-json">[{"group": "Juukselõikus", "id": "loikus", "name": "Meeste juukselõikus", "dur": 45, "price": 15, "desc": "Käärid ja masin, pesu, viimistlus ja soeng."}, {"group": "Juukselõikus", "id": "fade", "name": "Fade", "dur": 45, "price": 18, "desc": "Sujuv üleminek nullist, skin fade või taper. Pealt kääridega."}, {"group": "Juukselõikus", "id": "masin", "name": "Masinlõikus", "dur": 20, "price": 10, "desc": "Üks või kaks otsikut, kontuur ja kael puhtaks."}, {"group": "Juukselõikus", "id": "pikk", "name": "Pikkade juuste lõikus", "dur": 60, "price": 20, "desc": "Õlgadeni või pikemad juuksed, kihid ja kuju."}, {"group": "Habe ja raseerimine", "id": "kombo", "name": "Lõikus + habe", "dur": 75, "price": 25, "desc": "Juukselõikus ja habeme kujundamine ühe korraga."}, {"group": "Habe ja raseerimine", "id": "habe", "name": "Habeme kujundamine", "dur": 30, "price": 12, "desc": "Pikkus, kuju ja kontuur, lõpus õli või palsam."}, {"group": "Habe ja raseerimine", "id": "raseerimine", "name": "Kuuma rätikuga raseerimine", "dur": 30, "price": 15, "desc": "Klassikaline raseerimine habemenoaga."}, {"group": "Habe ja raseerimine", "id": "pea", "name": "Pea raseerimine", "dur": 30, "price": 14, "desc": "Pea siledaks habemenoaga, jahutav palsam."}, {"group": "Lapsed", "id": "poisid", "name": "Poiste lõikus", "dur": 30, "price": 12, "desc": "Kuni 12-aastastele. Rahulik tempo, lühike ooteaeg."}, {"group": "Lapsed", "id": "isa-poeg", "name": "Isa + poeg", "dur": 75, "price": 25, "desc": "Kaks lõikust järjest, istute kõrvuti."}, {"group": "Lisateenused", "id": "kontuur", "name": "Kontuuri värskendus", "dur": 15, "price": 7, "desc": "Kõrvade ja kaela piirid korda lõikuste vahel."}, {"group": "Lisateenused", "id": "kulmud", "name": "Kulmude korrigeerimine", "dur": 10, "price": 5, "desc": "Kulmud korda kääride ja masinaga."}, {"group": "Lisateenused", "id": "toon", "name": "Halli toonimine", "dur": 30, "price": 15, "desc": "Loomulik toon, mis katab halli osaliselt."}, {"group": "Lisateenused", "id": "pesu", "name": "Pesu ja soeng", "dur": 15, "price": 6, "desc": "Pesu, peamassaaž ja stiilimine tootega."}]</script>
+<script type="application/json" id="mst-json">[{"id": "any", "name": "Esimene vaba", "role": "Kiireim aeg"}, {"id": "irina", "name": "Irina", "role": "Omanik · meister"}, {"id": "andrei", "name": "Andrei", "role": "Meister"}, {"id": "olga", "name": "Olga", "role": "Meister"}]</script>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="cols">
+      <div><p class="lead">Lõikus, mida <em>märgatakse.</em> Keskallee 20, aastast 2015.</p></div>
+      <div><h4>Kontakt</h4><ul>
+        <li><a href="tel:+37251920155">+372 5192 0155</a></li>
+        <li><a href="mailto:irinabograya@gmail.com">irinabograya@gmail.com</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Keskallee 20, 30322 Kohtla-Järve</a></li>
+        <li><a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul></div>
+      <div><h4>Lahti</h4><table class="hours"><caption class="sr-only">Lahtiolekuajad</caption><tbody>
+  <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+  <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+  <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+</tbody></table></div>
+      <div><h4>Lehed</h4><ul>
+          <li><a href="broneeri.html">Broneeri aeg</a></li>
+          <li><a href="teenused.html">Teenused</a></li>
+          <li><a href="galerii.html">Tööd</a></li>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="kinkekaart.html">Kinkekaart</a></li>
+          <li><a href="kkk.html">KKK</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+      </ul></div>
+    </div>
+    <div class="word" aria-hidden="true">Bor<em>e</em>i</div>
+    <div class="legal"><span>© <span data-year>2026</span> Borei OÜ · registrikood 12807446</span><span><a href="privaatsus.html">Privaatsus</a> · <a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></span></div>
+  </div>
+</footer>
+<div class="mbar"><a href="tel:+37251920155" aria-label="Helista +372 5192 0155">☎</a><a href="broneeri.html">Broneeri aeg →</a></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

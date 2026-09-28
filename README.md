@@ -46,3 +46,4 @@ Silt kaob automaatselt, kui kohatäite sees on pilt.
 |---|---|
 | `terav/` | Salong Siid, terav ja minimalistlik variant |
 | `borei/` | Borei OÜ, meeste juuksur Kohtla-Järvel (vt `borei/BRIEF.md`) |
+| `borei-2/` | Borei OÜ, teine stiil: seriifkiri, must/kreem/punane (vt `borei-2/BRIEF.md`) |

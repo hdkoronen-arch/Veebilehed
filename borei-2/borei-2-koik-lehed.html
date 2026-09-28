@@ -1,0 +1,1664 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Borei · meeste juuksur Kohtla-Järvel</title>
+<meta name="description" content="Borei on meeste juuksurisalong Kohtla-Järvel, Keskallee 20. Lõikus, fade, habe ja raseerimine. Broneeri aeg veebis.">
+<meta name="theme-color" content="#f7f4ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230f0f0f'/%3E%3Ctext x='16' y='24' font-family='Georgia' font-style='italic' font-size='22' fill='%23f7f4ec' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BOREI · versioon 2 · meeste juuksur, Kohtla-Järve
+
+   Inspiratsioon (refero.design, godly.design, lapa.ninja kaudu):
+   - AVNIER: mustvalge täislaiuses hero, nummerdatud slaidid 01–04
+     õhukeste edenemisjoontega, pealkiri + loendur "(18)"
+   - Volkshotel: kastis logo, kastis "Menüü" nupp, manifesti tekst keskel
+   - Fresha: suur seriifpealkiri + otsinguriba tüüpi kiirbroneerimine
+   - Nudea: seriifkiri kursiivsete rõhuasetustega
+   - Aesop: kreemjas taust, horisontaalne teenuste rida edenemisribaga
+   - Prose: jooksev märksõnariba, sammud "1/ 2/ 3/"
+   - Polaroid: punakasoranž aktsent, polaroidraamiga kinkekaart
+   Reeglid: teravad nurgad, ei gradiente, ei lillat.
+   ========================================================= */
+
+:root {
+  --cream: #f7f4ec;
+  --cream-2: #efe9dd;
+  --cream-3: #e2dccd;
+  --ink: #0f0f0f;
+  --ink-2: #1c1c1c;
+  --ink-3: #2b2b2b;
+  --muted: #6b665d;
+  --muted-d: #a19b90;
+  --line: rgba(15, 15, 15, .16);
+  --line-d: rgba(247, 244, 236, .18);
+  --red: #cf3b22;
+  --red-2: #b3301a;
+  --red-l: #ff7a5c;
+  --err: #b3301a;
+
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+
+  --wrap: 1360px;
+  --gut: 16px;
+  --hdr: 60px;
+}
+@media (min-width: 720px) { :root { --gut: 32px; --hdr: 68px; } }
+@media (min-width: 1200px) { :root { --gut: 48px; } }
+
+*, *::before, *::after { box-sizing: border-box; border-radius: 0; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--hdr) + 16px); }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body.menu-open { overflow: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 8px; top: -60px; background: var(--ink); color: var(--cream); padding: 10px 14px; z-index: 200; }
+.skip:focus { top: 8px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gut); }
+
+/* ---------- Tüpograafia ---------- */
+.serif, h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; margin: 0; }
+h1 { font-size: clamp(3.2rem, 11vw, 8.6rem); line-height: .92; }
+h2 { font-size: clamp(2.5rem, 6.5vw, 5.2rem); line-height: .95; }
+h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); line-height: 1.02; }
+h1 em, h2 em, h3 em, .serif em { font-style: italic; }
+p { margin: 0 0 1em; }
+.eyebrow {
+  display: inline-block; font: 600 .72rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .16em;
+}
+.eyebrow--muted { color: var(--muted); }
+.count { font: 500 .8rem/1 var(--sans); vertical-align: super; letter-spacing: .04em; margin-left: .2em; font-style: normal; }
+h2 .count { font-size: .9rem; }
+.intro { font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.55; max-width: 42ch; }
+.muted { color: var(--muted); }
+.small { font-size: .88rem; }
+
+/* ---------- Nupud ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 18px;
+  min-height: 52px; padding: 0 20px; border: 1px solid var(--ink); background: var(--ink); color: var(--cream);
+  font: 600 .78rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; text-decoration: none; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.btn .ar { font: 400 1.1rem/1 var(--sans); letter-spacing: 0; transition: transform .15s; }
+.btn:hover .ar { transform: translateX(3px); }
+.btn:hover { background: var(--red); border-color: var(--red); }
+.btn--red { background: var(--red); border-color: var(--red); color: #fff; }
+.btn--red:hover { background: var(--ink); border-color: var(--ink); }
+.btn--line { background: transparent; color: var(--ink); }
+.btn--line:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.btn--cream { background: var(--cream); border-color: var(--cream); color: var(--ink); }
+.btn--cream:hover { background: var(--red); border-color: var(--red); color: #fff; }
+.btn--ghost-d { background: transparent; border-color: var(--line-d); color: var(--cream); }
+.btn--ghost-d:hover { background: var(--cream); color: var(--ink); border-color: var(--cream); }
+.btn--wide { width: 100%; }
+.btn[disabled] { opacity: .35; cursor: not-allowed; }
+.txt-link { font: 600 .74rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; text-decoration: none; display: inline-flex; gap: 10px; align-items: center; padding: 6px 0; border-bottom: 1px solid currentColor; }
+.txt-link:hover { color: var(--red); }
+
+/* ---------- Päis (Volkshotel: kastid) ---------- */
+.hdr { position: sticky; top: 0; z-index: 60; background: var(--cream); border-bottom: 1px solid var(--line); }
+.hdr .bar { display: flex; align-items: stretch; height: var(--hdr); }
+.logo { display: flex; align-items: center; text-decoration: none; margin-right: auto; }
+.logo b { display: flex; align-items: center; height: 38px; font: 400 1.7rem/1 var(--serif); letter-spacing: .01em; }
+.logo b span { display: flex; align-items: center; height: 100%; padding: 0 9px; }
+.logo b span:first-child { background: var(--ink); color: var(--cream); }
+.logo b span:last-child { border: 1px solid var(--ink); border-left: 0; }
+.logo small { display: none; margin-left: 14px; font: 500 .66rem/1.35 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+@media (min-width: 480px) { .logo small { display: block; } }
+.nav { display: none; }
+.nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; height: 100%; align-items: center; }
+.nav a { font: 500 .78rem/1 var(--sans); text-transform: uppercase; letter-spacing: .12em; text-decoration: none; padding: 8px 0; position: relative; }
+.nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: currentColor; transition: right .2s; }
+.nav a:hover::after, .nav a[aria-current="page"]::after { right: 0; }
+.nav a[aria-current="page"] { color: var(--red); }
+.hdr-book { display: none; align-self: center; margin-left: 28px; min-height: 42px; }
+.menu-btn {
+  align-self: center; display: inline-flex; align-items: center; gap: 10px; height: 40px; padding: 0 12px;
+  border: 1px solid var(--ink); background: transparent; cursor: pointer;
+  font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em;
+}
+.menu-btn i { display: grid; gap: 4px; }
+.menu-btn i::before, .menu-btn i::after { content: ""; display: block; width: 16px; height: 1.5px; background: currentColor; }
+@media (min-width: 1100px) {
+  .nav { display: block; }
+  .hdr-book { display: inline-flex; }
+  .menu-btn { display: none; }
+}
+
+.overlay {
+  position: fixed; inset: 0; z-index: 90; background: var(--ink); color: var(--cream);
+  display: flex; flex-direction: column; padding: 0 var(--gut) 20px;
+  transform: translateY(-100%); transition: transform .35s cubic-bezier(.7, 0, .2, 1); visibility: hidden;
+}
+.overlay.open { transform: none; visibility: visible; }
+.overlay .top { display: flex; justify-content: space-between; align-items: center; height: var(--hdr); border-bottom: 1px solid var(--line-d); }
+.overlay .top .logo b span:first-child { background: var(--cream); color: var(--ink); }
+.overlay .top .logo b span:last-child { border-color: var(--cream); }
+.overlay .close { height: 40px; padding: 0 12px; border: 1px solid var(--cream); background: transparent; color: var(--cream); font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; cursor: pointer; }
+.overlay ol { list-style: none; margin: 18px 0 auto; padding: 0; counter-reset: m; }
+.overlay li { counter-increment: m; }
+.overlay li a { display: flex; align-items: baseline; gap: 14px; padding: 6px 0; text-decoration: none; font: 400 clamp(2.4rem, 11vw, 3.4rem)/1.05 var(--serif); }
+.overlay li a::before { content: "0" counter(m); font: 500 .7rem/1 var(--sans); letter-spacing: .1em; color: var(--muted-d); transform: translateY(-1.2em); }
+.overlay li a[aria-current="page"] { font-style: italic; color: var(--red-l); }
+.overlay .foot { display: grid; gap: 4px; padding-top: 18px; border-top: 1px solid var(--line-d); font-size: .9rem; color: var(--muted-d); }
+.overlay .foot a { color: var(--cream); text-decoration: none; font: 400 1.6rem/1.2 var(--serif); }
+
+/* ---------- Hero (AVNIER + Fresha) ---------- */
+.hero { position: relative; background: var(--ink); color: var(--cream); min-height: min(88svh, 860px); display: flex; flex-direction: column; overflow: hidden; }
+.hero .slides { position: absolute; inset: 0; }
+.hero .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; }
+.hero .slide.on { opacity: 1; }
+.hero .shade { position: absolute; inset: 0; background: rgba(10, 10, 10, .38); }
+.hero .content { position: relative; z-index: 2; margin-top: auto; padding-top: 110px; padding-bottom: 28px; width: 100%; }
+.hero .status { position: absolute; z-index: 2; top: 20px; right: var(--gut); font: 500 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .12em; display: flex; align-items: center; gap: 8px; }
+.hero .status::before { content: ""; width: 8px; height: 8px; background: var(--muted-d); }
+.hero .status.is-open::before { background: #5fcf86; }
+.hero h1 { margin: 16px 0 22px; max-width: 11ch; }
+.hero h1 em { color: var(--red-l); }
+.hero .intro { color: #d9d4c9; }
+.dots { display: flex; gap: 14px; margin-top: 30px; }
+.dots button { flex: 0 0 58px; background: none; border: 0; padding: 8px 0 0; color: var(--muted-d); text-align: left; cursor: pointer; font: 500 .7rem/1 var(--sans); letter-spacing: .1em; }
+.dots button::before { content: ""; display: block; height: 1px; background: var(--line-d); margin-bottom: 8px; }
+.dots button span { display: block; height: 1px; background: var(--cream); width: 0; margin-top: -9px; margin-bottom: 8px; }
+.dots button.on { color: var(--cream); }
+.dots button.on span { animation: fill 6s linear forwards; }
+@keyframes fill { to { width: 100%; } }
+
+.quick { position: relative; z-index: 2; background: var(--cream); color: var(--ink); display: grid; border-top: 1px solid var(--ink); }
+.quick label { display: grid; gap: 2px; padding: 12px var(--gut); border-bottom: 1px solid var(--line); cursor: pointer; }
+.quick label span { font: 600 .66rem/1.2 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+.quick select { border: 0; background: transparent; padding: 2px 0; font: 400 1.35rem/1.2 var(--serif); -webkit-appearance: none; appearance: none; cursor: pointer; width: 100%; }
+.quick select:focus { outline: 0; }
+.quick label:focus-within { background: var(--cream-2); }
+.quick .btn { min-height: 60px; border: 0; }
+@media (min-width: 900px) {
+  .quick { grid-template-columns: 1.6fr 1fr auto; max-width: var(--wrap); margin: 0 auto; width: calc(100% - 2 * var(--gut)); border: 1px solid var(--cream); margin-bottom: 28px; }
+  .quick label { border-bottom: 0; border-right: 1px solid var(--line); padding: 14px 20px; }
+  .quick .btn { min-height: 100%; padding: 0 30px; }
+}
+
+/* ---------- Pildi kohatäide ---------- */
+.ph { position: relative; display: block; overflow: hidden; background: var(--cream-3); aspect-ratio: var(--ar, 3 / 4); }
+.ph > i { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: italic 400 1.05rem/1.2 var(--serif); color: var(--muted); text-align: center; width: 80%; }
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ph--dark { background: var(--ink-2); }
+.ph--dark > i { color: #6f6a62; }
+.ph--fill { position: absolute; inset: 0; aspect-ratio: auto; }
+.hero .ph > i { top: 58px; left: auto; right: var(--gut); transform: none; width: auto; text-align: right; font-size: .95rem; }
+
+/* ---------- Jooksev riba (Prose) ---------- */
+.marquee { background: var(--red); color: #fff; overflow: hidden; border-block: 1px solid var(--ink); }
+.marquee .track { display: flex; width: max-content; animation: slide 38s linear infinite; }
+.marquee span { font: italic 400 clamp(1.5rem, 3vw, 2.2rem)/1 var(--serif); padding: 16px 0; white-space: nowrap; }
+.marquee span::after { content: "/"; font-style: normal; margin: 0 26px; opacity: .55; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---------- Sektsioonid ---------- */
+.sec { padding: 72px 0; }
+@media (min-width: 900px) { .sec { padding: 120px 0; } }
+.sec--dark { background: var(--ink); color: var(--cream); }
+.sec--alt { background: var(--cream-2); }
+.sec--tight { padding: 48px 0; }
+.head { display: grid; gap: 16px; margin-bottom: 40px; }
+.head .eyebrow { color: var(--muted); }
+.sec--dark .head .eyebrow { color: var(--muted-d); }
+@media (min-width: 900px) { .head { grid-template-columns: 1fr auto; align-items: end; margin-bottom: 60px; } .head p { max-width: 40ch; margin: 0; } }
+.head > a { justify-self: start; }
+
+/* Manifest (Volkshotel) */
+.manifest { text-align: center; }
+.manifest .mark { width: 64px; height: 64px; margin: 0 auto 28px; display: grid; place-items: center; background: var(--ink); color: var(--cream); font: italic 400 2.2rem/1 var(--serif); }
+.manifest p { font: 400 clamp(1.7rem, 3.6vw, 3rem)/1.18 var(--serif); max-width: 24ch; margin: 0 auto 0.6em; }
+.manifest p em { color: var(--red); }
+.manifest .sign { font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); margin-top: 30px; }
+
+/* Teenuste rida (Aesop) */
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+.rail::-webkit-scrollbar { display: none; }
+@media (min-width: 640px) { .rail { grid-auto-columns: 44%; } }
+@media (min-width: 1000px) { .rail { grid-auto-columns: calc((100% - 42px) / 4); } }
+.svc { scroll-snap-align: start; text-align: center; text-decoration: none; display: block; }
+.svc .ph { --ar: 4 / 5; margin-bottom: 16px; background: var(--cream); }
+.svc h3 { font-size: 1.6rem; margin-bottom: 6px; }
+.svc p { color: var(--muted); font-size: .92rem; max-width: 30ch; margin: 0 auto 10px; }
+.svc .pr { font: 600 .74rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.svc:hover h3 { font-style: italic; }
+.rail-bar { position: relative; height: 1px; background: var(--line); margin-top: 26px; }
+.rail-bar span { position: absolute; left: 0; top: -1px; height: 3px; background: var(--ink); width: 25%; transition: left .1s linear; }
+.rail-nav { display: none; gap: 8px; }
+@media (min-width: 640px) { .rail-nav { display: flex; } }
+.rail-nav button { width: 46px; height: 46px; border: 1px solid var(--ink); background: transparent; cursor: pointer; font-size: 1.1rem; }
+.rail-nav button:hover { background: var(--ink); color: var(--cream); }
+
+/* Sammud (Prose) */
+.steps4 { display: grid; gap: 12px; }
+@media (min-width: 720px) { .steps4 { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .steps4 { grid-template-columns: repeat(4, 1fr); } }
+.step4 { background: var(--cream); border: 1px solid var(--line); padding: 22px 22px 26px; min-height: 220px; display: flex; flex-direction: column; }
+.step4 .n { font: 500 .8rem/1 var(--sans); letter-spacing: .06em; margin-bottom: auto; }
+.step4 h3 { margin: 40px 0 10px; }
+.step4 p { color: var(--muted); margin: 0; font-size: .95rem; }
+.step4:nth-child(2) { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.step4:nth-child(2) p { color: var(--muted-d); }
+
+/* Hinnang */
+.score { display: grid; gap: 28px; align-items: end; border-top: 1px solid var(--line-d); padding-top: 36px; }
+.score .big { font: 400 clamp(7rem, 26vw, 16rem)/.78 var(--serif); letter-spacing: -.03em; }
+.score .big em { color: var(--red-l); }
+.score .t { font: 400 clamp(1.5rem, 2.6vw, 2.1rem)/1.2 var(--serif); max-width: 20ch; }
+@media (min-width: 900px) { .score { grid-template-columns: auto 1fr auto; gap: 60px; } }
+
+/* Split */
+.split { display: grid; gap: 36px; align-items: center; }
+@media (min-width: 900px) { .split { grid-template-columns: 1fr 1fr; gap: 72px; } .split--rev > :first-child { order: 2; } }
+
+/* Galerii-eelvaade */
+.mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mosaic .ph:nth-child(1) { grid-row: span 2; --ar: auto; height: 100%; min-height: 100%; }
+@media (min-width: 900px) { .mosaic { grid-template-columns: 1.3fr 1fr 1fr; gap: 14px; } .mosaic .ph:nth-child(1) { grid-row: span 2; } }
+
+/* Asukoht */
+.visit { display: grid; gap: 0; }
+.visit .addr { font: 400 clamp(2.8rem, 8vw, 6rem)/.92 var(--serif); margin: 14px 0 24px; }
+.visit .addr em { color: var(--red-l); }
+.visit .map { min-height: 340px; background: var(--ink-3); position: relative; margin-top: 32px; }
+.visit .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(1) invert(.92) contrast(.9); }
+@media (min-width: 900px) { .visit { grid-template-columns: 1fr 1fr; gap: 64px; align-items: stretch; } .visit .map { margin-top: 0; } }
+.hours { width: 100%; border-collapse: collapse; margin: 8px 0 26px; }
+.hours th, .hours td { text-align: left; font-weight: 400; padding: 12px 0; border-top: 1px solid var(--line); }
+.hours td { text-align: right; white-space: nowrap; padding-left: 12px; font-variant-numeric: tabular-nums; }
+.hours tr:last-child th, .hours tr:last-child td { border-bottom: 1px solid var(--line); }
+.hours tr.today th { font-weight: 600; }
+.hours tr.today th::before { content: ""; display: inline-block; width: 7px; height: 7px; background: var(--red); margin-right: 10px; vertical-align: 2px; }
+.hours tr.today td { font-weight: 600; }
+.sec--dark .hours th, .sec--dark .hours td { border-color: var(--line-d); }
+.sec--dark .hours tr.today th::before { background: var(--red-l); }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- Lehe päis ---------- */
+.phead { padding: 48px 0 40px; border-bottom: 1px solid var(--line); }
+.phead .wrap { display: grid; gap: 22px; }
+.phead h1 { font-size: clamp(3.4rem, 12vw, 9rem); }
+.phead .crumb { font: 600 .7rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); }
+.phead .crumb a { text-decoration: none; }
+.phead .crumb a:hover { color: var(--ink); }
+@media (min-width: 900px) { .phead { padding: 80px 0 56px; } .phead .wrap { grid-template-columns: 1fr auto; align-items: end; } .phead .crumb { grid-column: 1 / -1; } .phead .intro { margin: 0 0 10px; } }
+
+/* ---------- Hinnakiri ---------- */
+.menu-group { display: grid; gap: 18px; padding: 40px 0; border-top: 1px solid var(--ink); }
+.menu-group:first-child { padding-top: 0; border-top: 0; }
+.menu-group > header h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.menu-group > header p { color: var(--muted); margin-top: 12px; max-width: 30ch; }
+@media (min-width: 960px) { .menu-group { grid-template-columns: 5fr 7fr; gap: 56px; padding: 56px 0; } .menu-group > header { position: sticky; top: calc(var(--hdr) + 24px); align-self: start; } }
+.item { display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; padding: 20px 0; border-bottom: 1px solid var(--line); text-decoration: none; position: relative; }
+.item:first-child { border-top: 1px solid var(--line); }
+.item h3 { font-size: 1.75rem; }
+.item .price { font: 400 1.75rem/1 var(--serif); font-variant-numeric: tabular-nums; }
+.item p { grid-column: 1 / -1; color: var(--muted); margin: 0; font-size: .95rem; max-width: 52ch; }
+.item .meta { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; margin-top: 6px; font: 600 .68rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+.item .meta b { color: var(--ink); font-weight: 600; }
+.item:hover h3 { font-style: italic; }
+.item:hover .meta b { color: var(--red); }
+
+.notes { display: grid; gap: 12px; }
+@media (min-width: 800px) { .notes { grid-template-columns: repeat(3, 1fr); } }
+.note-card { border: 1px solid var(--line-d); padding: 24px; }
+.note-card .n { font: 500 .8rem/1 var(--sans); color: var(--muted-d); }
+.note-card h3 { margin: 34px 0 10px; }
+.note-card p { color: var(--muted-d); margin: 0; font-size: .95rem; }
+
+/* ---------- Galerii ---------- */
+.tabs { display: flex; flex-wrap: wrap; gap: 6px 26px; margin-bottom: 32px; border-bottom: 1px solid var(--line); }
+.tab { background: none; border: 0; padding: 10px 0 14px; cursor: pointer; font: 400 1.6rem/1 var(--serif); color: var(--muted); position: relative; }
+.tab sup { font: 500 .66rem/1 var(--sans); margin-left: 3px; letter-spacing: .04em; }
+.tab[aria-pressed="true"] { color: var(--ink); font-style: italic; }
+.tab[aria-pressed="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--red); }
+.tab:hover { color: var(--ink); }
+.works { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; grid-auto-flow: dense; }
+@media (min-width: 800px) { .works { grid-template-columns: repeat(4, 1fr); gap: 14px; } }
+.works figure { margin: 0; }
+.works figure.big { grid-column: span 2; grid-row: span 2; }
+.works figure.big { display: flex; flex-direction: column; }
+.works figure.big button { flex: 1; display: flex; }
+.works figure.big .ph { --ar: auto; flex: 1; min-height: 280px; }
+.works button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; text-align: left; }
+.works .ph { --ar: 3 / 4; }
+.works figcaption { display: flex; justify-content: space-between; gap: 8px; padding: 8px 0 0; font-size: .82rem; height: 34px; }
+.works figcaption em { font-family: var(--serif); font-size: 1.1rem; }
+.works figcaption span { color: var(--muted); font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; }
+.lb { position: fixed; inset: 0; z-index: 120; background: var(--ink); color: var(--cream); display: none; grid-template-rows: auto 1fr auto; }
+.lb.open { display: grid; }
+.lb .lb-top { display: flex; justify-content: space-between; align-items: center; padding: 0 var(--gut); height: var(--hdr); border-bottom: 1px solid var(--line-d); font: 500 .74rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+.lb .lb-top button { height: 40px; padding: 0 12px; background: none; border: 1px solid var(--cream); color: var(--cream); cursor: pointer; font: inherit; }
+.lb .lb-img { display: grid; place-items: center; padding: 20px var(--gut); min-height: 0; }
+.lb .lb-img .ph { height: 100%; max-height: 72vh; width: auto; aspect-ratio: 3 / 4; max-width: 100%; }
+.lb .lb-bot { display: flex; justify-content: space-between; align-items: center; padding: 14px var(--gut) 20px; border-top: 1px solid var(--line-d); gap: 12px; }
+.lb .lb-bot em { font: italic 400 1.6rem/1.1 var(--serif); }
+.lb .lb-bot .arrows { display: flex; gap: 8px; }
+.lb .lb-bot button { width: 46px; height: 46px; background: none; border: 1px solid var(--cream); color: var(--cream); cursor: pointer; font-size: 1.1rem; }
+
+/* ---------- Vormid ---------- */
+.form { display: grid; gap: 20px; }
+.fld { display: grid; gap: 6px; }
+.fld > label, .fld > .lbl { font: 600 .68rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+.fld .opt { color: var(--muted); text-transform: none; letter-spacing: 0; font-weight: 400; }
+.fld input:not([type="checkbox"]):not([type="radio"]), .fld select, .fld textarea {
+  width: 100%; min-height: 50px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--ink); background: transparent;
+  font: 400 1.35rem/1.3 var(--serif); -webkit-appearance: none; appearance: none;
+}
+.fld textarea { min-height: 110px; resize: vertical; }
+.fld select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230f0f0f' stroke-width='1.4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 4px center; padding-right: 28px; }
+.fld input:focus, .fld select:focus, .fld textarea:focus { outline: 0; border-bottom: 2px solid var(--red); }
+.fld input::placeholder, .fld textarea::placeholder { color: #aaa397; }
+.fld .err { display: none; color: var(--err); font-size: .85rem; }
+.fld.bad input, .fld.bad textarea, .fld.bad select { border-bottom-color: var(--err); }
+.fld.bad .err { display: block; }
+.two { display: grid; gap: 20px; }
+@media (min-width: 640px) { .two { grid-template-columns: 1fr 1fr; } }
+.chk { display: flex; gap: 12px; align-items: flex-start; font-size: .92rem; cursor: pointer; }
+.chk input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--red); flex: none; }
+.chk.bad { color: var(--err); }
+.done { border-top: 1px solid var(--ink); padding-top: 28px; }
+.done h2 { margin: 12px 0 18px; }
+
+/* ---------- Broneerimine ---------- */
+.bk-progress { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 40px; list-style: none; padding: 0; }
+.bk-progress li { font: 600 .66rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+.bk-progress li::before { content: ""; display: block; height: 2px; background: var(--line); margin-bottom: 10px; }
+.bk-progress li.past::before, .bk-progress li.cur::before { background: var(--ink); }
+.bk-progress li.cur { color: var(--ink); }
+.bk-progress li.cur::before { background: var(--red); }
+.bk-progress li b { display: block; font: 400 1.4rem/1 var(--serif); letter-spacing: 0; text-transform: none; margin-bottom: 2px; }
+.bk-progress li span { display: none; }
+@media (min-width: 560px) { .bk-progress li span { display: inline; } }
+.bk-step > h2 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 10px; }
+.bk-step > p { color: var(--muted); margin-bottom: 30px; }
+.cards { display: grid; gap: 10px; }
+@media (min-width: 720px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card-opt { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 18px 18px 16px; border: 1px solid var(--line); background: var(--cream); cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.card-opt:hover { border-color: var(--ink); }
+.card-opt input { position: absolute; opacity: 0; pointer-events: none; }
+.card-opt .t { font: 400 1.55rem/1.05 var(--serif); }
+.card-opt .p { font: 400 1.55rem/1.05 var(--serif); }
+.card-opt .d { grid-column: 1 / -1; font-size: .88rem; color: var(--muted); }
+.card-opt .m { grid-column: 1 / -1; font: 600 .66rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); margin-top: 8px; }
+.card-opt.on { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.card-opt.on .d, .card-opt.on .m { color: var(--muted-d); }
+.card-opt:has(input:focus-visible) { outline: 2px solid var(--red); outline-offset: 2px; }
+.group-t { grid-column: 1 / -1; font: 600 .68rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); padding: 22px 0 6px; }
+.group-t:first-child { padding-top: 0; }
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (min-width: 900px) { .people { grid-template-columns: repeat(4, 1fr); } }
+.person-opt { position: relative; cursor: pointer; border: 1px solid var(--line); background: var(--cream); }
+.person-opt input { position: absolute; opacity: 0; pointer-events: none; }
+.person-opt .ph { --ar: 3 / 4; }
+.person-opt .any { display: grid; place-items: center; aspect-ratio: 3 / 4; background: var(--cream-2); font: italic 400 1.4rem/1.2 var(--serif); text-align: center; padding: 16px; color: var(--muted); }
+.person-opt .nm { display: block; padding: 12px 14px 14px; }
+.person-opt .nm b { display: block; font: 400 1.5rem/1 var(--serif); font-weight: 400; }
+.person-opt .nm small { font: 600 .64rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+.person-opt.on { border-color: var(--ink); background: var(--ink); color: var(--cream); }
+.person-opt.on .nm small { color: var(--muted-d); }
+.person-opt:has(input:focus-visible) { outline: 2px solid var(--red); outline-offset: 2px; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 28px; }
+.cal .dow { font: 600 .64rem/1 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); text-align: center; padding: 6px 0; }
+.cal button { aspect-ratio: 1 / 1; min-height: 42px; border: 1px solid var(--line); background: var(--cream); cursor: pointer; display: grid; place-items: center; align-content: center; gap: 2px; padding: 0; }
+.cal button b { font: 400 1.5rem/1 var(--serif); }
+.cal button small { font: 600 .56rem/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.cal button:hover:not(:disabled) { border-color: var(--ink); }
+.cal button[aria-pressed="true"] { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.cal button[aria-pressed="true"] small { color: var(--muted-d); }
+.cal button:disabled { visibility: hidden; }
+@media (min-width: 900px) { .cal { max-width: 620px; } }
+.slots-wrap { display: grid; gap: 22px; }
+.slot-group h4 { margin: 0 0 10px; font: 600 .68rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); }
+.slot-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.slot { min-width: 76px; height: 44px; border: 1px solid var(--line); background: var(--cream); cursor: pointer; font: 500 .95rem/1 var(--sans); font-variant-numeric: tabular-nums; }
+.slot:hover:not(:disabled) { border-color: var(--ink); }
+.slot[aria-pressed="true"], .slot[aria-pressed="true"]:hover { background: var(--red); border-color: var(--red); color: #fff; }
+.slot:disabled { color: #b9b2a5; text-decoration: line-through; cursor: not-allowed; border-style: dashed; }
+.empty { font: italic 400 1.3rem/1.3 var(--serif); color: var(--muted); }
+.recap { border: 1px solid var(--ink); margin-bottom: 30px; }
+.recap div { display: flex; justify-content: space-between; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.recap div:last-child { border-bottom: 0; background: var(--ink); color: var(--cream); }
+.recap dt { font: 600 .66rem/1.6 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+.recap div:last-child dt { color: var(--muted-d); }
+.recap dd { margin: 0; font: 400 1.25rem/1.2 var(--serif); text-align: right; }
+.bk-bar {
+  position: sticky; bottom: 0; z-index: 30; margin-top: 44px; background: var(--cream); border-top: 1px solid var(--ink);
+  display: flex; align-items: center; gap: 12px; padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+}
+.bk-bar .sum { margin-right: auto; min-width: 0; }
+.bk-bar .sum b { display: block; font: 400 1.3rem/1.1 var(--serif); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bk-bar .sum small { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font: 600 .64rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+.bk-bar .btn { min-height: 48px; padding: 0 16px; }
+.bk-bar #bk-back { padding: 0 14px; }
+@media (max-width: 480px) { .bk-bar #bk-back span.t { display: none; } }
+
+/* ---------- Kinkekaart (Polaroid) ---------- */
+.gift { display: grid; gap: 48px; align-items: start; }
+@media (min-width: 960px) { .gift { grid-template-columns: 1fr 1fr; gap: 80px; } .gift-prev { position: sticky; top: calc(var(--hdr) + 28px); } }
+.polaroid { background: #fff; padding: 16px 16px 0; box-shadow: 0 1px 0 var(--line), 0 18px 40px rgba(15, 15, 15, .12); max-width: 440px; margin: 0 auto; transform: rotate(-1.5deg); }
+.polaroid .pic { aspect-ratio: 1 / 1; background: var(--ink); color: var(--cream); display: grid; grid-template-rows: auto 1fr auto; padding: 20px; transition: background .2s, color .2s; }
+.polaroid.red .pic { background: var(--red); color: #fff; }
+.polaroid.cream .pic { background: var(--cream-2); color: var(--ink); }
+.polaroid .pic .top { display: flex; justify-content: space-between; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .16em; }
+.polaroid .pic .val { align-self: center; text-align: center; font: 400 clamp(3.4rem, 12vw, 5.6rem)/.9 var(--serif); word-break: break-word; }
+.polaroid .pic .val.long { font-size: clamp(2rem, 6.5vw, 2.8rem); font-style: italic; }
+.polaroid .pic .bot { display: flex; justify-content: space-between; align-items: flex-end; font: 600 .62rem/1.3 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+.polaroid .pic .bot b { font: 400 1.4rem/1 var(--serif); text-transform: none; letter-spacing: 0; }
+.polaroid .under { padding: 16px 6px 22px; min-height: 120px; }
+.polaroid .under p { font: italic 400 1.5rem/1.2 var(--serif); margin: 0 0 10px; overflow-wrap: anywhere; min-height: 1.2em; }
+.polaroid .under p:empty::before { content: "Siia tuleb sinu soov."; color: #b9b2a5; }
+.polaroid .under small { display: flex; justify-content: space-between; gap: 10px; font: 600 .62rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
+.seg { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); }
+.seg--2 { grid-template-columns: 1fr 1fr; }
+.seg button, .seg label { min-height: 50px; display: grid; place-items: center; border: 0; border-right: 1px solid var(--ink); background: transparent; cursor: pointer; font: 400 1.25rem/1 var(--serif); position: relative; }
+.seg > :last-child { border-right: 0; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg [aria-pressed="true"], .seg label.on { background: var(--ink); color: var(--cream); }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--red); outline-offset: -4px; }
+.swatches { display: flex; gap: 10px; }
+.swatches button { width: 44px; height: 44px; border: 1px solid var(--ink); cursor: pointer; }
+.swatches button[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- KKK ---------- */
+.faq-grid { display: grid; gap: 36px; }
+@media (min-width: 960px) { .faq-grid { grid-template-columns: 4fr 8fr; gap: 72px; } .faq-side { position: sticky; top: calc(var(--hdr) + 28px); align-self: start; } }
+.faq-side .search { margin-bottom: 24px; }
+.faq-cats { display: flex; flex-wrap: wrap; gap: 8px; }
+.faq-cats button { min-height: 38px; padding: 0 14px; border: 1px solid var(--ink); background: transparent; cursor: pointer; font: 600 .68rem/1 var(--sans); text-transform: uppercase; letter-spacing: .12em; }
+.faq-cats button[aria-pressed="true"] { background: var(--ink); color: var(--cream); }
+.qa { border-top: 1px solid var(--ink); }
+.qa details { border-bottom: 1px solid var(--line); }
+.qa summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr 32px; gap: 16px; padding: 20px 0; font: 400 clamp(1.4rem, 2.4vw, 1.9rem)/1.15 var(--serif); }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; width: 32px; height: 32px; border: 1px solid var(--ink); display: grid; place-items: center; font: 300 1.2rem/1 var(--sans); }
+.qa details[open] summary { font-style: italic; }
+.qa details[open] summary::after { content: "\2212"; background: var(--ink); color: var(--cream); }
+.qa summary:hover { color: var(--red); }
+.qa .a { padding: 0 48px 24px 0; max-width: 62ch; color: var(--ink-3); }
+.qa .a p:last-child { margin: 0; }
+.qa .cat { font: 600 .64rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted); display: block; margin-bottom: 10px; }
+
+/* ---------- Kontakt ---------- */
+.phone-xl { display: block; font: 400 clamp(3rem, 11vw, 9rem)/.9 var(--serif); text-decoration: none; letter-spacing: -.02em; }
+.phone-xl:hover { color: var(--red-l); font-style: italic; }
+.clist { display: grid; gap: 0; border-top: 1px solid var(--line-d); margin-top: 40px; }
+@media (min-width: 800px) { .clist { grid-template-columns: repeat(3, 1fr); } }
+.clist > div { padding: 20px 0; border-bottom: 1px solid var(--line-d); }
+@media (min-width: 800px) { .clist > div { border-bottom: 0; border-right: 1px solid var(--line-d); padding: 22px 24px; } .clist > div:first-child { padding-left: 0; } .clist > div:last-child { border-right: 0; } }
+.clist a, .clist p { font: 400 1.45rem/1.2 var(--serif); text-decoration: none; margin: 8px 0 0; overflow-wrap: anywhere; }
+.clist a:hover { color: var(--red-l); }
+.clist .eyebrow { display: block; color: var(--muted-d); }
+.clist a { display: inline-block; }
+
+/* ---------- Meeskond ---------- */
+.team { display: grid; gap: 28px; }
+@media (min-width: 720px) { .team { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+.member .ph { --ar: 3 / 4; margin-bottom: 16px; }
+.member h3 { font-size: 2rem; }
+.member .role { font: 600 .66rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); display: block; margin: 8px 0 10px; }
+.member p { color: var(--muted); margin: 0; }
+.facts { display: grid; gap: 0; border-top: 1px solid var(--ink); }
+@media (min-width: 800px) { .facts { grid-template-columns: repeat(4, 1fr); } }
+.facts > div { padding: 22px 0; border-bottom: 1px solid var(--line); }
+@media (min-width: 800px) { .facts > div { border-bottom: 0; border-right: 1px solid var(--line); padding: 26px 22px; } .facts > div:first-child { padding-left: 0; } .facts > div:last-child { border-right: 0; } }
+.facts b { display: block; font: 400 clamp(2.6rem, 5vw, 3.6rem)/1 var(--serif); margin-bottom: 8px; }
+.facts span { font: 600 .66rem/1.4 var(--sans); text-transform: uppercase; letter-spacing: .14em; color: var(--muted); }
+
+/* ---------- Tekstileht ---------- */
+.prose { max-width: 66ch; }
+.prose h2 { font-size: clamp(1.9rem, 3.5vw, 2.6rem); margin: 44px 0 12px; }
+.prose ul { padding-left: 20px; }
+.prose li { margin-bottom: 6px; }
+
+/* ---------- CTA ---------- */
+.cta { text-align: center; }
+.cta h2 { font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 30px; }
+.cta h2 em { color: var(--red); }
+.sec--dark.cta h2 em { color: var(--red-l); }
+
+/* ---------- Jalus ---------- */
+.ftr { background: var(--ink); color: var(--cream); padding-top: 64px; overflow: hidden; }
+.ftr .cols { display: grid; gap: 34px; padding-bottom: 48px; }
+@media (min-width: 720px) { .ftr .cols { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .ftr .cols { grid-template-columns: 1.3fr 1fr 1.1fr .8fr; gap: 48px; } }
+.ftr h4 { margin: 0 0 14px; font: 600 .66rem/1 var(--sans); text-transform: uppercase; letter-spacing: .16em; color: var(--muted-d); }
+.ftr .lead { font: 400 clamp(1.6rem, 2.6vw, 2.1rem)/1.15 var(--serif); max-width: 18ch; margin: 0; }
+.ftr .lead em { color: var(--red-l); }
+.ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ftr a { text-decoration: none; }
+.ftr a:hover { color: var(--red-l); }
+.ftr .hours { margin: 0; font-size: .9rem; }
+.ftr .hours th, .ftr .hours td { border-color: var(--line-d); padding: 9px 0; }
+.ftr .hours tr:last-child th, .ftr .hours tr:last-child td { border-bottom-color: var(--line-d); }
+.ftr .hours tr.today th::before { background: var(--red-l); }
+.ftr .word { font: 400 clamp(6rem, 30vw, 26rem)/.8 var(--serif); letter-spacing: -.04em; white-space: nowrap; margin: 0 0 .12em -0.04em; color: var(--cream); user-select: none; }
+.ftr .word em { color: var(--red); }
+.ftr .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 16px 0 20px; border-top: 1px solid var(--line-d); font-size: .78rem; color: var(--muted-d); }
+
+/* Mobiili riba */
+.mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: grid; grid-template-columns: 60px 1fr; transform: translateY(110%); transition: transform .25s; padding-bottom: env(safe-area-inset-bottom); background: var(--red); }
+.mbar.show { transform: none; }
+.mbar a { min-height: 58px; display: grid; place-items: center; text-decoration: none; font: 600 .78rem/1 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+.mbar a:first-child { background: var(--ink); color: var(--cream); font-size: 1.2rem; }
+.mbar a:last-child { color: #fff; }
+@media (min-width: 1100px) { .mbar { display: none; } }
+@media (max-width: 1099px) { .has-mbar .ftr { padding-bottom: 58px; } }
+.no-mbar .mbar { display: none; }
+
+.toast { position: fixed; left: 50%; bottom: 80px; z-index: 150; transform: translate(-50%, 16px); background: var(--ink); color: var(--cream); padding: 12px 18px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; max-width: calc(100% - 32px); }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+.js .rise { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .rise.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .rise { opacity: 1; transform: none; }
+  .dots button.on span { width: 100%; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#sisu">Liigu sisu juurde</a>
+<header class="hdr">
+  <div class="wrap bar">
+    <a class="logo" href="#avaleht" aria-label="Borei avaleht"><b><span>BO</span><span>REI</span></b><small>Meeste juuksur<br>Kohtla-Järve</small></a>
+    <nav class="nav" aria-label="Peamenüü"><ul>
+      <li><a href="#avaleht">Avaleht</a></li>
+      <li><a href="#teenused">Teenused</a></li>
+      <li><a href="#galerii">Tööd</a></li>
+      <li><a href="#meist">Meist</a></li>
+      <li><a href="#kinkekaart">Kinkekaart</a></li>
+      <li><a href="#kkk">KKK</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul></nav>
+    <a class="btn btn--red hdr-book" href="#broneeri">Broneeri <span class="ar">→</span></a>
+    <button class="menu-btn" type="button" data-open-menu aria-expanded="false" aria-controls="menu"><i></i>Menüü</button>
+  </div>
+</header>
+<div class="overlay" id="menu" aria-hidden="true">
+  <div class="top"><span class="logo"><b><span>BO</span><span>REI</span></b></span><button class="close" type="button" data-close-menu>Sulge ×</button></div>
+  <nav aria-label="Mobiilimenüü"><ol>
+    <li><a href="#avaleht">Avaleht</a></li>
+    <li><a href="#teenused">Teenused</a></li>
+    <li><a href="#galerii">Tööd</a></li>
+    <li><a href="#meist">Meist</a></li>
+    <li><a href="#kinkekaart">Kinkekaart</a></li>
+    <li><a href="#kkk">KKK</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#broneeri">Broneeri aeg</a></li>
+  </ol></nav>
+  <div class="foot"><a href="tel:+37251920155">+372 5192 0155</a><span>Keskallee 20, Kohtla-Järve · E–R 10–19 · L–P 10–16</span></div>
+</div>
+<main id="sisu">
+<div class="page" data-page="avaleht">
+<section class="hero">
+  <div class="slides" aria-hidden="true">
+    <div class="slide on"><span class="ph ph--dark ph--fill"><i>Hero pilt 1 · meister tööl</i></span></div>
+    <div class="slide"><span class="ph ph--dark ph--fill"><i>Hero pilt 2 · fade lähivaates</i></span></div>
+    <div class="slide"><span class="ph ph--dark ph--fill"><i>Hero pilt 3 · salong õhtul</i></span></div>
+    <div class="shade"></div>
+  </div>
+  <span class="status" data-status>Keskallee 20</span>
+  <div class="content wrap">
+    <span class="eyebrow">Meeste juuksur · Kohtla-Järve · aastast 2015</span>
+    <h1>Lõikus, mida <em>märgatakse.</em></h1>
+    <p class="intro">Klassikaline lõikus, fade, habe ja kuuma rätikuga raseerimine. Keskallee 20, iga päev lahti.</p>
+    <div class="dots" role="group" aria-label="Slaidid">
+      <button type="button" aria-label="Slaid 1">01<span></span></button>
+      <button type="button" aria-label="Slaid 2">02<span></span></button>
+      <button type="button" aria-label="Slaid 3">03<span></span></button>
+    </div>
+  </div>
+  <form class="quick" id="quick" action="#broneeri" aria-label="Kiirbroneering">
+    <label><span>Teenus</span><select id="q-svc">
+          <option value="">Kõik teenused</option>
+          <option value="loikus">Meeste juukselõikus</option>
+          <option value="fade">Fade</option>
+          <option value="masin">Masinlõikus</option>
+          <option value="pikk">Pikkade juuste lõikus</option>
+          <option value="kombo">Lõikus + habe</option>
+          <option value="habe">Habeme kujundamine</option>
+          <option value="raseerimine">Kuuma rätikuga raseerimine</option>
+          <option value="pea">Pea raseerimine</option>
+          <option value="poisid">Poiste lõikus</option>
+          <option value="isa-poeg">Isa + poeg</option>
+          <option value="kontuur">Kontuuri värskendus</option>
+          <option value="kulmud">Kulmude korrigeerimine</option>
+          <option value="toon">Halli toonimine</option>
+          <option value="pesu">Pesu ja soeng</option>
+        </select></label>
+    <label><span>Päev</span><select id="q-day"></select></label>
+    <button class="btn btn--red" type="submit">Leia aeg <span class="ar">→</span></button>
+  </form>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track"><span>Klassikaline lõikus</span><span>Fade</span><span>Habeme kujundamine</span><span>Kuum rätik</span><span>Poiste lõikus</span><span>Isa + poeg</span><span>Pea raseerimine</span><span>Klassikaline lõikus</span><span>Fade</span><span>Habeme kujundamine</span><span>Kuum rätik</span><span>Poiste lõikus</span><span>Isa + poeg</span><span>Pea raseerimine</span></div></div>
+
+<section class="sec">
+  <div class="wrap manifest rise">
+    <div class="mark" aria-hidden="true">B</div>
+    <p>Borei on koht <em>vahetusest tulnud meistrimehele</em> ja gümnasistile enne lõpuaktust. Isale ja pojale. Kõigile, kes tahavad head lõikust ilma pika jututa.</p>
+    <div class="sign">Borei · Keskallee 20 · aastast 2015</div>
+  </div>
+</section>
+
+<section class="sec sec--alt" data-rail>
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow">Hinnakiri</span><h2 style="margin-top:12px">Teenused<span class="count">(14)</span></h2></div>
+      <div class="rail-nav"><button type="button" data-rail-go="-1" aria-label="Eelmised">←</button><button type="button" data-rail-go="1" aria-label="Järgmised">→</button></div>
+    </div>
+    <div class="rail">
+      <a class="svc" href="#broneeri?teenus=loikus"><span class="ph "><i>Meeste juukselõikus</i></span><h3>Meeste juukselõikus</h3><p>Käärid ja masin, pesu, viimistlus ja soeng.</p><span class="pr">45 min · 15 €</span></a>
+      <a class="svc" href="#broneeri?teenus=fade"><span class="ph "><i>Fade</i></span><h3>Fade</h3><p>Sujuv üleminek nullist, skin fade või taper. Pealt kääridega.</p><span class="pr">45 min · 18 €</span></a>
+      <a class="svc" href="#broneeri?teenus=kombo"><span class="ph "><i>Lõikus + habe</i></span><h3>Lõikus + habe</h3><p>Juukselõikus ja habeme kujundamine ühe korraga.</p><span class="pr">75 min · 25 €</span></a>
+      <a class="svc" href="#broneeri?teenus=habe"><span class="ph "><i>Habeme kujundamine</i></span><h3>Habeme kujundamine</h3><p>Pikkus, kuju ja kontuur, lõpus õli või palsam.</p><span class="pr">30 min · 12 €</span></a>
+      <a class="svc" href="#broneeri?teenus=raseerimine"><span class="ph "><i>Kuuma rätikuga raseerimine</i></span><h3>Kuuma rätikuga raseerimine</h3><p>Klassikaline raseerimine habemenoaga.</p><span class="pr">30 min · 15 €</span></a>
+      <a class="svc" href="#broneeri?teenus=masin"><span class="ph "><i>Masinlõikus</i></span><h3>Masinlõikus</h3><p>Üks või kaks otsikut, kontuur ja kael puhtaks.</p><span class="pr">20 min · 10 €</span></a>
+      <a class="svc" href="#broneeri?teenus=poisid"><span class="ph "><i>Poiste lõikus</i></span><h3>Poiste lõikus</h3><p>Kuni 12-aastastele. Rahulik tempo, lühike ooteaeg.</p><span class="pr">30 min · 12 €</span></a>
+      <a class="svc" href="#broneeri?teenus=isa-poeg"><span class="ph "><i>Isa + poeg</i></span><h3>Isa + poeg</h3><p>Kaks lõikust järjest, istute kõrvuti.</p><span class="pr">75 min · 25 €</span></a>
+    </div>
+    <div class="rail-bar"><span></span></div>
+    <p style="margin-top:36px;text-align:center"><a class="txt-link" href="#teenused">Kogu hinnakiri <span>→</span></a></p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Broneerimine</span><h2 style="margin-top:12px">Toolini <em>nelja</em> sammuga</h2></div><p>Kinnitus tuleb SMS-iga. Tasud salongis kaardi või sularahaga.</p></div>
+    <div class="steps4 rise">
+      <div class="step4"><span class="n">1/</span><h3>Teenus</h3><p>Lõikus, habe või mõlemad. Hind ja kestus on kohe näha.</p></div>
+      <div class="step4"><span class="n">2/</span><h3>Meister</h3><p>Oma meister või esimene vaba, kui on kiire.</p></div>
+      <div class="step4"><span class="n">3/</span><h3>Aeg</h3><p>Kalendrist kaks nädalat ette, ka nädalavahetusel.</p></div>
+      <div class="step4"><span class="n">4/</span><h3>Kinnitus</h3><p>Nimi ja telefon. Lisa aeg soovi korral oma kalendrisse.</p></div>
+    </div>
+    <p style="margin-top:36px"><a class="btn btn--red" href="#broneeri">Alusta broneeringut <span class="ar">→</span></a></p>
+  </div>
+</section>
+
+<section class="sec sec--dark">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--muted-d)">Google Maps</span>
+    <div class="score rise" style="margin-top:20px">
+      <div class="big">4<em>,</em>8</div>
+      <p class="t">149 arvustust. Aitäh kõigile, kes on aja võtnud ja kirjutanud.</p>
+      <a class="btn btn--cream" href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Loe arvustusi <span class="ar">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Galerii</span><h2 style="margin-top:12px">Tööd<span class="count">(16)</span></h2></div><a class="txt-link" href="#galerii">Kõik tööd <span>→</span></a></div>
+    <div class="mosaic rise">
+      <span class="ph "><i>Fade</i></span>
+      <span class="ph " style="--ar:4/3"><i>Klassika</i></span>
+      <span class="ph " style="--ar:4/3"><i>Habe</i></span>
+      <span class="ph " style="--ar:4/3"><i>Poiste lõikus</i></span>
+      <span class="ph " style="--ar:4/3"><i>Pea raseerimine</i></span>
+    </div>
+  </div>
+</section>
+<section class="sec sec--dark">
+  <div class="wrap visit">
+    <div class="rise">
+      <span class="eyebrow">Asukoht</span>
+      <p class="addr">Keskallee <em>20</em></p>
+      <p style="color:var(--muted-d)">30322 Kohtla-Järve, Ida-Viru maakond. Parkimine maja ees.</p>
+      <table class="hours"><caption class="sr-only">Lahtiolekuajad</caption><tbody>
+  <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+  <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+  <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+</tbody></table>
+      <div class="btns"><a class="btn btn--cream" href="tel:+37251920155">Helista <span class="ar">→</span></a><a class="btn btn--ghost-d" href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Teejuhised <span class="ar">↗</span></a></div>
+    </div>
+    <div class="map"><iframe src="https://www.google.com/maps?q=Keskallee%2020%2C%2030322%20Kohtla-J%C3%A4rve&output=embed" title="Borei asukoht kaardil: Keskallee 20, Kohtla-Järve" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="teenused" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Teenused</div>
+    <h1>Teenused <em>& hinnad</em></h1>
+    <p class="intro">Vajuta teenusele ja broneeri kohe. Hind sisaldab konsultatsiooni ja viimistlust.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap">
+    <div class="menu-group">
+      <header><h2>Juukselõikus<span class="count">(4)</span></h2><p>Kõik lõikused sisaldavad konsultatsiooni, pesu ja viimistlust.</p></header>
+      <div>
+        <a class="item" href="#broneeri?teenus=loikus"><h3>Meeste juukselõikus</h3><span class="price">15 €</span><p>Käärid ja masin, pesu, viimistlus ja soeng.</p><span class="meta"><span>45 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=fade"><h3>Fade</h3><span class="price">18 €</span><p>Sujuv üleminek nullist, skin fade või taper. Pealt kääridega.</p><span class="meta"><span>45 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=masin"><h3>Masinlõikus</h3><span class="price">10 €</span><p>Üks või kaks otsikut, kontuur ja kael puhtaks.</p><span class="meta"><span>20 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=pikk"><h3>Pikkade juuste lõikus</h3><span class="price">20 €</span><p>Õlgadeni või pikemad juuksed, kihid ja kuju.</p><span class="meta"><span>60 min</span><b>Broneeri →</b></span></a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <header><h2>Habe ja raseerimine<span class="count">(4)</span></h2><p>Kuum rätik, habemenuga ja rahulik tempo.</p></header>
+      <div>
+        <a class="item" href="#broneeri?teenus=kombo"><h3>Lõikus + habe</h3><span class="price">25 €</span><p>Juukselõikus ja habeme kujundamine ühe korraga.</p><span class="meta"><span>75 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=habe"><h3>Habeme kujundamine</h3><span class="price">12 €</span><p>Pikkus, kuju ja kontuur, lõpus õli või palsam.</p><span class="meta"><span>30 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=raseerimine"><h3>Kuuma rätikuga raseerimine</h3><span class="price">15 €</span><p>Klassikaline raseerimine habemenoaga.</p><span class="meta"><span>30 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=pea"><h3>Pea raseerimine</h3><span class="price">14 €</span><p>Pea siledaks habemenoaga, jahutav palsam.</p><span class="meta"><span>30 min</span><b>Broneeri →</b></span></a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <header><h2>Lapsed<span class="count">(2)</span></h2><p>Lastega võtame aega. Vanem võib olla kõrval.</p></header>
+      <div>
+        <a class="item" href="#broneeri?teenus=poisid"><h3>Poiste lõikus</h3><span class="price">12 €</span><p>Kuni 12-aastastele. Rahulik tempo, lühike ooteaeg.</p><span class="meta"><span>30 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=isa-poeg"><h3>Isa + poeg</h3><span class="price">25 €</span><p>Kaks lõikust järjest, istute kõrvuti.</p><span class="meta"><span>75 min</span><b>Broneeri →</b></span></a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <header><h2>Lisateenused<span class="count">(4)</span></h2><p>Lisa lõikusele või tule eraldi.</p></header>
+      <div>
+        <a class="item" href="#broneeri?teenus=kontuur"><h3>Kontuuri värskendus</h3><span class="price">7 €</span><p>Kõrvade ja kaela piirid korda lõikuste vahel.</p><span class="meta"><span>15 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=kulmud"><h3>Kulmude korrigeerimine</h3><span class="price">5 €</span><p>Kulmud korda kääride ja masinaga.</p><span class="meta"><span>10 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=toon"><h3>Halli toonimine</h3><span class="price">15 €</span><p>Loomulik toon, mis katab halli osaliselt.</p><span class="meta"><span>30 min</span><b>Broneeri →</b></span></a>
+        <a class="item" href="#broneeri?teenus=pesu"><h3>Pesu ja soeng</h3><span class="price">6 €</span><p>Pesu, peamassaaž ja stiilimine tootega.</p><span class="meta"><span>15 min</span><b>Broneeri →</b></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec sec--dark">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Hea teada</span><h2 style="margin-top:12px">Enne <em>tulekut</em></h2></div></div>
+    <div class="notes">
+      <div class="note-card"><span class="n">1/</span><h3>Tasumine</h3><p>Pangakaart või sularaha salongis pärast teenust. Kinkekaart kehtib kõigile teenustele.</p></div>
+      <div class="note-card"><span class="n">2/</span><h3>Hilinemine</h3><p>Kui jääd üle 15 minuti hiljaks, helista. Vajadusel lühendame teenust või leiame uue aja.</p></div>
+      <div class="note-card"><span class="n">3/</span><h3>Tühistamine</h3><p>Anna teada vähemalt 3 tundi ette, siis saab aja võtta keegi teine.</p></div>
+    </div>
+  </div>
+</section>
+<section class="sec cta">
+  <div class="wrap">
+    <h2>Valmis <em>uueks</em> lõikuseks?</h2>
+    <a class="btn btn--red" href="#broneeri">Broneeri aeg <span class="ar">→</span></a>
+  </div>
+</section>
+</div>
+<div class="page" data-page="galerii" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Tööd</div>
+    <h1>Tööd</h1>
+    <p class="intro">Valik lõikusi ja habemeid salongist. Rohkem leiad Facebookist.</p>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="tabs" role="group" aria-label="Filtreeri töid">
+      <button class="tab" type="button" data-f="all" aria-pressed="true">Kõik</button>
+      <button class="tab" type="button" data-f="fade" aria-pressed="false">Fade</button>
+      <button class="tab" type="button" data-f="klassika" aria-pressed="false">Klassika</button>
+      <button class="tab" type="button" data-f="lyhike" aria-pressed="false">Lühike</button>
+      <button class="tab" type="button" data-f="habe" aria-pressed="false">Habe</button>
+      <button class="tab" type="button" data-f="poisid" aria-pressed="false">Poisid</button>
+    </div>
+    <div class="works">
+      <figure data-cat="fade" data-big class="big"><button type="button" aria-label="Ava pilt: Skin fade"><span class="ph "><i>Skin fade</i></span></button><figcaption><em>Skin fade</em><span>Fade</span></figcaption></figure>
+      <figure data-cat="klassika"><button type="button" aria-label="Ava pilt: Külje peale kammitud"><span class="ph "><i>Külje peale kammitud</i></span></button><figcaption><em>Külje peale kammitud</em><span>Klassika</span></figcaption></figure>
+      <figure data-cat="habe"><button type="button" aria-label="Ava pilt: Täishabe"><span class="ph "><i>Täishabe</i></span></button><figcaption><em>Täishabe</em><span>Habe</span></figcaption></figure>
+      <figure data-cat="fade"><button type="button" aria-label="Ava pilt: Mid fade"><span class="ph "><i>Mid fade</i></span></button><figcaption><em>Mid fade</em><span>Fade</span></figcaption></figure>
+      <figure data-cat="poisid"><button type="button" aria-label="Ava pilt: Poiste lõikus"><span class="ph "><i>Poiste lõikus</i></span></button><figcaption><em>Poiste lõikus</em><span>Poisid</span></figcaption></figure>
+      <figure data-cat="klassika"><button type="button" aria-label="Ava pilt: Pompadour"><span class="ph "><i>Pompadour</i></span></button><figcaption><em>Pompadour</em><span>Klassika</span></figcaption></figure>
+      <figure data-cat="habe"><button type="button" aria-label="Ava pilt: Lühike habe"><span class="ph "><i>Lühike habe</i></span></button><figcaption><em>Lühike habe</em><span>Habe</span></figcaption></figure>
+      <figure data-cat="lyhike" data-big class="big"><button type="button" aria-label="Ava pilt: Crew cut"><span class="ph "><i>Crew cut</i></span></button><figcaption><em>Crew cut</em><span>Lühike</span></figcaption></figure>
+      <figure data-cat="fade"><button type="button" aria-label="Ava pilt: Taper fade"><span class="ph "><i>Taper fade</i></span></button><figcaption><em>Taper fade</em><span>Fade</span></figcaption></figure>
+      <figure data-cat="klassika"><button type="button" aria-label="Ava pilt: Pikem pealt"><span class="ph "><i>Pikem pealt</i></span></button><figcaption><em>Pikem pealt</em><span>Klassika</span></figcaption></figure>
+      <figure data-cat="lyhike"><button type="button" aria-label="Ava pilt: Buzz cut"><span class="ph "><i>Buzz cut</i></span></button><figcaption><em>Buzz cut</em><span>Lühike</span></figcaption></figure>
+      <figure data-cat="poisid"><button type="button" aria-label="Ava pilt: Fade lapsele"><span class="ph "><i>Fade lapsele</i></span></button><figcaption><em>Fade lapsele</em><span>Poisid</span></figcaption></figure>
+      <figure data-cat="habe"><button type="button" aria-label="Ava pilt: Raseerimine"><span class="ph "><i>Raseerimine</i></span></button><figcaption><em>Raseerimine</em><span>Habe</span></figcaption></figure>
+      <figure data-cat="fade"><button type="button" aria-label="Ava pilt: Low fade + habe"><span class="ph "><i>Low fade + habe</i></span></button><figcaption><em>Low fade + habe</em><span>Fade</span></figcaption></figure>
+      <figure data-cat="lyhike"><button type="button" aria-label="Ava pilt: Masinlõikus 6 mm"><span class="ph "><i>Masinlõikus 6 mm</i></span></button><figcaption><em>Masinlõikus 6 mm</em><span>Lühike</span></figcaption></figure>
+      <figure data-cat="klassika"><button type="button" aria-label="Ava pilt: Ärisoeng"><span class="ph "><i>Ärisoeng</i></span></button><figcaption><em>Ärisoeng</em><span>Klassika</span></figcaption></figure>
+    </div>
+    <p style="margin-top:40px"><a class="txt-link" href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Rohkem töid Facebookis <span>↗</span></a></p>
+  </div>
+</section>
+<div class="lb" role="dialog" aria-modal="true" aria-label="Pildi vaade" aria-hidden="true">
+  <div class="lb-top"><span class="lb-count">01 / 16</span><button class="lb-close" type="button">Sulge ×</button></div>
+  <div class="lb-img"></div>
+  <div class="lb-bot"><div><em></em><br><span class="eyebrow lb-cat" style="color:var(--muted-d)"></span></div><div class="arrows"><button class="lb-prev" type="button" aria-label="Eelmine">←</button><button class="lb-next" type="button" aria-label="Järgmine">→</button></div></div>
+</div>
+<section class="sec sec--dark cta">
+  <div class="wrap">
+    <h2>Sama lõikus <em>sulle?</em></h2>
+    <a class="btn btn--red" href="#broneeri">Broneeri aeg <span class="ar">→</span></a>
+  </div>
+</section>
+</div>
+<div class="page" data-page="meist" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Meist</div>
+    <h1>Meist</h1>
+    <p class="intro">Meeste juuksurisalong Keskallee ääres aastast 2015. Väike meeskond ja palju püsikliente.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap split">
+    <span class="ph " style="--ar:4/5"><i>Irina tööl</i></span>
+    <div class="rise">
+      <span class="eyebrow eyebrow--muted">Lugu</span>
+      <h2 style="margin:14px 0 24px">Alustasime <em>ühe</em> tooliga</h2>
+      <p class="intro">Irina Oja avas Borei 2015. aastal. Mõte oli lihtne: mehel peab olema koht, kus saab kiiresti ja korralikult lõigatud.</p>
+      <p>Aastatega on toole juurde tulnud, aga põhimõte on sama. Meil käivad isad koos poegadega ja kliendid, kes tulid esimest korda juba avamise aastal.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap facts rise">
+    <div><b>2015</b><span>avatud aastast</span></div>
+    <div><b>4,8</b><span>Google'i hinne</span></div>
+    <div><b>149</b><span>arvustust</span></div>
+    <div><b>7/7</b><span>päeva nädalas lahti</span></div>
+  </div>
+</section>
+<section class="sec sec--alt">
+  <div class="wrap manifest rise">
+    <div class="mark" aria-hidden="true">B</div>
+    <p>Täpne kontuur. <em>Aus hind.</em> Broneeritud aeg tähendab, et sa ei istu ootetoolis.</p>
+    <div class="sign">Kolm asja, mida hoiame</div>
+  </div>
+</section>
+<section class="sec" id="meeskond">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Meeskond</span><h2 style="margin-top:12px">Meistrid<span class="count">(3)</span></h2></div><p>Broneerides saad valida oma meistri või esimese vaba.</p></div>
+    <div class="team">
+      <article class="member rise"><span class="ph "><i>Portree · Irina</i></span><h3>Irina Oja</h3><span class="role">Omanik · meister</span><p>Asutas Borei 2015. Klassikalised lõikused, habe ja kuuma rätikuga raseerimine.</p></article>
+      <article class="member rise"><span class="ph "><i>Portree · Andrei</i></span><h3>Andrei</h3><span class="role">Meister</span><p>Fade'id ja tekstuurid. Täpne üleminek ja puhas kontuur.</p></article>
+      <article class="member rise"><span class="ph "><i>Portree · Olga</i></span><h3>Olga</h3><span class="role">Meister</span><p>Poiste lõikused ja pikemad juuksed. Ka halli toonimine.</p></article>
+    </div>
+  </div>
+</section>
+<section class="sec sec--alt">
+  <div class="wrap">
+    <div class="head"><div><span class="eyebrow">Salong</span><h2 style="margin-top:12px">Keskallee <em>20</em></h2></div><p>Borei OÜ · registrikood 12807446 · 30322 Kohtla-Järve</p></div>
+    <div class="mosaic">
+      <span class="ph "><i>Salong · toolid</i></span>
+      <span class="ph " style="--ar:4/3"><i>Salong · ootenurk</i></span>
+      <span class="ph " style="--ar:4/3"><i>Salong · tööriistad</i></span>
+      <span class="ph " style="--ar:4/3"><i>Salong · aken</i></span>
+      <span class="ph " style="--ar:4/3"><i>Salong · peegel</i></span>
+    </div>
+  </div>
+</section>
+<section class="sec sec--dark cta">
+  <div class="wrap">
+    <h2>Tule <em>tutvuma.</em></h2>
+    <a class="btn btn--red" href="#broneeri">Broneeri aeg <span class="ar">→</span></a>
+  </div>
+</section>
+</div>
+<div class="page" data-page="broneeri" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Broneeri aeg</div>
+    <h1>Broneeri <em>aeg</em></h1>
+    <p class="intro">Neli sammu. Tasumine salongis, kinnitus SMS-iga.</p>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap" id="bk">
+    <div id="bk-flow">
+      <ol class="bk-progress">
+        <li class="cur"><b>1/</b><span>Teenus</span></li>
+        <li><b>2/</b><span>Meister</span></li>
+        <li><b>3/</b><span>Aeg</span></li>
+        <li><b>4/</b><span>Kinnitus</span></li>
+      </ol>
+      <div class="bk-step" data-step="1">
+        <h2>Mida <em>teeme?</em></h2>
+        <p>Vali üks teenus. Kombinatsioonid on eraldi välja toodud.</p>
+        <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Teenus</legend><div class="cards" id="bk-svcs"></div></fieldset>
+      </div>
+      <div class="bk-step" data-step="2" hidden>
+        <h2>Kes <em>lõikab?</em></h2>
+        <p>„Esimene vaba” annab kõige rohkem aegu.</p>
+        <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Meister</legend><div class="people" id="bk-people"></div></fieldset>
+      </div>
+      <div class="bk-step" data-step="3" hidden>
+        <h2>Millal <em>sobib?</em></h2>
+        <p>Kaks nädalat ette. Läbikriipsutatud ajad on võetud.</p>
+        <div class="cal" id="bk-cal" role="group" aria-label="Päev"></div>
+        <div class="slots-wrap" id="bk-slots" aria-live="polite"></div>
+      </div>
+      <div class="bk-step" data-step="4" hidden>
+        <h2>Peaaegu <em>valmis</em></h2>
+        <p>Kontrolli üle ja lisa oma andmed.</p>
+        <dl class="recap">
+          <div><dt>Teenus</dt><dd id="r-svc"></dd></div>
+          <div><dt>Meister</dt><dd id="r-mst"></dd></div>
+          <div><dt>Päev</dt><dd id="r-day"></dd></div>
+          <div><dt>Kell</dt><dd id="r-time"></dd></div>
+          <div><dt>Kokku</dt><dd id="r-sum"></dd></div>
+        </dl>
+        <form class="form" id="bk-form" novalidate>
+          <div class="two">
+            <div class="fld"><label for="b-name">Nimi</label><input id="b-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
+            <div class="fld"><label for="b-phone">Telefon</label><input id="b-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+372" required><span class="err">Kontrolli numbrit.</span></div>
+          </div>
+          <div class="fld"><label for="b-note">Lisainfo <span class="opt">(soovi korral)</span></label><textarea id="b-note" placeholder="Nt sama lõikus nagu eelmine kord"></textarea></div>
+          <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei kasutab minu andmeid broneeringu haldamiseks. <a href="#privaatsus">Privaatsus</a></span></label>
+        </form>
+      </div>
+      <div class="bk-bar">
+        <div class="sum"><b id="bar-t">Vali teenus</b><small id="bar-s">Samm 1 / 4</small></div>
+        <button class="btn btn--line" type="button" id="bk-back"><span class="ar">←</span><span class="t">Tagasi</span></button>
+        <button class="btn btn--red" type="button" id="bk-next" disabled>Edasi <span class="ar">→</span></button>
+      </div>
+    </div>
+    <div class="done" id="bk-done" hidden>
+      <span class="eyebrow eyebrow--muted">Broneering vastu võetud</span>
+      <h2>Aitäh, <em id="done-name"></em>.</h2>
+      <p class="intro" id="done-txt"></p>
+      <p class="muted">Kinnitus tuleb SMS-iga. Kui aeg ei sobi enam, helista <a href="tel:+37251920155">+372 5192 0155</a>.</p>
+      <div class="btns" style="margin-top:26px"><a class="btn btn--red" id="done-ics" download="borei-broneering.ics" href="#">Lisa kalendrisse <span class="ar">↓</span></a><a class="btn btn--line" href="#avaleht">Avalehele <span class="ar">→</span></a></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="svc-json">[{"group": "Juukselõikus", "id": "loikus", "name": "Meeste juukselõikus", "dur": 45, "price": 15, "desc": "Käärid ja masin, pesu, viimistlus ja soeng."}, {"group": "Juukselõikus", "id": "fade", "name": "Fade", "dur": 45, "price": 18, "desc": "Sujuv üleminek nullist, skin fade või taper. Pealt kääridega."}, {"group": "Juukselõikus", "id": "masin", "name": "Masinlõikus", "dur": 20, "price": 10, "desc": "Üks või kaks otsikut, kontuur ja kael puhtaks."}, {"group": "Juukselõikus", "id": "pikk", "name": "Pikkade juuste lõikus", "dur": 60, "price": 20, "desc": "Õlgadeni või pikemad juuksed, kihid ja kuju."}, {"group": "Habe ja raseerimine", "id": "kombo", "name": "Lõikus + habe", "dur": 75, "price": 25, "desc": "Juukselõikus ja habeme kujundamine ühe korraga."}, {"group": "Habe ja raseerimine", "id": "habe", "name": "Habeme kujundamine", "dur": 30, "price": 12, "desc": "Pikkus, kuju ja kontuur, lõpus õli või palsam."}, {"group": "Habe ja raseerimine", "id": "raseerimine", "name": "Kuuma rätikuga raseerimine", "dur": 30, "price": 15, "desc": "Klassikaline raseerimine habemenoaga."}, {"group": "Habe ja raseerimine", "id": "pea", "name": "Pea raseerimine", "dur": 30, "price": 14, "desc": "Pea siledaks habemenoaga, jahutav palsam."}, {"group": "Lapsed", "id": "poisid", "name": "Poiste lõikus", "dur": 30, "price": 12, "desc": "Kuni 12-aastastele. Rahulik tempo, lühike ooteaeg."}, {"group": "Lapsed", "id": "isa-poeg", "name": "Isa + poeg", "dur": 75, "price": 25, "desc": "Kaks lõikust järjest, istute kõrvuti."}, {"group": "Lisateenused", "id": "kontuur", "name": "Kontuuri värskendus", "dur": 15, "price": 7, "desc": "Kõrvade ja kaela piirid korda lõikuste vahel."}, {"group": "Lisateenused", "id": "kulmud", "name": "Kulmude korrigeerimine", "dur": 10, "price": 5, "desc": "Kulmud korda kääride ja masinaga."}, {"group": "Lisateenused", "id": "toon", "name": "Halli toonimine", "dur": 30, "price": 15, "desc": "Loomulik toon, mis katab halli osaliselt."}, {"group": "Lisateenused", "id": "pesu", "name": "Pesu ja soeng", "dur": 15, "price": 6, "desc": "Pesu, peamassaaž ja stiilimine tootega."}]</script>
+<script type="application/json" id="mst-json">[{"id": "any", "name": "Esimene vaba", "role": "Kiireim aeg"}, {"id": "irina", "name": "Irina", "role": "Omanik · meister"}, {"id": "andrei", "name": "Andrei", "role": "Meister"}, {"id": "olga", "name": "Olga", "role": "Meister"}]</script>
+</div>
+<div class="page" data-page="kinkekaart" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Kinkekaart</div>
+    <h1>Kinke<em>kaart</em></h1>
+    <p class="intro">Kingi korralik lõikus. Kaart muutub eelvaates kohe, kui midagi valid.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap gift">
+    <div>
+      <form class="form" id="gift" novalidate>
+        <div class="fld"><span class="lbl">Kaardi tüüp</span>
+          <div class="seg seg--2">
+            <label class="on"><input type="radio" name="gt" value="summa" checked>Summa</label>
+            <label><input type="radio" name="gt" value="teenus">Teenus</label>
+          </div>
+        </div>
+        <div class="fld" id="g-amt"><span class="lbl">Summa</span>
+          <div class="seg" role="group" aria-label="Summa">
+            <button type="button" data-amt="20" aria-pressed="false">20 €</button>
+            <button type="button" data-amt="30" aria-pressed="true">30 €</button>
+            <button type="button" data-amt="50" aria-pressed="false">50 €</button>
+            <button type="button" data-amt="muu" aria-pressed="false">Muu</button>
+          </div>
+          <div class="fld" id="g-own" hidden style="margin-top:12px"><label for="g-own-v">Oma summa (€)</label><input id="g-own-v" type="number" min="10" max="300" step="5" inputmode="numeric" placeholder="40"></div>
+        </div>
+        <div class="fld" id="g-svc-w" hidden><label for="g-svc">Teenus</label><select id="g-svc">
+            <option value="loikus">Meeste juukselõikus · 15 €</option>
+            <option value="fade">Fade · 18 €</option>
+            <option value="kombo">Lõikus + habe · 25 €</option>
+            <option value="raseerimine">Kuuma rätikuga raseerimine · 15 €</option>
+            <option value="habe">Habeme kujundamine · 12 €</option>
+            <option value="isa-poeg">Isa + poeg · 25 €</option>
+          </select></div>
+        <div class="fld"><span class="lbl">Foto värv</span>
+          <div class="swatches" role="group" aria-label="Kaardi värv">
+            <button type="button" data-c="" aria-pressed="true" style="background:#0f0f0f" aria-label="Must"></button>
+            <button type="button" data-c="red" aria-pressed="false" style="background:#cf3b22" aria-label="Punane"></button>
+            <button type="button" data-c="cream" aria-pressed="false" style="background:#efe9dd" aria-label="Kreem"></button>
+          </div>
+        </div>
+        <div class="two">
+          <div class="fld"><label for="g-to">Kellele</label><input id="g-to" type="text" maxlength="28" required><span class="err">Kirjuta saaja nimi.</span></div>
+          <div class="fld"><label for="g-from">Kellelt</label><input id="g-from" type="text" maxlength="28" required><span class="err">Kirjuta oma nimi.</span></div>
+        </div>
+        <div class="fld"><label for="g-msg">Soov <span class="opt">(kuni 120 tähemärki)</span></label><textarea id="g-msg" maxlength="120" placeholder="Palju õnne, isa!"></textarea></div>
+        <div class="two">
+          <div class="fld"><label for="g-phone">Sinu telefon</label><input id="g-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
+          <div class="fld"><label for="g-get">Kättesaamine</label><select id="g-get"><option>Tulen salongi järele</option><option>Saatke e-postiga (PDF)</option></select></div>
+        </div>
+        <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei võtab tellimuse kinnitamiseks minuga ühendust. <a href="#privaatsus">Privaatsus</a></span></label>
+        <button class="btn btn--red btn--wide" type="submit">Telli kinkekaart <span class="ar">→</span></button>
+        <p class="small muted">Kehtib 12 kuud. Tasumine salongis või arvega.</p>
+      </form>
+      <div class="done" id="g-done" hidden>
+        <span class="eyebrow eyebrow--muted">Tellimus vastu võetud</span>
+        <h2>Aitäh!</h2>
+        <p class="intro">Võtame ühendust ühe tööpäeva jooksul. Kaardi kood: <b id="g-done-code"></b>.</p>
+        <a class="btn btn--line" href="#avaleht">Avalehele <span class="ar">→</span></a>
+      </div>
+    </div>
+    <div class="gift-prev">
+      <span class="eyebrow eyebrow--muted" style="display:block;margin-bottom:22px">Eelvaade</span>
+      <div class="polaroid" aria-live="polite">
+        <div class="pic">
+          <div class="top"><span>Kinkekaart</span><span>Kohtla-Järve</span></div>
+          <div class="val" id="p-val">30 €</div>
+          <div class="bot"><span>Kood<br><span id="p-code"></span></span><b>Borei</b></div>
+        </div>
+        <div class="under"><p id="p-msg"></p><small><span>Kellele: <span id="p-to">Saaja</span></span><span>Kellelt: <span id="p-from">Sina</span></span></small></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="kkk" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / KKK</div>
+    <h1>Küsimused <em>& vastused</em></h1>
+    <p class="intro">Otsi märksõnaga või vali teema. Ei leidnud? Helista.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap faq-grid">
+    <aside class="faq-side">
+      <div class="fld search"><label for="faq-q">Otsi</label><input id="faq-q" type="search" placeholder="nt hilinemine"></div>
+      <div class="faq-cats" role="group" aria-label="Teemad">
+        <button type="button" data-cat="all" aria-pressed="true">Kõik</button>
+        <button type="button" data-cat="broneerimine" aria-pressed="false">Broneerimine</button>
+        <button type="button" data-cat="teenused" aria-pressed="false">Teenused</button>
+        <button type="button" data-cat="tasumine" aria-pressed="false">Tasumine</button>
+        <button type="button" data-cat="lapsed" aria-pressed="false">Lapsed</button>
+      </div>
+      <p style="margin-top:30px"><a class="btn btn--line" href="tel:+37251920155">Helista +372 5192 0155 <span class="ar">→</span></a></p>
+    </aside>
+    <div>
+      <div class="qa">
+      <details data-cat="broneerimine"><summary>Kas saab tulla ka ilma broneeringuta?</summary><div class="a"><span class="cat">Broneerimine</span><p>Jah, kui meistril on vaba aeg. Kindlam on enne helistada (+372 5192 0155) või broneerida veebis, eriti reedel ja laupäeval.</p></div></details>
+      <details data-cat="broneerimine"><summary>Kuidas broneeringut muuta või tühistada?</summary><div class="a"><span class="cat">Broneerimine</span><p>Helista või saada SMS numbrile +372 5192 0155. Palume teada anda vähemalt 3 tundi ette.</p></div></details>
+      <details data-cat="broneerimine"><summary>Mis saab, kui jään hiljaks?</summary><div class="a"><span class="cat">Broneerimine</span><p>Kuni 15 minutit mahub tavaliselt ära. Kui jääd rohkem hiljaks, helista: vajadusel lühendame teenust või pakume uut aega.</p></div></details>
+      <details data-cat="broneerimine"><summary>Kui kaugele ette saab aega võtta?</summary><div class="a"><span class="cat">Broneerimine</span><p>Veebis näed vabu aegu kaks nädalat ette. Kaugemaks ajaks helista.</p></div></details>
+      <details data-cat="teenused"><summary>Mis vahe on masinlõikusel ja tavalisel lõikusel?</summary><div class="a"><span class="cat">Teenused</span><p>Masinlõikus tehakse ühe või kahe otsikuga ühtlaseks. Tavalises lõikuses kasutame kääre ja masinat, teeme üleminekud ja kujundame soengu.</p></div></details>
+      <details data-cat="teenused"><summary>Mis on fade?</summary><div class="a"><span class="cat">Teenused</span><p>Sujuv üleminek lühikesest pikemaks külgedel ja kuklas. Võib alata nullist (skin fade) või jätta natuke pikkust (taper).</p></div></details>
+      <details data-cat="teenused"><summary>Kas lõikate ka naisi?</summary><div class="a"><span class="cat">Teenused</span><p>Oleme meeste salong, aga lühikesed masinlõikused teeme kõigile. Küsi telefoni teel.</p></div></details>
+      <details data-cat="teenused"><summary>Kas pean enne juuksed pesema?</summary><div class="a"><span class="cat">Teenused</span><p>Ei pea. Vajadusel peseme juuksed enne lõikust ja see sisaldub hinnas.</p></div></details>
+      <details data-cat="tasumine"><summary>Kuidas saab maksta?</summary><div class="a"><span class="cat">Tasumine</span><p>Pangakaardi või sularahaga salongis pärast teenust.</p></div></details>
+      <details data-cat="tasumine"><summary>Kui kaua kinkekaart kehtib?</summary><div class="a"><span class="cat">Tasumine</span><p>12 kuud alates ostmisest. Kehtivusaeg on kaardil kirjas.</p></div></details>
+      <details data-cat="tasumine"><summary>Kas kinkekaardi jääki saab hiljem kasutada?</summary><div class="a"><span class="cat">Tasumine</span><p>Jah. Kui teenus on kaardi summast odavam, jääb vahe kaardile järgmiseks korraks.</p></div></details>
+      <details data-cat="lapsed"><summary>Mis vanusest lõikate lapsi?</summary><div class="a"><span class="cat">Lapsed</span><p>Umbes 3. eluaastast. Poiste lõikuse hind kehtib kuni 12-aastastele.</p></div></details>
+      <details data-cat="lapsed"><summary>Kas lapsevanem võib juures olla?</summary><div class="a"><span class="cat">Lapsed</span><p>Muidugi. Väiksemad lapsed võivad istuda ka vanema süles.</p></div></details>
+      <details data-cat="lapsed"><summary>Mis on Isa + poeg?</summary><div class="a"><span class="cat">Lapsed</span><p>Kaks lõikust järjest. Broneeri üks aeg ja kirjuta lisainfosse lapse vanus.</p></div></details>
+      </div>
+      <p class="empty" id="faq-none" hidden style="margin-top:24px">Sellist küsimust ei leidnud. Helista +372 5192 0155, vastame kohe.</p>
+    </div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="kontakt" hidden>
+<section class="sec sec--dark">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--muted-d)">Kiireim on helistada</span>
+    <a class="phone-xl" href="tel:+37251920155" style="margin-top:18px">+372 5192 0155</a>
+    <div class="clist">
+      <div><span class="eyebrow">E-post</span><a href="mailto:irinabograya@gmail.com">irinabograya@gmail.com</a></div>
+      <div><span class="eyebrow">Aadress</span><a href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Keskallee 20, Kohtla-Järve ↗</a></div>
+      <div><span class="eyebrow">Sotsiaalmeedia</span><a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook ↗</a></div>
+    </div>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <form class="form" data-done="c-done" novalidate>
+        <h2 style="margin-bottom:8px">Kirjuta <em>meile</em></h2>
+        <div class="two">
+          <div class="fld"><label for="c-name">Nimi</label><input id="c-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
+          <div class="fld"><label for="c-phone">Telefon</label><input id="c-phone" type="tel" autocomplete="tel" required><span class="err">Kontrolli numbrit.</span></div>
+        </div>
+        <div class="fld"><label for="c-topic">Teema</label><select id="c-topic"><option>Üldine küsimus</option><option>Broneering</option><option>Kinkekaart</option><option>Grupiaeg (pulm, sünnipäev)</option><option>Tagasiside</option></select></div>
+        <div class="fld"><label for="c-msg">Sõnum</label><textarea id="c-msg" required></textarea><span class="err">Kirjuta sõnum.</span></div>
+        <label class="chk"><input type="checkbox" required><span>Olen nõus, et Borei kasutab minu andmeid vastamiseks. <a href="#privaatsus">Privaatsus</a></span></label>
+        <button class="btn btn--red" type="submit">Saada <span class="ar">→</span></button>
+      </form>
+      <div class="done" id="c-done" hidden><span class="eyebrow eyebrow--muted">Saadetud</span><h2>Aitäh!</h2><p class="intro">Vastame tavaliselt samal päeval. Kiire küsimuse korral helista.</p></div>
+    </div>
+    <div>
+      <span class="eyebrow eyebrow--muted">Lahtiolekuajad</span>
+      <h2 style="margin:12px 0 18px">Iga <em>päev</em></h2>
+      <table class="hours"><caption class="sr-only">Lahtiolekuajad</caption><tbody>
+  <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+  <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+  <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+</tbody></table>
+      <p class="muted">Riigipühadel võivad ajad erineda. Kontrolli Facebookist või helista.</p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--dark">
+  <div class="wrap visit">
+    <div class="rise">
+      <span class="eyebrow">Asukoht</span>
+      <p class="addr">Keskallee <em>20</em></p>
+      <p style="color:var(--muted-d)">30322 Kohtla-Järve, Ida-Viru maakond. Parkimine maja ees.</p>
+      <table class="hours"><caption class="sr-only">Lahtiolekuajad</caption><tbody>
+  <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+  <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+  <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+</tbody></table>
+      <div class="btns"><a class="btn btn--cream" href="tel:+37251920155">Helista <span class="ar">→</span></a><a class="btn btn--ghost-d" href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Teejuhised <span class="ar">↗</span></a></div>
+    </div>
+    <div class="map"><iframe src="https://www.google.com/maps?q=Keskallee%2020%2C%2030322%20Kohtla-J%C3%A4rve&output=embed" title="Borei asukoht kaardil: Keskallee 20, Kohtla-Järve" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="privaatsus" hidden>
+<section class="phead">
+  <div class="wrap">
+    <div class="crumb"><a href="#avaleht">Avaleht</a> / Privaatsus</div>
+    <h1>Privaatsus</h1>
+    <p class="intro">Kuidas Borei OÜ kasutab broneerimisel ja vormides antud andmeid.</p>
+  </div>
+</section>
+<section class="sec">
+  <div class="wrap prose">
+    <p><b>Vastutav töötleja:</b> Borei OÜ (registrikood 12807446), Keskallee 20, 30322 Kohtla-Järve. Kontakt: +372 5192 0155, irinabograya@gmail.com.</p>
+    <h2>Milliseid andmeid kogume</h2>
+    <ul><li>Nimi ja telefon, kui broneerid aja, tellid kinkekaardi või kirjutad meile.</li><li>Broneeringu andmed: teenus, meister, kuupäev ja kellaaeg.</li><li>Lisainfo, mille ise vormi kirjutad.</li></ul>
+    <h2>Milleks neid kasutame</h2>
+    <ul><li>Broneeringu kinnitamiseks ja meeldetuletuseks.</li><li>Kinkekaardi tellimuse täitmiseks.</li><li>Sinu küsimusele vastamiseks.</li></ul>
+    <p>Me ei müü ega jaga andmeid kolmandatele isikutele turunduseks.</p>
+    <h2>Kui kaua hoiame</h2>
+    <p>Broneeringu andmeid kuni 12 kuud, kinkekaardi andmeid kaardi kehtivuse lõpuni ja raamatupidamise dokumente seadusega nõutud aja.</p>
+    <h2>Sinu õigused</h2>
+    <p>Võid küsida, milliseid andmeid sinu kohta hoiame, neid parandada või lasta kustutada. Kirjuta irinabograya@gmail.com. Kaebuse saad esitada Andmekaitse Inspektsioonile (www.aki.ee).</p>
+    <h2>Küpsised ja kaart</h2>
+    <p>Sait ei kasuta jälgimisküpsiseid. Avalehel ja kontaktilehel on Google Mapsi kaart, millele kehtivad Google'i tingimused.</p>
+  </div>
+</section>
+</div>
+</main>
+<footer class="ftr">
+  <div class="wrap">
+    <div class="cols">
+      <div><p class="lead">Lõikus, mida <em>märgatakse.</em> Keskallee 20, aastast 2015.</p></div>
+      <div><h4>Kontakt</h4><ul>
+        <li><a href="tel:+37251920155">+372 5192 0155</a></li>
+        <li><a href="mailto:irinabograya@gmail.com">irinabograya@gmail.com</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Keskallee 20, 30322 Kohtla-Järve</a></li>
+        <li><a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul></div>
+      <div><h4>Lahti</h4><table class="hours"><caption class="sr-only">Lahtiolekuajad</caption><tbody>
+  <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+  <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+  <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+</tbody></table></div>
+      <div><h4>Lehed</h4><ul>
+          <li><a href="#broneeri">Broneeri aeg</a></li>
+          <li><a href="#teenused">Teenused</a></li>
+          <li><a href="#galerii">Tööd</a></li>
+          <li><a href="#meist">Meist</a></li>
+          <li><a href="#kinkekaart">Kinkekaart</a></li>
+          <li><a href="#kkk">KKK</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+      </ul></div>
+    </div>
+    <div class="word" aria-hidden="true">Bor<em>e</em>i</div>
+    <div class="legal"><span>© <span data-year>2026</span> Borei OÜ · registrikood 12807446</span><span><a href="#privaatsus">Privaatsus</a> · <a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></span></div>
+  </div>
+</footer>
+<div class="mbar"><a href="tel:+37251920155" aria-label="Helista +372 5192 0155">☎</a><a href="#broneeri">Broneeri aeg →</a></div>
+<script>
+/* BOREI v2 · saidi skriptid (ilma sõltuvusteta) */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* Lahtiolekuajad: 0 = pühapäev ... 6 = laupäev */
+  var HOURS = { 0: [10, 16], 1: [10, 19], 2: [10, 19], 3: [10, 19], 4: [10, 19], 5: [10, 19], 6: [10, 16] };
+  var DOW = ["P", "E", "T", "K", "N", "R", "L"];
+  var DOW_LONG = ["pühapäev", "esmaspäev", "teisipäev", "kolmapäev", "neljapäev", "reede", "laupäev"];
+  var MON = ["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"];
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function iso(d) { return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()); }
+  function parseIso(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  function fmt(d) { return DOW_LONG[d.getDay()] + ", " + d.getDate() + ". " + MON[d.getMonth()]; }
+
+  function toast(msg) {
+    var t = $(".toast");
+    if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("show"); }, 2800);
+  }
+  /* Vormi saatmine. Kuulame ka nupu klikki, sest liivakastis (sandbox ilma allow-forms) submit-sündmust ei tule. */
+  function onSubmit(form, fn) {
+    form.addEventListener("submit", function (e) { e.preventDefault(); fn(); });
+    $$('button[type="submit"]', form).forEach(function (b) { b.addEventListener("click", function (e) { e.preventDefault(); fn(); }); });
+  }
+  /* Navigeerimine: ühe faili versioonis asendab ruuter selle */
+  function go(url) { if (window.boreiGo) window.boreiGo(url); else location.href = url; }
+
+  /* ---------- Menüü ---------- */
+  var ov = $(".overlay"), lastFocus = null;
+  function menu(open) {
+    if (!ov) return;
+    if (open) lastFocus = document.activeElement;
+    ov.classList.toggle("open", open);
+    ov.setAttribute("aria-hidden", String(!open));
+    document.body.classList.toggle("menu-open", open);
+    $$(".menu-btn").forEach(function (b) { b.setAttribute("aria-expanded", String(open)); });
+    if (open) $(".close", ov).focus(); else if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  window.boreiCloseMenu = function () { if (ov && ov.classList.contains("open")) menu(false); };
+  $$("[data-open-menu]").forEach(function (b) { b.addEventListener("click", function () { menu(true); }); });
+  $$("[data-close-menu]").forEach(function (b) { b.addEventListener("click", function () { menu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") { window.boreiCloseMenu(); closeLb(); } });
+
+  /* ---------- Mobiili riba ---------- */
+  var mbar = $(".mbar");
+  if (mbar) {
+    document.body.classList.add("has-mbar");
+    var onScroll = function () { mbar.classList.toggle("show", window.scrollY > 420); };
+    window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+  }
+
+  /* ---------- Täna ---------- */
+  var now = new Date(), today = now.getDay();
+  $$(".hours tr[data-day]").forEach(function (tr) {
+    if (tr.getAttribute("data-day").split(",").indexOf(String(today)) > -1) tr.classList.add("today");
+  });
+  $$("[data-status]").forEach(function (el) {
+    var h = HOURS[today], t = now.getHours() + now.getMinutes() / 60, open = t >= h[0] && t < h[1];
+    el.classList.toggle("is-open", open);
+    el.textContent = open ? "Praegu avatud · kuni " + h[1] + ":00" : (t < h[0] ? "Avame täna " + h[0] + ":00" : "Suletud · homme " + HOURS[(today + 1) % 7][0] + ":00");
+  });
+  $$("[data-year]").forEach(function (el) { el.textContent = now.getFullYear(); });
+
+  /* ---------- Ilmumine ---------- */
+  var rises = $$(".rise");
+  if ("IntersectionObserver" in window && !reduce) {
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -6% 0px" });
+    rises.forEach(function (el) { io.observe(el); });
+  } else rises.forEach(function (el) { el.classList.add("in"); });
+
+  /* ---------- Hero slaidid (AVNIER) ---------- */
+  var slides = $$(".hero .slide"), dots = $$(".dots button"), cur = 0, timer = null;
+  function show(i) {
+    cur = (i + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle("on", k === cur); });
+    dots.forEach(function (d, k) {
+      d.classList.remove("on"); d.setAttribute("aria-pressed", String(k === cur));
+      if (k === cur) { void d.offsetWidth; d.classList.add("on"); }
+    });
+    clearTimeout(timer);
+    if (!reduce) timer = setTimeout(function () { show(cur + 1); }, 6000);
+  }
+  if (slides.length) {
+    dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); }); });
+    show(0);
+  }
+
+  /* ---------- Kiirbroneerimine (Fresha) ---------- */
+  var quick = $("#quick");
+  if (quick) {
+    var qd = $("#q-day");
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(); d.setDate(d.getDate() + i);
+      var o = document.createElement("option"); o.value = iso(d);
+      o.textContent = i === 0 ? "Täna" : i === 1 ? "Homme" : DOW_LONG[d.getDay()].charAt(0).toUpperCase() + DOW_LONG[d.getDay()].slice(1) + " " + d.getDate() + "." + pad(d.getMonth() + 1);
+      qd.appendChild(o);
+    }
+    onSubmit(quick, function () {
+      var p = new URLSearchParams();
+      if ($("#q-svc").value) p.set("teenus", $("#q-svc").value);
+      p.set("paev", qd.value);
+      go(quick.getAttribute("action") + "?" + p.toString());
+    });
+  }
+
+  /* ---------- Teenuste rida (Aesop) ---------- */
+  $$("[data-rail]").forEach(function (wrap) {
+    var rail = $(".rail", wrap), bar = $(".rail-bar span", wrap);
+    function upd() {
+      var max = rail.scrollWidth - rail.clientWidth, w = rail.clientWidth / rail.scrollWidth * 100;
+      bar.style.width = Math.max(w, 8) + "%";
+      bar.style.left = (max > 0 ? rail.scrollLeft / max * (100 - w) : 0) + "%";
+    }
+    rail.addEventListener("scroll", upd, { passive: true }); window.addEventListener("resize", upd); upd();
+    $$("[data-rail-go]", wrap).forEach(function (b) {
+      b.addEventListener("click", function () { rail.scrollBy({ left: +b.getAttribute("data-rail-go") * rail.clientWidth * .8, behavior: reduce ? "auto" : "smooth" }); });
+    });
+    wrap._upd = upd;
+  });
+  window.boreiRails = function () { $$("[data-rail]").forEach(function (w) { if (w._upd) w._upd(); }); };
+
+  /* ---------- Galerii ---------- */
+  var works = $(".works"), lb = $(".lb"), lbI = 0;
+  function visible() { return $$(".works figure").filter(function (f) { return !f.hidden; }); }
+  function openLb(i) {
+    var items = visible(); if (!lb || !items.length) return;
+    lbI = (i + items.length) % items.length;
+    var f = items[lbI];
+    $(".lb-img", lb).innerHTML = $(".ph", f).outerHTML;
+    $(".lb-count", lb).textContent = pad(lbI + 1) + " / " + pad(items.length);
+    $(".lb-bot em", lb).textContent = $("figcaption em", f).textContent;
+    $(".lb-cat", lb).textContent = $("figcaption span", f).textContent;
+    if (!lb.classList.contains("open")) { lastFocus = document.activeElement; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false"); document.body.classList.add("menu-open"); $(".lb-close", lb).focus(); }
+  }
+  function closeLb() {
+    if (!lb || !lb.classList.contains("open")) return;
+    lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); document.body.classList.remove("menu-open");
+    if (lastFocus) lastFocus.focus();
+  }
+  if (works) {
+    var figs = $$("figure", works);
+    $$(".tab[data-f]").forEach(function (t) {
+      var f = t.getAttribute("data-f");
+      var sup = document.createElement("sup");
+      sup.textContent = "(" + (f === "all" ? figs.length : figs.filter(function (x) { return x.dataset.cat === f; }).length) + ")";
+      t.appendChild(sup);
+      t.addEventListener("click", function () {
+        $$(".tab[data-f]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === t)); });
+        figs.forEach(function (x) { x.hidden = !(f === "all" || x.dataset.cat === f); x.classList.toggle("big", f === "all" && x.hasAttribute("data-big")); });
+      });
+    });
+    figs.forEach(function (f) { $("button", f).addEventListener("click", function () { openLb(visible().indexOf(f)); }); });
+  }
+  if (lb) {
+    $(".lb-close", lb).addEventListener("click", closeLb);
+    $(".lb-prev", lb).addEventListener("click", function () { openLb(lbI - 1); });
+    $(".lb-next", lb).addEventListener("click", function () { openLb(lbI + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("open")) return;
+      if (e.key === "ArrowLeft") openLb(lbI - 1);
+      if (e.key === "ArrowRight") openLb(lbI + 1);
+    });
+  }
+
+  /* ---------- KKK: otsing ja teemad ---------- */
+  var qa = $(".qa");
+  if (qa) {
+    var cat = "all", search = $("#faq-q"), none = $("#faq-none");
+    function filter() {
+      var q = (search.value || "").trim().toLowerCase(), n = 0;
+      $$("details", qa).forEach(function (d) {
+        var ok = (cat === "all" || d.dataset.cat === cat) && (!q || d.textContent.toLowerCase().indexOf(q) > -1);
+        d.hidden = !ok; if (ok) n++;
+        if (q && ok) d.open = true;
+      });
+      none.hidden = n > 0;
+    }
+    search.addEventListener("input", filter);
+    $$(".faq-cats button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        cat = b.dataset.cat;
+        $$(".faq-cats button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        filter();
+      });
+    });
+  }
+
+  /* ---------- Vormid ---------- */
+  function validate(form) {
+    var ok = true, first = null;
+    $$("[required]", form).forEach(function (el) {
+      var w = el.closest(".fld") || el.closest(".chk");
+      var v = el.type === "checkbox" ? el.checked : el.value.trim() !== "";
+      if (v && el.type === "email" && el.value.trim()) v = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      if (v && el.type === "tel") v = el.value.replace(/\D/g, "").length >= 7;
+      if (w) w.classList.toggle("bad", !v);
+      if (!v) { ok = false; if (!first) first = el; }
+    });
+    if (first) first.focus();
+    return ok;
+  }
+  document.addEventListener("input", function (e) { var w = e.target.closest && e.target.closest(".bad"); if (w) w.classList.remove("bad"); });
+  $$("form[data-done]").forEach(function (f) {
+    onSubmit(f, function () {
+      if (!validate(f)) return;
+      var d = document.getElementById(f.getAttribute("data-done"));
+      f.hidden = true; d.hidden = false; d.setAttribute("tabindex", "-1"); d.focus();
+    });
+  });
+
+  /* ---------- Broneerimine ---------- */
+  var bk = $("#bk");
+  if (bk) {
+    var SV = JSON.parse($("#svc-json").textContent), MS = JSON.parse($("#mst-json").textContent);
+    var st = { svc: null, mst: null, day: null, time: null }, step = 1, started = false;
+    var sv = function (id) { return SV.filter(function (s) { return s.id === id; })[0]; };
+    var ms = function (id) { return MS.filter(function (m) { return m.id === id; })[0]; };
+
+    /* 1 */
+    var sl = $("#bk-svcs"), grp = "";
+    SV.forEach(function (s) {
+      if (s.group !== grp) { grp = s.group; var g = document.createElement("div"); g.className = "group-t"; g.textContent = grp; sl.appendChild(g); }
+      var l = document.createElement("label"); l.className = "card-opt";
+      l.innerHTML = '<input type="radio" name="svc" value="' + s.id + '"><span class="t">' + s.name + '</span><span class="p">' + s.price + ' €</span><span class="d">' + s.desc + '</span><span class="m">' + s.dur + ' min</span>';
+      sl.appendChild(l);
+    });
+    /* 2 */
+    var pl = $("#bk-people");
+    MS.forEach(function (m) {
+      var l = document.createElement("label"); l.className = "person-opt";
+      l.innerHTML = '<input type="radio" name="mst" value="' + m.id + '">' +
+        (m.id === "any" ? '<span class="any">Ükskõik kes,<br>peaasi et kiiresti</span>' : '<span class="ph"><i>Portree</i></span>') +
+        '<span class="nm"><b>' + m.name + '</b><small>' + m.role + '</small></span>';
+      pl.appendChild(l);
+    });
+    function mark(name) { $$('input[name="' + name + '"]', bk).forEach(function (i) { i.parentNode.classList.toggle("on", i.checked); }); }
+    bk.addEventListener("change", function (e) {
+      if (e.target.name === "svc") { st.svc = e.target.value; st.time = null; mark("svc"); slots(); }
+      if (e.target.name === "mst") { st.mst = e.target.value; st.time = null; mark("mst"); slots(); }
+      upd();
+    });
+    /* 3: kalender, esmaspäevast algav nädal */
+    var cal = $("#bk-cal");
+    ["E", "T", "K", "N", "R", "L", "P"].forEach(function (d) { var s = document.createElement("span"); s.className = "dow"; s.textContent = d; cal.appendChild(s); });
+    var start = new Date(); start.setHours(0, 0, 0, 0);
+    var lead = (start.getDay() + 6) % 7;
+    for (var k = 0; k < lead; k++) { var b0 = document.createElement("button"); b0.type = "button"; b0.disabled = true; b0.setAttribute("aria-hidden", "true"); b0.tabIndex = -1; cal.appendChild(b0); }
+    for (var n = 0; n < 14; n++) {
+      var dd = new Date(start); dd.setDate(start.getDate() + n);
+      var b = document.createElement("button"); b.type = "button"; b.dataset.day = iso(dd); b.setAttribute("aria-pressed", "false");
+      b.setAttribute("aria-label", fmt(dd));
+      b.innerHTML = "<b>" + dd.getDate() + "</b><small>" + (n === 0 ? "täna" : MON[dd.getMonth()].slice(0, 3)) + "</small>";
+      cal.appendChild(b);
+    }
+    cal.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-day]"); if (!b) return;
+      pickDay(b.dataset.day);
+    });
+    function pickDay(day) {
+      var b = $('button[data-day="' + day + '"]', cal); if (!b) return false;
+      $$("button[data-day]", cal).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      st.day = day; st.time = null; slots(); upd(); return true;
+    }
+    function rng(str) { var h = 7; for (var i = 0; i < str.length; i++) h = (h * 33 + str.charCodeAt(i)) >>> 0; return function () { h = (h * 1103515245 + 12345) >>> 0; return (h >>> 8) / 16777216; }; }
+    var sw = $("#bk-slots");
+    function slots() {
+      sw.innerHTML = "";
+      if (!st.day) { sw.innerHTML = '<p class="empty">Vali kalendrist päev.</p>'; return; }
+      var d = parseIso(st.day), h = HOURS[d.getDay()], dur = st.svc ? sv(st.svc).dur : 30;
+      var r = rng(st.day + (st.mst || "any")), nowD = new Date(), isT = d.toDateString() === nowD.toDateString();
+      var groups = [["Hommik", 0, 12], ["Päev", 12, 16], ["Õhtu", 16, 24]], free = 0;
+      groups.forEach(function (g) {
+        var list = document.createElement("div"); list.className = "slot-list"; var cnt = 0;
+        for (var m = h[0] * 60; m + dur <= h[1] * 60; m += 30) {
+          if (m < g[1] * 60 || m >= g[2] * 60) continue;
+          var lab = pad(Math.floor(m / 60)) + ":" + pad(m % 60);
+          var taken = r() < (st.mst === "any" ? .2 : .38) || (isT && m <= nowD.getHours() * 60 + nowD.getMinutes() + 30);
+          var s = document.createElement("button"); s.type = "button"; s.className = "slot"; s.textContent = lab;
+          s.setAttribute("aria-pressed", String(st.time === lab));
+          if (taken) { s.disabled = true; s.setAttribute("aria-label", lab + " hõivatud"); } else free++;
+          list.appendChild(s); cnt++;
+        }
+        if (!cnt) return;
+        var w = document.createElement("div"); w.className = "slot-group";
+        w.innerHTML = "<h4>" + g[0] + "</h4>"; w.appendChild(list); sw.appendChild(w);
+      });
+      if (!free) sw.innerHTML = '<p class="empty">Sel päeval on kõik ajad võetud. Proovi mõnda teist päeva.</p>';
+    }
+    sw.addEventListener("click", function (e) {
+      var s = e.target.closest(".slot"); if (!s || s.disabled) return;
+      $$(".slot", sw).forEach(function (x) { x.setAttribute("aria-pressed", String(x === s)); });
+      st.time = s.textContent; upd();
+    });
+
+    var next = $("#bk-next"), back = $("#bk-back");
+    function valid(n) { return n === 1 ? !!st.svc : n === 2 ? !!st.mst : n === 3 ? !!(st.day && st.time) : true; }
+    function upd() {
+      var s = st.svc && sv(st.svc);
+      $("#bar-t").textContent = s ? s.name + " · " + s.price + " €" : "Vali teenus";
+      var bits = [];
+      if (s) bits.push(s.dur + " min");
+      if (st.mst) bits.push(ms(st.mst).name);
+      if (st.day) bits.push(fmt(parseIso(st.day)).split(",")[1].trim());
+      if (st.time) bits.push(st.time);
+      $("#bar-s").textContent = bits.length ? bits.join(" · ") : "Samm " + step + " / 4";
+      next.disabled = !valid(step);
+      if (step === 4) {
+        $("#r-svc").textContent = s.name; $("#r-mst").textContent = ms(st.mst).name;
+        $("#r-day").textContent = fmt(parseIso(st.day)); $("#r-time").textContent = st.time + " (" + s.dur + " min)";
+        $("#r-sum").textContent = s.price + " €";
+      }
+    }
+    function goStep(n) {
+      step = n;
+      $$(".bk-step", bk).forEach(function (el) { el.hidden = +el.dataset.step !== n; });
+      $$(".bk-progress li").forEach(function (li, i) { li.classList.toggle("past", i + 1 < n); li.classList.toggle("cur", i + 1 === n); if (i + 1 === n) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current"); });
+      back.style.visibility = n === 1 ? "hidden" : "visible";
+      next.innerHTML = (n === 4 ? "Kinnita" : "Edasi") + ' <span class="ar">→</span>';
+      upd();
+      if (started) { var h = $('.bk-step[data-step="' + n + '"] h2', bk); h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); bk.scrollIntoView({ block: "start", behavior: reduce ? "auto" : "smooth" }); }
+      started = true;
+    }
+    next.addEventListener("click", function () {
+      if (!valid(step)) return;
+      if (step < 4) return goStep(step + 1);
+      if (!validate($("#bk-form"))) return;
+      var s = sv(st.svc), d = parseIso(st.day), tp = st.time.split(":");
+      $("#done-name").textContent = $("#b-name").value.trim().split(" ")[0];
+      $("#done-txt").textContent = s.name + ", " + fmt(d) + " kell " + st.time + ". Meister: " + ms(st.mst).name + ". Hind " + s.price + " €, tasumine salongis.";
+      var startD = new Date(d); startD.setHours(+tp[0], +tp[1]);
+      var endD = new Date(startD.getTime() + s.dur * 60000);
+      var ics = function (x) { return x.getFullYear() + pad(x.getMonth() + 1) + pad(x.getDate()) + "T" + pad(x.getHours()) + pad(x.getMinutes()) + "00"; };
+      var body = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Borei//Broneering//ET", "BEGIN:VEVENT", "UID:" + Date.now() + "@borei", "DTSTAMP:" + ics(new Date()), "DTSTART:" + ics(startD), "DTEND:" + ics(endD), "SUMMARY:Borei: " + s.name, "LOCATION:Keskallee 20\\, Kohtla-Järve", "END:VEVENT", "END:VCALENDAR"].join("\r\n");
+      try { $("#done-ics").href = URL.createObjectURL(new Blob([body], { type: "text/calendar" })); } catch (err) { $("#done-ics").hidden = true; }
+      $("#bk-flow").hidden = true;
+      var done = $("#bk-done"); done.hidden = false; done.setAttribute("tabindex", "-1"); done.focus();
+      bk.scrollIntoView({ block: "start" });
+    });
+    back.addEventListener("click", function () { if (step > 1) goStep(step - 1); });
+
+    /* Eelvalik: ?teenus=...&paev=... */
+    function reset() {
+      st = { svc: null, mst: null, day: null, time: null };
+      $$("input", bk).forEach(function (i) { if (i.type === "radio" || i.type === "checkbox") i.checked = false; else i.value = ""; });
+      $("#b-note").value = ""; $$(".on", bk).forEach(function (x) { x.classList.remove("on"); });
+      $$("button[data-day]", cal).forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+      $("#bk-done").hidden = true; $("#bk-flow").hidden = false; started = false; slots(); goStep(1);
+    }
+    window.boreiBooking = function (params) {
+      if (!$("#bk-done").hidden) reset();
+      var t = params.get("teenus"), p = params.get("paev");
+      if (t && sv(t)) { var r = $('input[name="svc"][value="' + t + '"]', bk); r.checked = true; st.svc = t; st.time = null; mark("svc"); }
+      if (p) pickDay(p);
+      slots(); upd();
+      if (st.svc && step === 1) goStep(2);
+    };
+    slots();
+    goStep(1);
+    if (!window.boreiGo) window.boreiBooking(new URLSearchParams(location.search));
+  }
+
+  /* ---------- Kinkekaart ---------- */
+  var gf = $("#gift");
+  if (gf) {
+    var pol = $(".polaroid"), amount = "30 €";
+    var code = "BOREI-"; for (var c = 0; c < 5; c++) code += "ACDEFGHJKLMNPRSTUVXYZ2345679".charAt(Math.floor(Math.random() * 28));
+    $("#p-code").textContent = code;
+    function draw() {
+      var type = $('input[name="gt"]:checked', gf).value;
+      $$(".seg label", gf).forEach(function (l) { l.classList.toggle("on", $("input", l).checked); });
+      $("#g-amt").hidden = type !== "summa"; $("#g-svc-w").hidden = type === "summa";
+      var val = $("#p-val");
+      if (type === "summa") { val.textContent = amount; val.classList.remove("long"); }
+      else { var o = $("#g-svc").selectedOptions[0]; val.textContent = o.text.split(" · ")[0]; val.classList.add("long"); }
+      $("#p-to").textContent = $("#g-to").value.trim() || "Saaja";
+      $("#p-from").textContent = $("#g-from").value.trim() || "Sina";
+      $("#p-msg").textContent = $("#g-msg").value.trim();
+    }
+    $$("[data-amt]", gf).forEach(function (b) {
+      b.addEventListener("click", function () {
+        $$("[data-amt]", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        var v = b.dataset.amt; $("#g-own").hidden = v !== "muu";
+        if (v === "muu") { $("#g-own-v").focus(); amount = ($("#g-own-v").value || "0") + " €"; } else amount = v + " €";
+        draw();
+      });
+    });
+    $("#g-own-v").addEventListener("input", function () { amount = (this.value || "0") + " €"; draw(); });
+    $$(".swatches button", gf).forEach(function (b) {
+      b.addEventListener("click", function () {
+        $$(".swatches button", gf).forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        pol.className = "polaroid " + b.dataset.c;
+      });
+    });
+    gf.addEventListener("input", draw); gf.addEventListener("change", draw);
+    onSubmit(gf, function () {
+      if ($('input[name="gt"]:checked', gf).value === "summa" && parseInt(amount, 10) < 10) { toast("Väikseim summa on 10 €."); return; }
+      if (!validate(gf)) return;
+      gf.hidden = true; $("#g-done-code").textContent = code;
+      var d = $("#g-done"); d.hidden = false; d.setAttribute("tabindex", "-1"); d.focus();
+    });
+    draw();
+  }
+})();
+
+
+/* Ühe faili ruuter: #leht ja #leht?param=vaartus */
+(function () {
+  "use strict";
+  var META = {"avaleht": ["Borei · meeste juuksur Kohtla-Järvel", "Borei on meeste juuksurisalong Kohtla-Järvel, Keskallee 20. Lõikus, fade, habe ja raseerimine. Broneeri aeg veebis."], "teenused": ["Teenused ja hinnad · Borei", "Borei hinnakiri: meeste juukselõikus, fade, masinlõikus, habe, raseerimine ja poiste lõikus Kohtla-Järvel."], "galerii": ["Tööd · Borei", "Borei tööd: fade, klassikalised lõikused, habemed ja poiste lõikused. Filtreeri stiili järgi."], "meist": ["Meist · Borei", "Borei lugu: meeste juuksurisalong Kohtla-Järvel aastast 2015. Omanik Irina Oja ja meistrid."], "broneeri": ["Broneeri aeg · Borei", "Broneeri aeg Borei meeste juuksurisalongi Kohtla-Järvel: teenus, meister, aeg ja kinnitus."], "kinkekaart": ["Kinkekaart · Borei", "Borei kinkekaart: kingi meeste lõikus või habemehooldus. Vali summa või teenus ja vaata eelvaadet."], "kkk": ["KKK · Borei", "Korduma kippuvad küsimused: broneerimine, hilinemine, tasumine, kinkekaardid ja laste lõikused Boreis."], "kontakt": ["Kontakt · Borei", "Borei kontakt: Keskallee 20, Kohtla-Järve. Telefon +372 5192 0155. Lahti iga päev."], "privaatsus": ["Privaatsus · Borei", "Borei OÜ privaatsuspoliitika: millised andmed kogume broneerimisel ja kuidas neid kasutame."]};
+  var pages = [].slice.call(document.querySelectorAll(".page[data-page]")), current = null;
+  function route(hash) {
+    var h = decodeURIComponent(String(hash == null ? location.hash : hash).replace(/^#/, ""));
+    var m = h.match(/^([a-z-]+)(?:\?(.*))?$/), name = m && META[m[1]] ? m[1] : null;
+    if (!name) {
+      var el = h && document.getElementById(h);
+      if (el) { el.setAttribute("tabindex", "-1"); el.focus({ preventScroll: true }); el.scrollIntoView(); return; }
+      if (current) return;
+      name = "avaleht";
+    }
+    var changed = name !== current; current = name;
+    pages.forEach(function (p) { p.hidden = p.getAttribute("data-page") !== name; });
+    document.querySelectorAll(".nav a, .overlay a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + name) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    document.body.classList.toggle("no-mbar", name === "broneeri");
+    document.title = META[name][0];
+    var d = document.querySelector('meta[name="description"]'); if (d) d.setAttribute("content", META[name][1]);
+    if (window.boreiCloseMenu) window.boreiCloseMenu();
+    if (name === "broneeri" && m && m[2] && window.boreiBooking) window.boreiBooking(new URLSearchParams(m[2]));
+    if (changed) window.scrollTo(0, 0);
+    if (window.boreiRails) window.boreiRails();
+    document.querySelectorAll('.page:not([hidden]) .rise').forEach(function (r) { if (r.getBoundingClientRect().top < innerHeight) r.classList.add("in"); });
+  }
+  window.boreiGo = function (href) { try { history.pushState(null, "", href); } catch (e) {} route(href); };
+  window.addEventListener("hashchange", function () { route(); });
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault(); window.boreiGo(a.getAttribute("href"));
+  });
+  route();
+})();
+</script>
+</body>
+</html>
