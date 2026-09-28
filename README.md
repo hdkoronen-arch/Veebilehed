@@ -40,3 +40,9 @@ Silt kaob automaatselt, kui kohatäite sees on pilt.
   Päris saatmiseks ühenda need broneerimissüsteemi / vormiteenusega (nt Formspree, Netlify Forms) ja e-pood makselahendusega.
 - `privaatsus.html` ja `tingimused.html` on näidistekstid — lase juristil üle vaadata.
 - Päis ja jalus on igas HTML-failis korratud; menüü muutmisel uuenda kõiki faile.
+
+## Teised saidid selles repos
+| Kaust | Ettevõte |
+|---|---|
+| `terav/` | Salong Siid, terav ja minimalistlik variant |
+| `borei/` | Borei OÜ, meeste juuksur Kohtla-Järvel (vt `borei/BRIEF.md`) |

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Broneeri aeg · Borei</title>
+<meta name="description" content="Broneeri aeg Borei meeste juuksurisalongi Kohtla-Järvel: vali teenus, meister ja aeg.">
+<meta name="theme-color" content="#ebe7df">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c3e65'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='20' fill='%23ebe7df' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#sisu">Liigu sisu juurde</a>
+<div class="topbar">
+  <div class="wrap">
+    <span class="status" data-status>Keskallee 20, Kohtla-Järve</span>
+    <span><span class="hide-s"><a href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Keskallee 20, Kohtla-Järve</a> · </span><a href="tel:+37251920155">+372 5192 0155</a></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Borei avaleht"><b>BOREI</b><span>Meeste juuksur · 2015</span></a>
+    <nav class="main-nav" aria-label="Peamenüü">
+      <ul>
+        <li><a href="index.html">Avaleht</a></li>
+        <li><a href="teenused.html">Teenused</a></li>
+        <li><a href="galerii.html">Tööd</a></li>
+        <li><a href="meist.html">Meist</a></li>
+        <li><a href="kinkekaart.html">Kinkekaart</a></li>
+        <li><a href="kkk.html">KKK</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="hdr-phone" href="tel:+37251920155">+372 5192 0155</a>
+    <a class="btn btn--accent hdr-book" href="broneeri.html">Broneeri aeg</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu-open><span class="sr-only">Ava menüü</span><i></i><i></i><i></i></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <div class="mn-top"><b>BOREI</b><button class="close" type="button" data-menu-close aria-label="Sulge menüü">×</button></div>
+  <nav aria-label="Mobiilimenüü">
+    <ul>
+      <li><a href="index.html">Avaleht<small>01</small></a></li>
+      <li><a href="teenused.html">Teenused<small>02</small></a></li>
+      <li><a href="galerii.html">Tööd<small>03</small></a></li>
+      <li><a href="meist.html">Meist<small>04</small></a></li>
+      <li><a href="kinkekaart.html">Kinkekaart<small>05</small></a></li>
+      <li><a href="kkk.html">KKK<small>06</small></a></li>
+      <li><a href="kontakt.html">Kontakt<small>07</small></a></li>
+      <li><a href="broneeri.html">Broneeri aeg<small>08</small></a></li>
+    </ul>
+  </nav>
+  <div class="mn-foot">
+    <a href="tel:+37251920155">+372 5192 0155</a>
+    <span>Keskallee 20, 30322 Kohtla-Järve</span>
+    <span>E–R 10–19 · L–P 10–16</span>
+  </div>
+</div>
+<main id="sisu">
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Avaleht</a> / Broneeri aeg</div>
+    <h1>Broneeri<br>aeg</h1>
+    <p class="lead">Neli sammu: teenus, meister, aeg ja sinu andmed. Tasumine salongis.</p>
+  </div>
+</section>
+<section class="section section--tight">
+  <div class="wrap booking" id="booking">
+    <div>
+      <div id="bk-flow">
+        <ol class="steps">
+          <li class="current"><b>01</b><span>Teenus</span></li>
+          <li><b>02</b><span>Meister</span></li>
+          <li><b>03</b><span>Aeg</span></li>
+          <li><b>04</b><span>Andmed</span></li>
+        </ol>
+
+        <div class="step" data-step="1">
+          <h2>Vali teenus</h2>
+          <p>Hind ja kestus on näha iga teenuse juures.</p>
+          <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Teenus</legend><div class="opts" id="svc-list"></div></fieldset>
+        </div>
+
+        <div class="step" data-step="2" hidden>
+          <h2>Vali meister</h2>
+          <p>Kui meister pole oluline, vali „Esimene vaba”. Siis on rohkem vabu aegu.</p>
+          <fieldset style="border:0;margin:0;padding:0"><legend class="sr-only">Meister</legend><div class="masters" id="master-list"></div></fieldset>
+        </div>
+
+        <div class="step" data-step="3" hidden>
+          <h2>Vali aeg</h2>
+          <p>Vabad ajad järgmiseks 14 päevaks. Läbikriipsutatud ajad on juba võetud.</p>
+          <div class="days" id="days" role="group" aria-label="Päev"></div>
+          <p class="note" id="slots-note" aria-live="polite"></p>
+          <div class="slots" id="slots" role="group" aria-label="Kellaaeg"></div>
+        </div>
+
+        <div class="step" data-step="4" hidden>
+          <h2>Sinu andmed</h2>
+          <p>Saadame kinnituse ja meeldetuletuse SMS-iga päev enne.</p>
+          <form class="form" id="bk-form" novalidate>
+            <div class="row-2">
+              <div class="field"><label for="b-name">Nimi</label><input id="b-name" type="text" autocomplete="name" required><span class="err">Kirjuta oma nimi.</span></div>
+              <div class="field"><label for="b-phone">Telefon</label><input id="b-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+372" required><span class="err">Kontrolli telefoninumbrit.</span></div>
+            </div>
+            <div class="field"><label for="b-email">E-post <span class="opt">(soovi korral)</span></label><input id="b-email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="b-note">Lisainfo <span class="opt">(soovi korral)</span></label><textarea id="b-note" rows="3" placeholder="Nt soovin sama lõikust nagu eelmine kord"></textarea></div>
+            <label class="check"><input type="checkbox" id="b-ok" required><span>Olen nõus, et Borei kasutab minu andmeid broneeringu haldamiseks. <a href="privaatsus.html">Privaatsus</a></span></label>
+          </form>
+        </div>
+
+        <div class="step-nav">
+          <button class="btn btn--ghost" type="button" id="back"><span class="arr">←</span> Tagasi</button>
+          <button class="btn btn--accent" type="button" id="next" disabled>Edasi <span class="arr">→</span></button>
+        </div>
+      </div>
+
+      <div class="success" id="bk-done" hidden>
+        <span class="label">Broneering vastu võetud</span>
+        <h3 style="font-size:clamp(2rem,5vw,3rem);margin:10px 0 14px">Aitäh, <span id="done-name"></span>!</h3>
+        <p id="done-text"></p>
+        <p class="note">Kinnitus tuleb SMS-iga. Kui aeg ei sobi enam, helista <a href="tel:+37251920155">+372 5192 0155</a>.</p>
+        <p style="margin-top:22px"><a class="btn" href="index.html">Tagasi avalehele</a></p>
+      </div>
+    </div>
+
+    <aside class="summary" aria-label="Broneeringu kokkuvõte">
+      <h3>Sinu broneering</h3>
+      <dl>
+        <div><dt>Teenus</dt><dd id="sum-service">–</dd></div>
+        <div><dt>Meister</dt><dd id="sum-master">–</dd></div>
+        <div><dt>Päev</dt><dd id="sum-date">–</dd></div>
+        <div><dt>Kell</dt><dd id="sum-time">–</dd></div>
+      </dl>
+      <div class="total"><span class="label" style="color:#9a958c">Kokku</span><b id="sum-total">0 €</b></div>
+      <div class="foot">Keskallee 20, Kohtla-Järve. Tasud salongis kaardi või sularahaga.</div>
+    </aside>
+  </div>
+</section>
+<script type="application/json" id="services-data">[{"group": "Juukselõikus", "id": "loikus", "name": "Meeste juukselõikus", "dur": 45, "price": 15, "desc": "Käärid ja masin, pesu, viimistlus ja soeng."}, {"group": "Juukselõikus", "id": "fade", "name": "Fade lõikus", "dur": 45, "price": 18, "desc": "Sujuv üleminek nullist, skin fade või taper, pealt kääridega."}, {"group": "Juukselõikus", "id": "masin", "name": "Masinlõikus", "dur": 20, "price": 10, "desc": "Üks või kaks otsikut, kontuur ja kael puhtaks."}, {"group": "Juukselõikus", "id": "pikk", "name": "Pikkade juuste lõikus", "dur": 60, "price": 20, "desc": "Õlgadeni või pikemad juuksed, kihid ja kuju."}, {"group": "Habe ja raseerimine", "id": "kombo", "name": "Lõikus + habe", "dur": 75, "price": 25, "desc": "Juukselõikus ja habeme kujundamine ühe külastusega."}, {"group": "Habe ja raseerimine", "id": "habe", "name": "Habeme kujundamine", "dur": 30, "price": 12, "desc": "Pikkus, kuju ja kontuur, lõpus õli või palsam."}, {"group": "Habe ja raseerimine", "id": "raseerimine", "name": "Kuuma rätikuga raseerimine", "dur": 30, "price": 15, "desc": "Klassikaline habemenoaga raseerimine kuuma rätikuga."}, {"group": "Habe ja raseerimine", "id": "pea", "name": "Pea raseerimine", "dur": 30, "price": 14, "desc": "Pea siledaks habemenoaga, jahutav palsam."}, {"group": "Lapsed", "id": "poisid", "name": "Poiste lõikus", "dur": 30, "price": 12, "desc": "Kuni 12-aastastele. Rahulik tempo ja lühike ooteaeg."}, {"group": "Lapsed", "id": "isa-poeg", "name": "Isa + poeg", "dur": 75, "price": 25, "desc": "Kaks lõikust järjest, istute kõrvuti."}, {"group": "Lisateenused", "id": "kontuur", "name": "Kontuuri värskendus", "dur": 15, "price": 7, "desc": "Kõrvade ja kaela piirid korda lõikuste vahel."}, {"group": "Lisateenused", "id": "kulmud", "name": "Kulmude korrigeerimine", "dur": 10, "price": 5, "desc": "Kulmud korda kääride ja masinaga."}, {"group": "Lisateenused", "id": "toon", "name": "Halli toonimine", "dur": 30, "price": 15, "desc": "Loomulik toon, mis katab halli osaliselt."}, {"group": "Lisateenused", "id": "pesu", "name": "Pesu ja soeng", "dur": 15, "price": 6, "desc": "Pesu, massaaž ja stiilimine tootega."}]</script>
+<script type="application/json" id="masters-data">[{"id": "any", "name": "Esimene vaba", "role": "Kiireim aeg"}, {"id": "irina", "name": "Irina", "role": "Omanik · meister"}, {"id": "andrei", "name": "Andrei", "role": "Meister"}, {"id": "olga", "name": "Olga", "role": "Meister"}]</script>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <b>BOREI</b>
+        <p>Meeste juuksurisalong Kohtla-Järvel aastast 2015. Lõikus, fade, habe ja raseerimine.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+37251920155">+372 5192 0155</a></li>
+          <li><a href="mailto:irinabograya@gmail.com">irinabograya@gmail.com</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Borei+Keskallee+20+Kohtla-J%C3%A4rve" target="_blank" rel="noopener">Keskallee 20, 30322 Kohtla-Järve</a></li>
+          <li><a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Lahti</h4>
+        <table class="hours">
+  <caption class="sr-only">Lahtiolekuajad</caption>
+  <tbody>
+    <tr data-day="1,2,3,4,5"><th scope="row">Esmaspäev–reede</th><td>10:00–19:00</td></tr>
+    <tr data-day="6"><th scope="row">Laupäev</th><td>10:00–16:00</td></tr>
+    <tr data-day="0"><th scope="row">Pühapäev</th><td>10:00–16:00</td></tr>
+  </tbody>
+</table>
+      </div>
+      <div class="ft-col">
+        <h4>Lehed</h4>
+        <ul>
+          <li><a href="broneeri.html">Broneeri aeg</a></li>
+          <li><a href="teenused.html">Teenused</a></li>
+          <li><a href="galerii.html">Tööd</a></li>
+          <li><a href="meist.html">Meist</a></li>
+          <li><a href="kinkekaart.html">Kinkekaart</a></li>
+          <li><a href="kkk.html">KKK</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="ft-bot">
+      <span>© <span data-year>2026</span> Borei OÜ · reg. kood 12807446</span>
+      <span><a href="privaatsus.html">Privaatsus</a> · <a href="https://www.facebook.com/MJSborei/" target="_blank" rel="noopener">Facebook</a></span>
+    </div>
+  </div>
+</footer>
+<div class="sticky-book">
+  <a href="tel:+37251920155">Helista</a>
+  <a href="broneeri.html">Broneeri aeg</a>
+</div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
